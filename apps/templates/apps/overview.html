@@ -1,0 +1,81 @@
+{% extends 'apps/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Обзор платформы</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <h5 class="card-title">{{ stats.total_courses }}</h5>
+                <p class="card-text"><i class="fas fa-book"></i> Курсов</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <h5 class="card-title">{{ stats.total_lessons }}</h5>
+                <p class="card-text"><i class="fas fa-chapter"></i> Уроков</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <h5 class="card-title">{{ stats.total_items }}</h5>
+                <p class="card-text"><i class="fas fa-tasks"></i> Заданий</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <h5 class="card-title">{{ stats.total_users }}</h5>
+                <p class="card-text"><i class="fas fa-users"></i> Пользователей</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Распределение по типам заданий</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for type, count in stats.type_distribution.items %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ type }}
+                        <span class="badge bg-primary rounded-pill">{{ count }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Распределение по сложности</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    {% for diff, count in stats.difficulty_distribution.items %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Уровень {{ diff }}
+                        <span class="badge bg-warning rounded-pill">{{ count }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <p class="mt-2">Средняя сложность: <strong>{{ stats.avg_difficulty }}</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

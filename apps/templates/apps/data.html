@@ -1,0 +1,143 @@
+{% extends 'apps/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Просмотр данных</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+            <span class="badge bg-primary">{{ courses|length }} курсов</span>
+            <span class="badge bg-success">{{ lessons|length }} уроков</span>
+            <span class="badge bg-warning">{{ items|length }} заданий</span>
+            <span class="badge bg-info">{{ users|length }} пользователей</span>
+        </div>
+    </div>
+</div>
+
+<!-- Фильтры -->
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3">
+            <div class="col-md-3">
+                <label class="form-label">Сложность:</label>
+                <select name="difficulty" class="form-select">
+                    <option value="">Все уровни</option>
+                    {% for i in "12345" %}
+                    <option value="{{ i }}" {% if difficulty_filter == i %}selected{% endif %}>Уровень {{ i }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Тип задания:</label>
+                <select name="type" class="form-select">
+                    <option value="">Все типы</option>
+                    <option value="mcq/single" {% if type_filter == "mcq/single" %}selected{% endif %}>MCQ Single</option>
+                    <option value="mcq/multi" {% if type_filter == "mcq/multi" %}selected{% endif %}>MCQ Multi</option>
+                    <option value="short" {% if type_filter == "short" %}selected{% endif %}>Short Answer</option>
+                    <option value="numeric" {% if type_filter == "numeric" %}selected{% endif %}>Numeric</option>
+                </select>
+            </div>
+            <div class="col-md-6 align-self-end">
+                <button type="submit" class="btn btn-primary me-2">
+                    <i class="fas fa-filter"></i> Применить фильтры
+                </button>
+                <a href="{% url 'apps:data' %}" class="btn btn-outline-secondary">
+                    <i class="fas fa-times"></i> Сбросить
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Курсы -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-book"></i> Курсы ({{ courses|length }})</h5>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    {% for course in courses %}
+                    <div class="list-group-item">
+                        <h6 class="mb-1">{{ course.title }}</h6>
+                        <small class="text-muted">ID: {{ course.id }}</small>
+                        <div class="mt-2">
+                            {% for topic in course.topics %}
+                            <span class="badge bg-light text-dark small">{{ topic }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Пользователи -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-users"></i> Пользователи ({{ users|length }})</h5>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    {% for user in users %}
+                    <div class="list-group-item">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">{{ user.name }}</h6>
+                            <span class="badge bg-{% if user.role == 'teacher' %}warning{% else %}info{% endif %}">
+                                {{ user.get_role_display }}
+                            </span>
+                        </div>
+                        <small class="text-muted">ID: {{ user.id }}</small>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Задания -->
+<div class="card">
+    <div class="card-header">
+        <h5><i class="fas fa-tasks"></i> Задания (показано {{ items|length }} из {{ items.count }})</h5>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Тип</th>
+                        <th>Вопрос</th>
+                        <th>Сложность</th>
+                        <th>Теги</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td><small>{{ item.id }}</small></td>
+                        <td>
+                            <span class="badge bg-secondary">{{ item.get_type_display }}</span>
+                        </td>
+                        <td>{{ item.stem|truncatewords:10 }}</td>
+                        <td>
+                            <span class="badge bg-{% if item.difficulty <= 2 %}success{% elif item.difficulty <= 4 %}warning{% else %}danger{% endif %}">
+                                {{ item.difficulty }}
+                            </span>
+                        </td>
+                        <td>
+                            {% for tag in item.tags %}
+                            <span class="badge bg-light text-dark small">{{ tag }}</span>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

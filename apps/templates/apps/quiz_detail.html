@@ -1,0 +1,194 @@
+{% extends 'apps/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Детали теста</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <span class="badge bg-{% if quiz.status == 'started' %}warning{% elif quiz.status == 'finished' %}info{% else %}success{% endif %} me-2">
+            {{ quiz.get_status_display }}
+        </span>
+        <span class="badge bg-secondary">{{ quiz.items.count }} вопросов</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>Информация о тесте</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-borderless">
+                    <tr>
+                        <th width="30%">ID теста:</th>
+                        <td>{{ quiz.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Студент:</th>
+                        <td>{{ quiz.user.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Шаблон:</th>
+                        <td>{{ quiz.blueprint.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Время создания:</th>
+                        <td>{{ quiz.ts }}</td>
+                    </tr>
+                    <tr>
+                        <th>Статус:</th>
+                        <td>
+                            <span class="badge bg-{% if quiz.status == 'started' %}warning{% elif quiz.status == 'finished' %}info{% else %}success{% endif %}">
+                                {{ quiz.get_status_display }}
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5>Вопросы теста ({{ items|length }})</h5>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    {% for item in items %}
+                    <div class="list-group-item">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">Вопрос {{ forloop.counter }}</h6>
+                            <small class="text-muted">
+                                Сложность: 
+                                <span class="badge bg-{% if item.difficulty <= 2 %}success{% elif item.difficulty <= 4 %}warning{% else %}danger{% endif %}">
+                                    {{ item.difficulty }}
+                                </span>
+                            </small>
+                        </div>
+                        <p class="mb-1">{{ item.stem }}</p>
+                        <small class="text-muted">
+                            Тип: {{ item.get_type_display }} | 
+                            Теги: {% for tag in item.tags %}<span class="badge bg-light text-dark">{{ tag }}</span> {% endfor %}
+                        </small>
+                        
+                        {% if item.options %}
+                        <div class="mt-2">
+                            <small><strong>Варианты:</strong></small>
+                            <div class="ms-3">
+                                {% for option in item.options %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="{% if item.type == 'mcq/single' %}radio{% else %}checkbox{% endif %}" 
+                                           name="question{{ item.id }}" id="option{{ item.id }}_{{ forloop.counter0 }}">
+                                    <label class="form-check-label small" for="option{{ item.id }}_{{ forloop.counter0 }}">
+                                        {{ option }}
+                                    </label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Действия</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-play"></i> Начать тест
+                    </button>
+                    <button class="btn btn-outline-secondary" type="button">
+                        <i class="fas fa-edit"></i> Редактировать
+                    </button>
+                    <button class="btn btn-outline-info" type="button">
+                        <i class="fas fa-chart-bar"></i> Статистика
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5>Статистика вопросов</h5>
+            </div>
+            <div class="card-body">
+                {% regroup items by type as type_list %}
+                {% for type in type_list %}
+                <div class="mb-2">
+                    <small><strong>{{ type.grouper }}</strong>: {{ type.list|length }} вопросов</small>
+                    <div class="progress" style="height: 5px;">
+                        <div class="progress-bar" style="width: {% widthratio type.list|length items.count 100 %}%"></div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <hr>
+                <div class="row text-center">
+                    <div class="col-4">
+                        <h6>{{ items|length }}</h6>
+                        <small class="text-muted">Всего</small>
+                    </div>
+                    <div class="col-4">
+                        <h6>
+                            {% with min_diff=items|dictsort:"difficulty"|first %}
+                                {{ min_diff.difficulty }}
+                            {% endwith %}
+                            -
+                            {% with max_diff=items|dictsort:"difficulty"|last %}
+                                {{ max_diff.difficulty }}
+                            {% endwith %}
+                        </h6>
+                        <small class="text-muted">Сложность</small>
+                    </div>
+                    <div class="col-4">
+                        <h6>{{ type_list|length }}</h6>
+                        <small class="text-muted">Типов</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5>Функциональные метрики</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info small">
+                    <h6>Использованные подходы:</h6>
+                    <ul class="mb-0">
+                        <li>Чистые функции</li>
+                        <li>Иммутабельные структуры</li>
+                        <li>Функции высшего порядка</li>
+                        <li>Работа с кортежами</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="{% url 'apps:functional' %}" class="btn btn-outline-secondary">
+        <i class="fas fa-arrow-left"></i> Назад к генерации тестов
+    </a>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+$(document).ready(function() {
+    // Простая валидация формы
+    $('input[type="radio"], input[type="checkbox"]').change(function() {
+        const questionId = $(this).attr('name');
+        const selectedCount = $(`input[name="${questionId}"]:checked`).length;
+        console.log(`Выбрано ответов в вопросе: ${selectedCount}`);
+    });
+});
+</script>
+{% endblock %}

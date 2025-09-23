@@ -1,0 +1,198 @@
+{% extends 'apps/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Функциональное ядро</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-cogs"></i> Генерация теста</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" id="quizForm">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label"><i class="fas fa-user"></i> Студент:</label>
+                        <select name="user_id" class="form-select" required>
+                            <option value="">Выберите студента</option>
+                            {% for user in student_users %}
+                            <option value="{{ user.id }}">{{ user.name }} ({{ user.role }})</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><i class="fas fa-clipboard-list"></i> Шаблон теста:</label>
+                        <select name="blueprint_id" class="form-select" required>
+                            <option value="">Выберите шаблон</option>
+                            {% for bp in blueprints %}
+                            <option value="{{ bp.id }}">
+                                {{ bp.id }} -
+                                {% if bp.rules.count %} {{ bp.rules.count }} вопросов {% endif %}
+                                {% if bp.rules.difficulty %} сложность {{ bp.rules.difficulty.0 }}-{{ bp.rules.difficulty.1 }} {% endif %}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i> Сгенерировать тест
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" id="ajaxGenerate">
+                            <i class="fas fa-bolt"></i> Сгенерировать (AJAX)
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-filter"></i> Демонстрация фильтров</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-success">
+                    <h6><i class="fas fa-check-circle"></i> Результаты фильтрации:</h6>
+                    <p class="mb-1">Отфильтровано заданий: <strong>{{ demo_items_count }}</strong></p>
+                    <small class="text-muted">
+                        Примененные фильтры: сложность 2-4, типы mcq/single и mcq/multi
+                    </small>
+                </div>
+
+                <div class="alert alert-info">
+                    <h6><i class="fas fa-code"></i> Используемые функциональные подходы:</h6>
+                    <ul class="mb-0 small">
+                        <li><strong>Чистые функции</strong> - без side effects</li>
+                        <li><strong>Иммутабельные структуры</strong> - кортежи вместо списков</li>
+                        <li><strong>Функции высшего порядка</strong> - create_filter_factory</li>
+                        <li><strong>Композиция функций</strong> - последовательные фильтры</li>
+                        <li><strong>Работа с кортежами</strong> - tuple, frozenset</li>
+                        <li><strong>Функциональные утилиты</strong> - filter, map, reduce</li>
+                    </ul>
+                </div>
+
+                <div class="mt-3">
+                    <h6><i class="fas fa-list"></i> Структуры данных:</h6>
+                    <div class="row text-center small">
+                        <div class="col-3">
+                            <span class="badge bg-primary">Списки</span>
+                            <div>JSON поля</div>
+                        </div>
+                        <div class="col-3">
+                            <span class="badge bg-success">Кортежи</span>
+                            <div>Иммутабельные данные</div>
+                        </div>
+                        <div class="col-3">
+                            <span class="badge bg-warning">Словари</span>
+                            <div>Правила, статистика</div>
+                        </div>
+                        <div class="col-3">
+                            <span class="badge bg-info">Множества</span>
+                            <div>Уникальные значения</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5><i class="fas fa-rocket"></i> Быстрая генерация</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    {% for bp in blueprints|slice:":3" %}
+                    <button type="button" class="btn btn-outline-primary quick-generate"
+                            data-user-id="{{ student_users.0.id }}" data-bp-id="{{ bp.id }}">
+                        <i class="fas fa-bolt"></i> {{ bp.id }} ({{ bp.rules.count }} вопросов)
+                    </button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Результаты AJAX генерации -->
+<div id="ajaxResult" class="mt-4" style="display: none;">
+    <div class="alert alert-success">
+        <h5><i class="fas fa-check"></i> Тест успешно создан!</h5>
+        <p id="resultMessage"></p>
+        <a href="#" id="quizLink" class="btn btn-success btn-sm">
+            <i class="fas fa-external-link-alt"></i> Перейти к тесту
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+$(document).ready(function() {
+    // AJAX генерация теста
+    $('#ajaxGenerate').click(function() {
+        const formData = $('#quizForm').serialize();
+
+        if (!formData.includes('user_id=') || !formData.includes('blueprint_id=')) {
+            alert('Пожалуйста, выберите студента и шаблон теста');
+            return;
+        }
+
+        $.ajax({
+            url: "{% url 'apps:generate_quiz' %}",
+            method: 'POST',
+            data: formData,
+            beforeSend: function() {
+                $('#ajaxGenerate').html('<i class="fas fa-spinner fa-spin"></i> Генерация...');
+                $('#ajaxGenerate').prop('disabled', true);
+            },
+            success: function(response) {
+                if (response.success) {
+                    $('#resultMessage').html(
+                        `Создан тест <strong>${response.quiz_id}</strong> с <strong>${response.items_count}</strong> вопросами`
+                    );
+                    $('#quizLink').attr('href', "{% url 'apps:quiz_detail' '0' %}".replace('0', response.quiz_id));
+                    $('#ajaxResult').show();
+                } else {
+                    alert('Ошибка: ' + response.error);
+                }
+            },
+            error: function() {
+                alert('Ошибка при генерации теста');
+            },
+            complete: function() {
+                $('#ajaxGenerate').html('<i class="fas fa-bolt"></i> Сгенерировать (AJAX)');
+                $('#ajaxGenerate').prop('disabled', false);
+            }
+        });
+    });
+
+    // Быстрая генерация
+    $('.quick-generate').click(function() {
+        const userId = $(this).data('user-id');
+        const bpId = $(this).data('bp-id');
+
+        $.ajax({
+            url: "{% url 'apps:generate_quiz' %}",
+            method: 'POST',
+            data: {
+                'user_id': userId,
+                'blueprint_id': bpId,
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function(response) {
+                if (response.success) {
+                    window.location.href = "{% url 'apps:quiz_detail' '0' %}".replace('0', response.quiz_id);
+                }
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

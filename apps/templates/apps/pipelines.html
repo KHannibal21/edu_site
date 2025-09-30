@@ -1,0 +1,198 @@
+{% extends 'apps/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Функциональные пайплайны</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <span class="badge bg-info">Композиция функций</span>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Левая колонка: Демонстрация пайплайнов -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>🎯 Демонстрация пайплайнов</h5>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Тип пайплайна:</label>
+                        <select name="pipeline_type" class="form-select" required>
+                            <option value="basic">Базовый пайплайн (сложность + тип)</option>
+                            <option value="advanced">Продвинутый пайплайн (сложность + тема + теги)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label">Минимальная сложность:</label>
+                            <input type="number" name="min_difficulty" class="form-control" min="1" max="5" value="2" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Максимальная сложность:</label>
+                            <input type="number" name="max_difficulty" class="form-control" min="1" max="5" value="4" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Тема (для продвинутого пайплайна):</label>
+                        <input type="text" name="topic" class="form-control" placeholder="python, web, data...">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Тип задания (для базового пайплайна):</label>
+                        <select name="qtype" class="form-select">
+                            <option value="">Любой тип</option>
+                            <option value="mcq/single">MCQ Single</option>
+                            <option value="mcq/multi">MCQ Multi</option>
+                            <option value="short">Short Answer</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Обязательные теги (через запятую):</label>
+                        <input type="text" name="required_tags" class="form-control" placeholder="python,basic,advanced...">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Запустить пайплайн
+                    </button>
+                </form>
+                
+                {% if pipeline_results %}
+                <div class="mt-4">
+                    <div class="alert alert-success">
+                        <h6>🎉 Результаты пайплайна:</h6>
+                        <p><strong>Тип:</strong> {{ pipeline_results.type }}</p>
+                        <p><strong>Фильтры:</strong> {{ pipeline_results.filters }}</p>
+                        <p><strong>Найдено заданий:</strong> {{ pipeline_results.count }}</p>
+                    </div>
+                    
+                    {% if pipeline_results.items %}
+                    <h6>Примеры отфильтрованных заданий:</h6>
+                    <div class="list-group">
+                        {% for item in pipeline_results.items %}
+                        <div class="list-group-item">
+                            <small><strong>{{ item.id }}</strong> | {{ item.type }} | Сложность: {{ item.difficulty }}</small>
+                            <br>
+                            <small class="text-muted">Теги: {{ item.tags|join:", " }}</small>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Правая колонка: Композиция функций -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>🔄 Композиция функций</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <h6>📝 Активная композиция:</h6>
+                    <p class="mb-2">{{ composition_demo.pipeline }}</p>
+                </div>
+                
+                {% if composition_demo.error %}
+                <div class="alert alert-warning">
+                    Ошибка композиции: {{ composition_demo.error }}
+                </div>
+                {% else %}
+                <div class="row text-center mb-3">
+                    <div class="col-6">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5>{{ composition_demo.input_count }}</h5>
+                                <small>Входные данные</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <h5>{{ composition_demo.output_count }}</h5>
+                                <small>Результат пайплайна</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                {% if composition_demo.result %}
+                <h6>Результат преобразования:</h6>
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Тип</th>
+                                <th>Сложность</th>
+                                <th>Теги</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in composition_demo.result %}
+                            <tr>
+                                <td><small>{{ item.id }}</small></td>
+                                <td><span class="badge bg-secondary">{{ item.type }}</span></td>
+                                <td>
+                                    <span class="badge bg-{% if item.difficulty <= 2 %}success{% elif item.difficulty <= 4 %}warning{% else %}danger{% endif %}">
+                                        {{ item.difficulty }}
+                                    </span>
+                                </td>
+                                <td>
+                                    {% for tag in item.tags %}
+                                    <span class="badge bg-light text-dark small">{{ tag }}</span>
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- Блок с объяснением -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5>📚 О пайплайнах и композиции</h5>
+            </div>
+            <div class="card-body">
+                <h6>🎯 Что такое функциональные пайплайны?</h6>
+                <p class="small">Пайплайны - это композиция функций, где выход одной функции становится входом для следующей.</p>
+                
+                <h6>🔧 Используемые подходы:</h6>
+                <ul class="small">
+                    <li><strong>Замыкания</strong> - фабрики функций-фильтров</li>
+                    <li><strong>Композиция</strong> - последовательное применение функций</li>
+                    <li><strong>Чистые функции</strong> - предсказуемые преобразования</li>
+                    <li><strong>Иммутабельность</strong> - работа с кортежами</li>
+                </ul>
+                
+                <h6>💡 Пример кода:</h6>
+                <pre class="bg-light p-2 small"><code># Создание пайплайна
+pipeline = compose(
+    filter_by_difficulty(2, 4),
+    filter_by_topic('python'), 
+    transform_to_dict,
+    limit_results(5)
+)
+
+# Применение
+result = pipeline(items)</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

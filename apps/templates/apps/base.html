@@ -51,7 +51,8 @@
                            href="{% url 'apps:functional' %}">
                             <i class="fas fa-code"></i> Functional Core
                         </a>
-                        <a class="menu-item" href="#">
+                        <a class="menu-item {% if menu == 'pipelines' %}active{% endif %}"
+                           href="{% url 'apps:pipelines' %}">
                             <i class="fas fa-project-diagram"></i> Pipelines
                         </a>
                         <a class="menu-item" href="#">

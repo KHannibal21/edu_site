@@ -1,8 +1,11 @@
+import time
+import random
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.utils import timezone
 from .models import *
 from .recursion import flatten_curriculum, build_item_tree, walk_blueprint_rules
+from .memo import generate_quiz_variant, benchmark_generation
 from .services import *
 
 
@@ -203,3 +206,41 @@ def generate_quiz_ajax(request):
                 'success': False,
                 'error': str(e)
             })
+
+
+def reports_view(request):
+    """UI: Reports → Variants (cached)"""
+    benchmark_results = None
+    cache_demo = None
+
+    if request.method == 'POST':
+        if 'run_benchmark' in request.POST:
+            iterations = int(request.POST.get('iterations', 100))
+            benchmark_results = benchmark_generation(iterations)
+
+        elif 'generate_variant' in request.POST:
+            # Демонстрация генерации вариантов
+            bp_key = request.POST.get('bp_key', 'bp_10:python:1,2,3:42')
+            pool_size = int(request.POST.get('pool_size', 50))
+
+            # Создаем тестовый пул
+            pool_idx = tuple(f"item_{i}_diff_{random.randint(1, 5)}" for i in range(pool_size))
+
+            # Генерируем вариант (с кэшем)
+            start_time = time.time()
+            variant = generate_quiz_variant(bp_key, pool_idx, 42)
+            generation_time = time.time() - start_time
+
+            cache_demo = {
+                'bp_key': bp_key,
+                'variant': variant,
+                'generation_time': round(generation_time, 4),
+                'cache_info': generate_quiz_variant.cache_info()
+            }
+
+    context = {
+        'benchmark_results': benchmark_results,
+        'cache_demo': cache_demo,
+        'menu': 'reports'
+    }
+    return render(request, 'apps/reports.html', context)

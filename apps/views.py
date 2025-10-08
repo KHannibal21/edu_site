@@ -212,19 +212,24 @@ def reports_view(request):
     """UI: Reports → Variants (cached)"""
     benchmark_results = None
     cache_demo = None
+    form_data = {'pool_size': 50, 'bp_key': 'bp_10:python:1,2,3:42'}  # ← ДОБАВЛЯЕМ ДАННЫЕ ФОРМЫ
 
     if request.method == 'POST':
         if 'run_benchmark' in request.POST:
             iterations = int(request.POST.get('iterations', 100))
-            benchmark_results = benchmark_generation(iterations)
+            pool_size = int(request.POST.get('benchmark_pool_size', 200))
+            benchmark_results = benchmark_generation(iterations, pool_size)
 
         elif 'generate_variant' in request.POST:
-            # Демонстрация генерации вариантов
             bp_key = request.POST.get('bp_key', 'bp_10:python:1,2,3:42')
             pool_size = int(request.POST.get('pool_size', 50))
 
+            # СОХРАНЯЕМ ВВЕДЕННЫЕ ДАННЫЕ
+            form_data['pool_size'] = pool_size  # ← СОХРАНЯЕМ ВВЕДЕННОЕ ЗНАЧЕНИЕ
+            form_data['bp_key'] = bp_key  # ← СОХРАНЯЕМ ВВЕДЕННЫЙ BP_KEY
+
             # Создаем тестовый пул
-            pool_idx = tuple(f"item_{i}_diff_{random.randint(1, 5)}" for i in range(pool_size))
+            pool_idx = tuple(f"item_{i}diff{random.randint(1, 5)}" for i in range(pool_size))
 
             # Генерируем вариант (с кэшем)
             start_time = time.time()
@@ -233,6 +238,7 @@ def reports_view(request):
 
             cache_demo = {
                 'bp_key': bp_key,
+                'pool_size': pool_size,
                 'variant': variant,
                 'generation_time': round(generation_time, 4),
                 'cache_info': generate_quiz_variant.cache_info()
@@ -241,6 +247,7 @@ def reports_view(request):
     context = {
         'benchmark_results': benchmark_results,
         'cache_demo': cache_demo,
+        'form_data': form_data,  # ← ПЕРЕДАЕМ ДАННЫЕ ФОРМЫ В ШАБЛОН
         'menu': 'reports'
     }
     return render(request, 'apps/reports.html', context)

@@ -51,7 +51,6 @@
         </div>
     </div>
 
-    <!-- Демонстрация генерации -->
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
@@ -62,14 +61,13 @@
                     {% csrf_token %}
                     <div class="mb-3">
                         <label class="form-label">Blueprint Key:</label>
-                        <input type="text" name="bp_key" class="form-control" 
-                               value="bp_10:python:1,2,3:42" required>
-                        <small class="text-muted">Формат: bp_Count:Topics:Difficulties:Seed</small>
+                        <input type="text" name="bp_key" class="form-control"
+                               value="{{ form_data.bp_key }}" required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Размер пула заданий:</label>
-                        <input type="number" name="pool_size" class="form-control" 
-                               min="10" max="200" value="50" required>
+                        <label class="form-label">Размер количество заданий:</label>
+                        <input type="number" name="pool_size" class="form-control"
+                               min="10" max="200" value="{{ form_data.pool_size }}" required>
                     </div>
                     <button type="submit" name="generate_variant" class="btn btn-outline-primary">
                         <i class="fas fa-cogs"></i> Сгенерировать вариант
@@ -82,8 +80,9 @@
                         <h6>✅ Вариант сгенерирован:</h6>
                         <p><strong>Время:</strong> {{ cache_demo.generation_time }}s</p>
                         <p><strong>Blueprint:</strong> {{ cache_demo.bp_key }}</p>
+                        <p><strong>Размер пула:</strong> {{ cache_demo.pool_size }} заданий</p>
                     </div>
-                    
+
                     <h6>Выбранные задания (первые 10):</h6>
                     <div class="list-group">
                         {% for item_id in cache_demo.variant|slice:":10" %}
@@ -92,10 +91,10 @@
                         </div>
                         {% endfor %}
                     </div>
-                    
+
                     <div class="mt-2">
                         <small class="text-muted">
-                            Всего заданий: {{ cache_demo.variant|length }} | 
+                            Всего заданий: {{ cache_demo.variant|length }} |
                             Cache hits: {{ cache_demo.cache_info.hits }}
                         </small>
                     </div>
@@ -113,7 +112,7 @@
     </div>
     <div class="card-body">
         <p><strong>Мемоизация</strong> - кэширование результатов "дорогих" функций для одинаковых входных параметров.</p>
-        
+
         <h6>🔑 Иммутабельный ключ кэша:</h6>
         <pre class="bg-light p-2"><code>bp_10:python,web:1,2,3,4:42
   ↑     ↑         ↑       ↑

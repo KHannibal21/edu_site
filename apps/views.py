@@ -55,16 +55,56 @@ def functional_core(request):
     courses, items, blueprints, users = load_immutable_data()
     student_users = [user for user in users if user.role == 'student']
 
-    if request.method == 'POST':
+    # Демонстрация Maybe/Either с реальными операциями
+    functional_patterns_demo = None
+
+    if request.method == 'POST' and 'demo_maybe_either' in request.POST:
+        # Демонстрация Maybe
+        item_id = request.POST.get('item_id', 'item_1')
+        maybe_result = safe_item(items, item_id)
+
+        # Демонстрация Either с валидацией ответа
+        answer_payload = request.POST.get('answer_payload', '')
+
+        # Простой парсинг без JSON - для MCQ это индексы, для short - текст
+        answer_data = answer_payload
+        if answer_payload.startswith('[') and answer_payload.endswith(']'):
+            # Простая обработка формата [0,1] без json
+            try:
+                # Убираем скобки и разбиваем по запятым
+                numbers = answer_payload[1:-1].split(',')
+                answer_data = [int(num.strip()) for num in numbers if num.strip()]
+            except:
+                answer_data = answer_payload
+
+        selected_item = maybe_result.get_or_else(items[0] if items else None)
+
+        if selected_item:
+            validation_result = validate_answer(selected_item, answer_data, ())
+            grading_result = grade_item(selected_item, answer_data, ())
+
+            functional_patterns_demo = {
+                'item_id': item_id,
+                'maybe_result': maybe_result,
+                'validation_result': validation_result,
+                'grading_result': grading_result,
+                'selected_item': selected_item,
+                'user_answer': answer_payload
+            }
+        else:
+            functional_patterns_demo = {
+                'item_id': item_id,
+                'maybe_result': maybe_result,
+                'user_answer': answer_payload
+            }
+
+    if request.method == 'POST' and 'user_id' in request.POST:
         user_id = request.POST.get('user_id')
         blueprint_id = request.POST.get('blueprint_id')
 
         user = User.objects.get(id=user_id)
         blueprint = QuizBlueprint.objects.get(id=blueprint_id)
-
-        # Создаем квиз функциональным способом
         quiz = create_quiz_functional(user, blueprint, items)
-
         return redirect('apps:quiz_detail', quiz_id=quiz.id)
 
     # Демонстрация фильтров
@@ -79,6 +119,8 @@ def functional_core(request):
         'student_users': student_users,
         'blueprints': blueprints,
         'demo_items_count': len(filtered_items),
+        'functional_patterns_demo': functional_patterns_demo,
+        'all_items': items[:10],  # Показываем первые 10 для демонстрации
         'menu': 'functional'
     }
     return render(request, 'apps/functional.html', context)

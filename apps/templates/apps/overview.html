@@ -1,81 +1,417 @@
 {% extends 'apps/base.html' %}
 
 {% block content %}
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Обзор платформы</h1>
-</div>
-
-<div class="row">
-    <div class="col-md-3 mb-4">
-        <div class="card stat-card">
-            <div class="card-body">
-                <h5 class="card-title">{{ stats.total_courses }}</h5>
-                <p class="card-text"><i class="fas fa-book"></i> Курсов</p>
-            </div>
-        </div>
+<!-- Заголовок страницы -->
+<div class="page-header">
+    <div class="header-content">
+        <h1 class="page-title">Образовательная платформа</h1>
+        <p class="page-subtitle">Добро пожаловать в систему дистанционного обучения</p>
     </div>
-    <div class="col-md-3 mb-4">
-        <div class="card stat-card">
-            <div class="card-body">
-                <h5 class="card-title">{{ stats.total_lessons }}</h5>
-                <p class="card-text"><i class="fas fa-chapter"></i> Уроков</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3 mb-4">
-        <div class="card stat-card">
-            <div class="card-body">
-                <h5 class="card-title">{{ stats.total_items }}</h5>
-                <p class="card-text"><i class="fas fa-tasks"></i> Заданий</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3 mb-4">
-        <div class="card stat-card">
-            <div class="card-body">
-                <h5 class="card-title">{{ stats.total_users }}</h5>
-                <p class="card-text"><i class="fas fa-users"></i> Пользователей</p>
-            </div>
-        </div>
+    <div class="header-actions">
+        <button class="btn btn-primary">
+            <i class="fas fa-plus me-2"></i>Новый курс
+        </button>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-header">
-                <h5>Распределение по типам заданий</h5>
+<!-- Основная статистика -->
+<div class="stats-grid-main">
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i class="fas fa-book-open"></i>
+        </div>
+        <div class="stat-content">
+            <div class="stat-number">{{ stats.total_courses }}</div>
+            <div class="stat-label">Активных курсов</div>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i class="fas fa-tasks"></i>
+        </div>
+        <div class="stat-content">
+            <div class="stat-number">{{ stats.total_lessons }}</div>
+            <div class="stat-label">Уроков доступно</div>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i class="fas fa-file-alt"></i>
+        </div>
+        <div class="stat-content">
+            <div class="stat-number">{{ stats.total_items }}</div>
+            <div class="stat-label">Заданий в системе</div>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="stat-content">
+            <div class="stat-number">{{ stats.avg_difficulty }}</div>
+            <div class="stat-label">Средняя сложность</div>
+        </div>
+    </div>
+</div>
+
+<!-- Основной контент -->
+<div class="content-grid">
+    <div class="content-column main-column">
+        <!-- Рекомендуемые курсы -->
+        <div class="content-section">
+            <div class="section-header">
+                <h3 class="section-title">Рекомендуемые курсы</h3>
+                <a href="#" class="section-link">Все курсы <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="card-body">
-                <ul class="list-group">
-                    {% for type, count in stats.type_distribution.items %}
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        {{ type }}
-                        <span class="badge bg-primary rounded-pill">{{ count }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
+            <div class="courses-list">
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="course-info">
+                        <h5 class="course-title">Программирование на Python</h5>
+                        <p class="course-description">Основы программирования и алгоритмы для начинающих</p>
+                        <div class="course-meta">
+                            <span class="course-lessons"><i class="fas fa-play-circle"></i> 24 урока</span>
+                            <span class="course-difficulty"><i class="fas fa-signal"></i> Средний</span>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                            <span class="progress-text">75% завершено</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="course-info">
+                        <h5 class="course-title">Базы данных и SQL</h5>
+                        <p class="course-description">Проектирование баз данных и работа с SQL запросами</p>
+                        <div class="course-meta">
+                            <span class="course-lessons"><i class="fas fa-play-circle"></i> 18 уроков</span>
+                            <span class="course-difficulty"><i class="fas fa-signal"></i> Продвинутый</span>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 40%"></div>
+                            </div>
+                            <span class="progress-text">40% завершено</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="course-info">
+                        <h5 class="course-title">Веб-разработка</h5>
+                        <p class="course-description">Создание современных веб-приложений</p>
+                        <div class="course-meta">
+                            <span class="course-lessons"><i class="fas fa-play-circle"></i> 32 урока</span>
+                            <span class="course-difficulty"><i class="fas fa-signal"></i> Начальный</span>
+                        </div>
+                        <div class="course-progress">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 20%"></div>
+                            </div>
+                            <span class="progress-text">20% завершено</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Статистика платформы -->
+        <div class="content-section">
+            <div class="section-header">
+                <h3 class="section-title">Статистика платформы</h3>
+            </div>
+            <div class="stats-details">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="stat-detail-card">
+                            <h6>Распределение по типам заданий</h6>
+                            <div class="type-stats">
+                                {% for type, count in stats.type_distribution.items %}
+                                <div class="type-stat-item">
+                                    <span class="type-name">{{ type }}</span>
+                                    <div class="type-progress">
+                                        <div class="progress">
+                                            {% widthratio count stats.total_items 100 as percentage %}
+                                            <div class="progress-bar" style="width: {{ percentage }}%"></div>
+                                        </div>
+                                        <span class="type-count">{{ count }}</span>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="stat-detail-card">
+                            <h6>Сложность заданий</h6>
+                            <div class="difficulty-stats">
+                                {% for diff, count in stats.difficulty_distribution.items %}
+                                <div class="difficulty-item">
+                                    <span class="difficulty-level">Уровень {{ diff }}</span>
+                                    <span class="difficulty-count">{{ count }} заданий</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="avg-difficulty">
+                                <strong>Средняя сложность: {{ stats.avg_difficulty }}/5</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
-    <div class="col-md-6">
-        <div class="card">
-            <div class="card-header">
-                <h5>Распределение по сложности</h5>
+
+    <div class="content-column sidebar-column">
+        <!-- Ближайшие дедлайны -->
+        <div class="content-section">
+            <div class="section-header">
+                <h3 class="section-title">Ближайшие дедлайны</h3>
             </div>
-            <div class="card-body">
-                <ul class="list-group">
-                    {% for diff, count in stats.difficulty_distribution.items %}
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Уровень {{ diff }}
-                        <span class="badge bg-warning rounded-pill">{{ count }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-                <p class="mt-2">Средняя сложность: <strong>{{ stats.avg_difficulty }}</strong></p>
+            <div class="deadlines-list">
+                <div class="deadline-item urgent">
+                    <div class="deadline-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="deadline-info">
+                        <h6 class="deadline-title">Лабораторная работа #3 - Python</h6>
+                        <span class="deadline-date">Завтра, 14:00</span>
+                    </div>
+                </div>
+
+                <div class="deadline-item">
+                    <div class="deadline-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="deadline-info">
+                        <h6 class="deadline-title">Тест по алгоритмам</h6>
+                        <span class="deadline-date">2 дня</span>
+                    </div>
+                </div>
+
+                <div class="deadline-item">
+                    <div class="deadline-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="deadline-info">
+                        <h6 class="deadline-title">Проект "Веб-приложение"</h6>
+                        <span class="deadline-date">5 дней</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Последняя активность -->
+        <div class="content-section">
+            <div class="section-header">
+                <h3 class="section-title">Последняя активность</h3>
+            </div>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon success">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="activity-info">
+                        <p>Завершён тест "Основы Python"</p>
+                        <span class="activity-time">2 часа назад</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon primary">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="activity-info">
+                        <p>Начато изучение курса "Базы данных"</p>
+                        <span class="activity-time">Вчера</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon warning">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="activity-info">
+                        <p>Просрочено задание "SQL запросы"</p>
+                        <span class="activity-time">2 дня назад</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Быстрый доступ -->
+        <div class="content-section">
+            <div class="section-header">
+                <h3 class="section-title">Быстрый доступ</h3>
+            </div>
+            <div class="quick-actions">
+                <a href="{% url 'apps:functional' %}" class="quick-action-btn">
+                    <i class="fas fa-code"></i>
+                    <span>Практикум</span>
+                </a>
+                <a href="{% url 'apps:pipelines' %}" class="quick-action-btn">
+                    <i class="fas fa-tasks"></i>
+                    <span>Задания</span>
+                </a>
+                <a href="{% url 'apps:data' %}" class="quick-action-btn">
+                    <i class="fas fa-database"></i>
+                    <span>База знаний</span>
+                </a>
+                <a href="{% url 'apps:reports' %}" class="quick-action-btn">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Отчёты</span>
+                </a>
             </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<style>
+/* Дополнительные стили для overview страницы */
+.course-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.course-lessons, .course-difficulty {
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.stats-details {
+    margin-top: 1rem;
+}
+
+.stat-detail-card {
+    background: var(--light);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+
+.stat-detail-card h6 {
+    margin-bottom: 1rem;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.type-stat-item {
+    margin-bottom: 0.8rem;
+}
+
+.type-name {
+    font-size: 0.9rem;
+    color: var(--dark);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.type-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.type-progress .progress {
+    flex: 1;
+    height: 6px;
+}
+
+.type-count {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    min-width: 30px;
+    text-align: right;
+}
+
+.difficulty-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.difficulty-item:last-child {
+    border-bottom: none;
+}
+
+.difficulty-level {
+    font-size: 0.9rem;
+    color: var(--dark);
+}
+
+.difficulty-count {
+    font-size: 0.8rem;
+    color: var(--secondary);
+}
+
+.avg-difficulty {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--primary);
+    text-align: center;
+    color: var(--primary);
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.quick-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.5rem;
+    background: var(--light);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--dark);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.quick-action-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.quick-action-btn i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.quick-action-btn span {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.activity-icon.warning {
+    background: #fff3cd;
+    color: var(--warning);
+}
+</style>
 {% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="card shadow-sm p-4" style="width: 400px;">
+        <h3 class="text-center mb-4">Вход в EduPlatform</h3>
+        <form method="POST" action="{% url 'apps:login' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_username" class="form-label">Имя пользователя</label>
+                <input type="text" class="form-control" id="id_username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="id_password" class="form-label">Пароль</label>
+                <input type="password" class="form-control" id="id_password" name="password" required>
+
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Войти</button>
+        </form>
+        <p class="text-center mt-3">
+            <a href="{% url 'apps:register' %}">Зарегистрироваться</a>
+
+        </p>
+    </div>
+</div>
+{% endblock %}

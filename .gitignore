@@ -1,0 +1,14 @@
+# Добавьте эти строки в .gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.env
+*.sqlite3
+*.db
+.DS_Store
+Thumbs.db

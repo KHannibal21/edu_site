@@ -1,9 +1,14 @@
+import time
+from django.utils import timezone
 import random
 from functools import reduce
-from typing import Tuple, Dict, Any, List
+from typing import Tuple, Dict, Any, List, Iterable, Iterator, Tuple
 from django.db.models import QuerySet
 from .models import *
 from .ftypes import Maybe, Either
+from django.db import models
+from collections import defaultdict
+import heapq
 
 class ImmutableCourse:
     def __init__(self, course: Course):
@@ -491,3 +496,151 @@ def demonstrate_interactive_maybe_either(items: Tuple[ImmutableItem, ...], item_
         'grading_result': grading_result,
         'selected_item': selected_item
     }
+
+#==== Ленивые вычесления =====
+
+def iter_answers(answers: models.QuerySet, predicate=None) -> Iterable[Answer]:
+    """Ленивая итерация по ответам с возможностью фильтрации"""
+    for answer in answers.iterator():  # Используем iterator() для экономии памяти
+        if predicate is None or predicate(answer):
+            yield answer
+
+
+def lazy_grade_stream(answers: Iterable[Answer], grading_rules: dict) -> Iterator[Tuple[str, float]]:
+    """Ленивый поток оценивания ответов"""
+
+    for answer in answers:
+        # УПРОЩАЕМ проверку - оцениваем все ответы
+        if not answer.is_graded:  # Простая проверка
+            item_type = answer.item.type
+            rule = grading_rules.get(item_type)
+
+            if rule:
+                try:
+                    # Ленивое вычисление оценки
+                    score = calculate_score(answer.payload, answer.item.answer, rule)
+                    weighted_score = score * rule.weight
+
+                    # НЕМЕДЛЕННО сохраняем оценку
+                    answer.score = weighted_score
+                    answer.max_score = rule.weight
+                    answer.is_graded = True
+                    answer.save()
+
+                    yield answer.item.id, weighted_score
+
+                except Exception as e:
+                    print(f"Ошибка при оценке ответа {answer.id}: {e}")
+                    continue
+
+
+def calculate_score(student_answer, correct_answer, rule):
+    """Вычисление оценки на основе правила"""
+    scoring_func = rule.scoring_function
+
+    if scoring_func == 'exact_match':
+        return 1.0 if student_answer == correct_answer else 0.0
+
+    elif scoring_func == 'partial':
+        # Для MCQ multiple
+        correct_count = len(set(student_answer) & set(correct_answer))
+        wrong_count = len(set(student_answer) - set(correct_answer))
+        penalty = rule.parameters.get('penalty_per_wrong', 0.25)
+        score = (correct_count - wrong_count * penalty) / len(correct_answer)
+        return max(0, min(1.0, score))
+
+    elif scoring_func == 'programming':
+        # Упрощенное оценивание программирования
+        test_cases_passed = rule.parameters.get('test_cases_passed', 0)
+        total_test_cases = rule.parameters.get('total_test_cases', 1)
+        return test_cases_passed / total_test_cases
+
+    elif scoring_func == 'fuzzy_match':
+        # Для текстовых ответов
+        student_text = ' '.join(str(student_answer)).lower()
+        correct_text = ' '.join(str(correct_answer)).lower()
+        if student_text == correct_text:
+            return 1.0
+        elif student_text in correct_text or correct_text in student_text:
+            return 0.7
+        else:
+            return 0.0
+
+    return 0.0
+
+
+def process_quiz_grading(quiz: Quiz, top_k: int = 5) -> dict:
+    """Обработка оценивания теста с ленивыми вычислениями"""
+
+    # Получаем правила оценивания
+    grading_rules = {
+        rule.item_type: rule
+        for rule in GradingRule.objects.all()
+    }
+
+    # Ленивый поток ответов - ВАЖНО: используем iterator() для экономии памяти
+    answers = Answer.objects.filter(quiz=quiz).select_related('item').iterator()
+    grading_stream = lazy_grade_stream(answers, grading_rules)
+
+    # Накопление результатов
+    total_score = 0.0
+    max_possible_score = 0.0
+    item_scores = []
+    difficulty_stats = defaultdict(list)
+    processed_count = 0
+
+    # Обрабатываем поток лениво
+    for item_id, score in grading_stream:
+        try:
+            item = Item.objects.get(id=item_id)
+            total_score += score
+            max_possible_score += item.difficulty  # или rule.weight если хотите
+            item_scores.append((item_id, score, item.difficulty))
+            difficulty_stats[item.difficulty].append(score)
+            processed_count += 1
+        except Item.DoesNotExist:
+            continue
+
+    # Materialize только в конце - топ-K самых сложных заданий
+    hardest_items = heapq.nsmallest(top_k, item_scores, key=lambda x: x[1]) if item_scores else []
+
+    # Статистика по сложностям
+    difficulty_summary = {}
+    for diff, scores in difficulty_stats.items():
+        if scores:
+            difficulty_summary[diff] = {
+                'avg_score': sum(scores) / len(scores),
+                'count': len(scores)
+            }
+
+    # Удаляем старые оценки и создаем новую
+    Grade.objects.filter(quiz=quiz).delete()
+
+    grade_id = f"grade_{quiz.id}_{int(time.time())}"
+    grade = Grade.objects.create(
+        id=grade_id,
+        quiz=quiz,
+        score=total_score,
+        breakdown={
+            'total_score': total_score,
+            'max_possible': max_possible_score,
+            'percentage': (total_score / max_possible_score * 100) if max_possible_score > 0 else 0,
+            'hardest_items': hardest_items,
+            'difficulty_stats': difficulty_summary,
+            'items_attempted': processed_count
+        }
+    )
+
+    return {
+        'total_score': total_score,
+        'percentage': (total_score / max_possible_score * 100) if max_possible_score > 0 else 0,
+        'hardest_items': hardest_items,
+        'difficulty_stats': difficulty_summary,
+        'items_attempted': processed_count,
+        'grade_id': grade.id
+    }
+
+def create_demo_quiz_for_lazy_grading():
+    """Создание демо-квиза для ленивого оценивания (без циклических импортов)"""
+    from .demo_data import create_simple_demo_quiz
+    return create_simple_demo_quiz()

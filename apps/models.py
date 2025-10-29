@@ -76,14 +76,25 @@ class Quiz(models.Model):
     def __str__(self):
         return f"Quiz {self.id} - {self.status}"
 
+
 class Answer(models.Model):
     id = models.CharField(max_length=20, primary_key=True)
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name="answers")
     item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name="answers")
     payload = models.JSONField(default=list)
 
+    # Новые поля для ленивого оценивания
+    is_graded = models.BooleanField(default=False)
+    score = models.FloatField(null=True, blank=True)
+    max_score = models.FloatField(null=True, blank=True)
+    grading_metadata = models.JSONField(default=dict)  # детали оценивания
+
     def __str__(self):
         return f"Answer {self.id} for Quiz {self.quiz.id}"
+
+    @property
+    def needs_grading(self):
+        return not self.is_graded and self.quiz.status in ["started", "finished"]
 
 class Grade(models.Model):
     id = models.CharField(max_length=20, primary_key=True)
@@ -110,3 +121,21 @@ class Rule(models.Model):
 
     def __str__(self):
         return f"Rule {self.kind}"
+
+
+class GradingRule(models.Model):
+    """Правило оценивания для конкретного типа заданий"""
+    id = models.CharField(max_length=20, primary_key=True)
+    item_type = models.CharField(max_length=32, choices=Item.TYPE_CHOICES)
+    name = models.CharField(max_length=100)
+    scoring_function = models.CharField(max_length=50)
+    weight = models.FloatField(default=1.0)
+    parameters = models.JSONField(default=dict)
+
+    def __str__(self):
+        return f"{self.name} ({self.item_type})"
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['item_type']),
+        ]

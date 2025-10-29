@@ -12,13 +12,10 @@ urlpatterns = [
     path('reports/', views.reports_view, name='reports'),
     path('quiz/<str:quiz_id>/', views.quiz_detail, name='quiz_detail'),
     path('api/generate-quiz/', views.generate_quiz_ajax, name='generate_quiz'),
-    # Вход через стандартный LoginView
-    path('login/', LoginView.as_view(template_name='apps/login.html'), name='login'),
-
-    # Регистрация через кастомный view
+    # Auth URLs
+    path('login/', views.login_view, name='login'),
     path('register/', views.register_view, name='register'),
-
-    path('logout/', LogoutView.as_view(next_page='apps:functional'), name='logout'),
+    path('logout/', views.logout_view, name='logout'),
 
 
 ]

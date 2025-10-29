@@ -28,16 +28,20 @@ class Command(BaseCommand):
         # Создаем blueprints (≥3)
         blueprints = self.create_blueprints(lessons)
 
+        # СОЗДАЕМ ПРАВИЛА ОЦЕНИВАНИЯ
+        grading_rules = self.create_grading_rules()
+
         self.stdout.write(
             self.style.SUCCESS(
                 f'Успешно создано: {len(courses)} курсов, {len(lessons)} уроков, '
-                f'{len(items)} заданий, {len(users)} пользователей, {len(blueprints)} шаблонов'
+                f'{len(items)} заданий, {len(users)} пользователей, '
+                f'{len(blueprints)} шаблонов, {len(grading_rules)} правил оценивания'
             )
         )
 
     def clear_data(self):
         """Очистка существующих данных"""
-        models = [Course, Lesson, Item, User, QuizBlueprint, Quiz, Answer, Grade, Event, Rule]
+        models = [Course, Lesson, Item, User, QuizBlueprint, Quiz, Answer, Grade, Event, Rule, GradingRule]
         for model in models:
             model.objects.all().delete()
 
@@ -108,10 +112,10 @@ class Command(BaseCommand):
                     answer = sorted(random.sample(range(4), random.randint(1, 3)))
             elif item_type == 'short':
                 options = []
-                answer = "Пример правильного ответа"
+                answer = ["Пример правильного ответа"]
             elif item_type == 'numeric':
                 options = []
-                answer = random.randint(1, 100)
+                answer = [random.randint(1, 100)]
             elif item_type == 'ordering':
                 options = [f"Элемент {j + 1}" for j in range(4)]
                 answer = list(range(4))
@@ -238,3 +242,71 @@ class Command(BaseCommand):
             blueprints.append(blueprint)
 
         return blueprints
+
+    def create_grading_rules(self):
+        """Создание правил оценивания"""
+        grading_rules_data = [
+            {
+                "id": "rule_mcq_single",
+                "item_type": "mcq/single",
+                "name": "Оценивание одиночного выбора",
+                "scoring_function": "exact_match",
+                "weight": 1.0,
+                "parameters": {}
+            },
+            {
+                "id": "rule_mcq_multi",
+                "item_type": "mcq/multi",
+                "name": "Оценивание множественного выбора",
+                "scoring_function": "partial",
+                "weight": 1.5,
+                "parameters": {"penalty_per_wrong": 0.25}
+            },
+            {
+                "id": "rule_short",
+                "item_type": "short",
+                "name": "Оценивание короткого ответа",
+                "scoring_function": "fuzzy_match",
+                "weight": 1.0,
+                "parameters": {}
+            },
+            {
+                "id": "rule_numeric",
+                "item_type": "numeric",
+                "name": "Оценивание числового ответа",
+                "scoring_function": "exact_match",
+                "weight": 1.0,
+                "parameters": {}
+            },
+            {
+                "id": "rule_ordering",
+                "item_type": "ordering",
+                "name": "Оценивание порядка",
+                "scoring_function": "exact_match",
+                "weight": 2.0,
+                "parameters": {}
+            },
+            {
+                "id": "rule_matching",
+                "item_type": "matching",
+                "name": "Оценивание сопоставления",
+                "scoring_function": "partial",
+                "weight": 1.5,
+                "parameters": {}
+            }
+        ]
+
+        grading_rules = []
+        for data in grading_rules_data:
+            rule = GradingRule.objects.create(
+                id=data["id"],
+                item_type=data["item_type"],
+                name=data["name"],
+                scoring_function=data["scoring_function"],
+                weight=data["weight"],
+                parameters=data["parameters"]
+            )
+            grading_rules.append(rule)
+
+        self.stdout.write("✅ Правила оценивания созданы")
+        return grading_rules

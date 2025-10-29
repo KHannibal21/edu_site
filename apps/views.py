@@ -1,5 +1,6 @@
 import time
 import random
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.utils import timezone
@@ -10,6 +11,7 @@ from .services import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from .demo_data import create_simple_demo_quiz
 
 
 def overview(request):
@@ -55,6 +57,9 @@ def data_explorer(request):
 
 def login_view(request):
     """Страница входа"""
+    if request.user.is_authenticated:
+        return redirect('apps:overview')
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -86,7 +91,11 @@ def register_view(request):
 
     return render(request, 'apps/register.html', {'menu': ''})
 
-
+@login_required
+def logout_view(request):
+    """Выход из системы"""
+    logout(request)
+    return redirect('apps:overview')
 
 
 def functional_core(request):
@@ -166,14 +175,16 @@ def functional_core(request):
 
 
 def pipelines_demo(request):
-    """Демонстрация пайплайнов и композиции функций"""
+    """Демонстрация пайплайнов, композиции функций и ленивых вычислений"""
+    # Загружаем данные в иммутабельные структуры
     _, items, blueprints, users = load_immutable_data()
 
     pipeline_results = {}
     composition_demo = {}
+    lazy_grading_demo = {}
 
-    # Демонстрация готовых пайплайнов
-    if request.method == 'POST':
+    # Демонстрация готовых пайплайнов (фильтрация заданий)
+    if request.method == 'POST' and 'pipeline_type' in request.POST:
         pipeline_type = request.POST.get('pipeline_type', 'basic')
         min_diff = int(request.POST.get('min_difficulty', 1))
         max_diff = int(request.POST.get('max_difficulty', 5))
@@ -198,43 +209,120 @@ def pipelines_demo(request):
                 min_difficulty=min_diff,
                 max_difficulty=max_diff,
                 topic=topic,
-                required_tags=tuple(required_tags)
+                required_tags=tuple([tag.strip() for tag in required_tags if tag.strip()])
             ), items))
             pipeline_results['type'] = 'Продвинутый пайплайн'
             pipeline_results[
                 'filters'] = f'Сложность: {min_diff}-{max_diff}, Тема: {topic or "любая"}, Теги: {", ".join(required_tags) or "любые"}'
 
         pipeline_results['count'] = len(filtered_items)
-        pipeline_results['items'] = filtered_items[:10]  # Показываем первые 10
-
-    # Демонстрация композиции функций
-    try:
-        # Композиция: загрузка → фильтрация → преобразование
-        from functools import reduce
-
-        # 1. Загрузка и преобразование
-        loaded_items = items
-
-        # 2. Цепочка фильтров через композицию
-        def compose(*functions):
-            return reduce(lambda f, g: lambda x: f(g(x)), functions)
-
-        # Создаем композицию функций
-        processing_pipeline = compose(
-            lambda items: tuple(filter(by_difficulty(2, 4), items)),  # FILTER по сложности
-            lambda items: tuple(filter(by_topic('python'), items)),  # FILTER по теме
-            lambda items: tuple(map(lambda item: {  # MAP для преобразования
+        pipeline_results['items'] = [
+            {
                 'id': item.id,
                 'type': item.type,
                 'difficulty': item.difficulty,
-                'tags': item.tags
+                'tags': list(item.tags),
+                'stem': item.stem[:50] + '...' if len(item.stem) > 50 else item.stem
+            }
+            for item in filtered_items[:10]  # Показываем первые 10
+        ]
+
+    # Демонстрация ленивого оценивания
+    elif request.method == 'POST' and 'lazy_grading' in request.POST:
+        quiz_id = request.POST.get('quiz_id')
+        top_k = int(request.POST.get('top_k', 3))
+
+        try:
+            if quiz_id == 'demo':
+                # Демо-режим - создаем тестовый квиз
+                quiz = create_simple_demo_quiz()
+                lazy_grading_demo['is_demo'] = True
+            else:
+                # Реальный тест из базы
+                quiz = Quiz.objects.get(id=quiz_id)
+                lazy_grading_demo['is_demo'] = False
+
+            # Запускаем ленивое оценивание
+            grading_result = process_quiz_grading(quiz, top_k)
+
+            # Получаем информацию о самых сложных заданиях
+            hardest_items_info = []
+            for item_id, score, difficulty in grading_result['hardest_items']:
+                # Используем вашу безопасную функцию для получения задания
+                item_maybe = safe_item(items, item_id)
+                item = item_maybe.get_or_else(None)
+
+                if item:
+                    hardest_items_info.append({
+                        'id': item_id,
+                        'stem': item.stem[:50] + '...' if len(item.stem) > 50 else item.stem,
+                        'score': score,
+                        'difficulty': difficulty,
+                        'type': item.type
+                    })
+                else:
+                    # Если не нашли в кэше, пробуем получить из базы
+                    try:
+                        db_item = Item.objects.get(id=item_id)
+                        hardest_items_info.append({
+                            'id': item_id,
+                            'stem': db_item.stem[:50] + '...' if len(db_item.stem) > 50 else db_item.stem,
+                            'score': score,
+                            'difficulty': difficulty,
+                            'type': db_item.type
+                        })
+                    except Item.DoesNotExist:
+                        hardest_items_info.append({
+                            'id': item_id,
+                            'stem': 'Задание не найдено',
+                            'score': score,
+                            'difficulty': difficulty,
+                            'type': 'unknown'
+                        })
+
+            lazy_grading_demo.update({
+                'quiz': quiz,
+                'total_score': round(grading_result['total_score'], 2),
+                'percentage': round(grading_result['percentage'], 1),
+                'hardest_items': hardest_items_info,
+                'difficulty_stats': grading_result['difficulty_stats'],
+                'items_attempted': grading_result['items_attempted'],
+                'error': None
+            })
+
+        except Quiz.DoesNotExist:
+            lazy_grading_demo = {'error': f'Тест с ID {quiz_id} не найден'}
+        except Exception as e:
+            lazy_grading_demo = {'error': f'Ошибка при оценивании: {str(e)}'}
+
+    # Демонстрация композиции функций на иммутабельных данных
+    try:
+        # Используем ваши иммутабельные items
+        loaded_items = items
+
+        # Композиция функций
+        from functools import reduce
+
+        def compose(*functions):
+            return reduce(lambda f, g: lambda x: f(g(x)), functions)
+
+        # Создаем композицию функций используя ваши замыкания
+        processing_pipeline = compose(
+            lambda items: tuple(filter(by_difficulty(2, 4), items)),
+            lambda items: tuple(filter(by_topic('python'), items)),
+            lambda items: tuple(map(lambda item: {
+                'id': item.id,
+                'type': item.type,
+                'difficulty': item.difficulty,
+                'tags': list(item.tags),
+                'stem_preview': item.stem[:30] + '...' if len(item.stem) > 30 else item.stem
             }, items)),
-            lambda items: items[:5]  # LIMIT
+            lambda items: items[:5]
         )
 
         composition_result = processing_pipeline(loaded_items)
         composition_demo = {
-            'pipeline': 'Загрузка → Фильтр(сложность) → Фильтр(тема) → Преобразование → Лимит',
+            'pipeline': 'Загрузка → Фильтр(сложность 2-4) → Фильтр(тема Python) → Преобразование → Лимит(5)',
             'input_count': len(loaded_items),
             'output_count': len(composition_result),
             'result': composition_result
@@ -243,9 +331,14 @@ def pipelines_demo(request):
     except Exception as e:
         composition_demo = {'error': str(e)}
 
+    # Получаем данные для форм
+    recent_quizzes = Quiz.objects.select_related('user', 'blueprint').order_by('-ts')[:10]
+
     context = {
         'pipeline_results': pipeline_results,
         'composition_demo': composition_demo,
+        'lazy_grading_demo': lazy_grading_demo,
+        'recent_quizzes': recent_quizzes,
         'menu': 'pipelines'
     }
     return render(request, 'apps/pipelines.html', context)

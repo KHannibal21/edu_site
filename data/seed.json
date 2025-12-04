@@ -1,0 +1,6594 @@
+{
+  "courses": [
+    {
+      "id": "python101",
+      "title": "Python для начинающих",
+      "description": "Основы программирования на Python",
+      "topics": [
+        "синтаксис",
+        "типы данных",
+        "функции",
+        "ООП",
+        "исключения"
+      ],
+      "level": "beginner",
+      "created_at": "2025-11-15T04:13:26.386366",
+      "updated_at": "2025-11-27T22:59:08.386395",
+      "is_active": true
+    },
+    {
+      "id": "ds_intro",
+      "title": "Введение в Data Science",
+      "description": "Основы анализа данных и машинного обучения",
+      "topics": [
+        "pandas",
+        "numpy",
+        "визуализация",
+        "статистика",
+        "ML basics"
+      ],
+      "level": "intermediate",
+      "created_at": "2025-11-15T23:45:39.386404",
+      "updated_at": "2025-11-26T11:29:58.386408",
+      "is_active": true
+    },
+    {
+      "id": "web_dev",
+      "title": "Веб-разработка на Django",
+      "description": "Создание веб-приложений с Django и React",
+      "topics": [
+        "HTML/CSS",
+        "Django",
+        "REST API",
+        "React",
+        "базы данных"
+      ],
+      "level": "advanced",
+      "created_at": "2025-11-11T03:01:15.386414",
+      "updated_at": "2025-12-02T13:25:08.386418",
+      "is_active": true
+    },
+    {
+      "id": "algorithms",
+      "title": "Алгоритмы и структуры данных",
+      "description": "Классические алгоритмы и структуры данных",
+      "topics": [
+        "сортировка",
+        "поиск",
+        "графы",
+        "динамическое программирование",
+        "деревья"
+      ],
+      "level": "advanced",
+      "created_at": "2025-11-14T15:51:34.386423",
+      "updated_at": "2025-11-30T15:23:13.386427",
+      "is_active": false
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lesson_python101_1d13",
+      "course_id": "python101",
+      "title": "Урок 1: функции",
+      "order": 1,
+      "topic": "функции",
+      "content": "Содержание урока 1 по курсу Python для начинающих",
+      "duration_minutes": 120,
+      "created_at": "2025-11-21T16:11:42.386461"
+    },
+    {
+      "id": "lesson_python101_7cbf",
+      "course_id": "python101",
+      "title": "Урок 2: типы данных",
+      "order": 2,
+      "topic": "ООП",
+      "content": "Содержание урока 2 по курсу Python для начинающих",
+      "duration_minutes": 30,
+      "created_at": "2025-12-01T08:02:55.386474"
+    },
+    {
+      "id": "lesson_python101_04c0",
+      "course_id": "python101",
+      "title": "Урок 3: ООП",
+      "order": 3,
+      "topic": "синтаксис",
+      "content": "Содержание урока 3 по курсу Python для начинающих",
+      "duration_minutes": 30,
+      "created_at": "2025-11-24T10:32:27.386484"
+    },
+    {
+      "id": "lesson_ds_intro_ee9e",
+      "course_id": "ds_intro",
+      "title": "Урок 1: ML basics",
+      "order": 1,
+      "topic": "pandas",
+      "content": "Содержание урока 1 по курсу Введение в Data Science",
+      "duration_minutes": 120,
+      "created_at": "2025-11-27T10:25:47.386493"
+    },
+    {
+      "id": "lesson_ds_intro_fc80",
+      "course_id": "ds_intro",
+      "title": "Урок 2: numpy",
+      "order": 2,
+      "topic": "статистика",
+      "content": "Содержание урока 2 по курсу Введение в Data Science",
+      "duration_minutes": 120,
+      "created_at": "2025-11-25T06:04:04.386500"
+    },
+    {
+      "id": "lesson_ds_intro_d285",
+      "course_id": "ds_intro",
+      "title": "Урок 3: ML basics",
+      "order": 3,
+      "topic": "статистика",
+      "content": "Содержание урока 3 по курсу Введение в Data Science",
+      "duration_minutes": 120,
+      "created_at": "2025-12-01T01:14:37.386509"
+    },
+    {
+      "id": "lesson_web_dev_7964",
+      "course_id": "web_dev",
+      "title": "Урок 1: HTML/CSS",
+      "order": 1,
+      "topic": "REST API",
+      "content": "Содержание урока 1 по курсу Веб-разработка на Django",
+      "duration_minutes": 30,
+      "created_at": "2025-11-23T21:55:58.386518"
+    },
+    {
+      "id": "lesson_web_dev_ab8f",
+      "course_id": "web_dev",
+      "title": "Урок 2: базы данных",
+      "order": 2,
+      "topic": "React",
+      "content": "Содержание урока 2 по курсу Веб-разработка на Django",
+      "duration_minutes": 30,
+      "created_at": "2025-11-18T15:52:25.386525"
+    },
+    {
+      "id": "lesson_web_dev_76fe",
+      "course_id": "web_dev",
+      "title": "Урок 3: Django",
+      "order": 3,
+      "topic": "HTML/CSS",
+      "content": "Содержание урока 3 по курсу Веб-разработка на Django",
+      "duration_minutes": 30,
+      "created_at": "2025-12-02T12:27:52.386533"
+    },
+    {
+      "id": "lesson_algorithms_09e4",
+      "course_id": "algorithms",
+      "title": "Урок 1: деревья",
+      "order": 1,
+      "topic": "динамическое программирование",
+      "content": "Содержание урока 1 по курсу Алгоритмы и структуры данных",
+      "duration_minutes": 30,
+      "created_at": "2025-11-27T07:06:09.386543"
+    },
+    {
+      "id": "lesson_algorithms_77e7",
+      "course_id": "algorithms",
+      "title": "Урок 2: деревья",
+      "order": 2,
+      "topic": "поиск",
+      "content": "Содержание урока 2 по курсу Алгоритмы и структуры данных",
+      "duration_minutes": 60,
+      "created_at": "2025-11-30T08:30:25.386551"
+    },
+    {
+      "id": "lesson_algorithms_dda0",
+      "course_id": "algorithms",
+      "title": "Урок 3: поиск",
+      "order": 3,
+      "topic": "поиск",
+      "content": "Содержание урока 3 по курсу Алгоритмы и структуры данных",
+      "duration_minutes": 120,
+      "created_at": "2025-11-22T10:47:38.386559"
+    }
+  ],
+  "items": [
+    {
+      "id": "item_f5e2441d",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "multiple_choice",
+      "difficulty": 4,
+      "topic": "функции",
+      "tags": [
+        "мобильный",
+        "теория",
+        "debug",
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Вопрос 1 по теме 'функции'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 1"
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-24T15:19:24.386602",
+      "updated_at": "2025-11-29T14:21:47.386607"
+    },
+    {
+      "id": "item_167f9dec",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "open_answer",
+      "difficulty": 2,
+      "topic": "функции",
+      "tags": [
+        "веб",
+        "мобильный",
+        "безопасность"
+      ],
+      "content": {
+        "question": "Объясните понятие 'функции'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о функции"
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T07:11:22.386623",
+      "updated_at": "2025-12-02T04:28:05.386627"
+    },
+    {
+      "id": "item_24a052e3",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "matching",
+      "difficulty": 4,
+      "topic": "функции",
+      "tags": [
+        "средний",
+        "безопасность",
+        "веб",
+        "код"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'функции'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-28T21:58:53.386641",
+      "updated_at": "2025-12-02T08:23:51.386645"
+    },
+    {
+      "id": "item_3984dc30",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "single_choice",
+      "difficulty": 4,
+      "topic": "функции",
+      "tags": [
+        "сопоставление",
+        "память"
+      ],
+      "content": {
+        "question": "Вопрос 4 по теме 'функции'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 1,
+        "explanation": "Объяснение к вопросу 4"
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-25T15:59:27.386656",
+      "updated_at": "2025-12-03T02:02:04.386662"
+    },
+    {
+      "id": "item_fc4bdf51",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "true_false",
+      "difficulty": 2,
+      "topic": "функции",
+      "tags": [
+        "память"
+      ],
+      "content": {
+        "question": "Утверждение о функции",
+        "statement": "Это утверждение о функции",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-26T05:13:50.386674",
+      "updated_at": "2025-12-01T11:12:39.386677"
+    },
+    {
+      "id": "item_3f8a3938",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "open_answer",
+      "difficulty": 4,
+      "topic": "функции",
+      "tags": [
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Объясните понятие 'функции'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о функции"
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-28T05:18:12.386688",
+      "updated_at": "2025-12-01T11:35:41.386692"
+    },
+    {
+      "id": "item_cf5aa5ab",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "open_answer",
+      "difficulty": 4,
+      "topic": "функции",
+      "tags": [
+        "память",
+        "открытый",
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Объясните понятие 'функции'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о функции"
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-11-23T19:24:12.386702",
+      "updated_at": "2025-12-01T05:58:44.386705"
+    },
+    {
+      "id": "item_dafc2b71",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "open_answer",
+      "difficulty": 3,
+      "topic": "функции",
+      "tags": [
+        "средний"
+      ],
+      "content": {
+        "question": "Объясните понятие 'функции'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о функции"
+      },
+      "metadata": {
+        "author": "Преподаватель Васильев",
+        "generated": true
+      },
+      "created_at": "2025-11-26T00:37:50.386715",
+      "updated_at": "2025-12-01T02:08:04.386718"
+    },
+    {
+      "id": "item_d0545788",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "multiple_choice",
+      "difficulty": 5,
+      "topic": "функции",
+      "tags": [
+        "память"
+      ],
+      "content": {
+        "question": "Вопрос 9 по теме 'функции'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 9"
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-23T01:47:15.386730",
+      "updated_at": "2025-12-02T07:36:06.386734"
+    },
+    {
+      "id": "item_400bafcc",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "code",
+      "difficulty": 1,
+      "topic": "функции",
+      "tags": [
+        "легкий",
+        "оптимизация",
+        "мобильный"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по функции",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-28T07:25:38.386745",
+      "updated_at": "2025-12-01T20:00:55.386749"
+    },
+    {
+      "id": "item_f0e44651",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "true_false",
+      "difficulty": 3,
+      "topic": "функции",
+      "tags": [
+        "сеть",
+        "debug",
+        "алгоритм",
+        "память"
+      ],
+      "content": {
+        "question": "Утверждение о функции",
+        "statement": "Это утверждение о функции",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-11-25T23:12:35.386761",
+      "updated_at": "2025-12-02T23:55:52.386764"
+    },
+    {
+      "id": "item_e2bdebe0",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "open_answer",
+      "difficulty": 5,
+      "topic": "функции",
+      "tags": [
+        "открытый",
+        "теория",
+        "практика"
+      ],
+      "content": {
+        "question": "Объясните понятие 'функции'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о функции"
+      },
+      "metadata": {
+        "author": "Преподаватель Васильев",
+        "generated": true
+      },
+      "created_at": "2025-11-27T21:19:59.386774",
+      "updated_at": "2025-12-01T22:16:43.386777"
+    },
+    {
+      "id": "item_e0eacc67",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "code",
+      "difficulty": 4,
+      "topic": "функции",
+      "tags": [
+        "память",
+        "выбор",
+        "производительность"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по функции",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-25T08:34:52.386787",
+      "updated_at": "2025-11-30T22:04:54.386791"
+    },
+    {
+      "id": "item_220071d9",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "multiple_choice",
+      "difficulty": 4,
+      "topic": "функции",
+      "tags": [
+        "код"
+      ],
+      "content": {
+        "question": "Вопрос 14 по теме 'функции'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 14"
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-12-01T08:20:46.386801",
+      "updated_at": "2025-12-02T19:11:27.386804"
+    },
+    {
+      "id": "item_b1b46b30",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "single_choice",
+      "difficulty": 5,
+      "topic": "функции",
+      "tags": [
+        "оптимизация",
+        "мобильный",
+        "теория",
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Вопрос 15 по теме 'функции'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 15"
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-30T07:46:54.386815",
+      "updated_at": "2025-12-02T06:14:34.386819"
+    },
+    {
+      "id": "item_f9ff37ee",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "matching",
+      "difficulty": 4,
+      "topic": "функции",
+      "tags": [
+        "легкий"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'функции'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-24T15:30:02.386829",
+      "updated_at": "2025-11-29T04:24:04.386832"
+    },
+    {
+      "id": "item_a6dad58f",
+      "lesson_id": "lesson_python101_1d13",
+      "type": "code",
+      "difficulty": 4,
+      "topic": "функции",
+      "tags": [
+        "производительность",
+        "практика",
+        "безопасность"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по функции",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-25T15:16:32.386841",
+      "updated_at": "2025-11-30T20:55:15.386844"
+    },
+    {
+      "id": "item_f3012751",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "matching",
+      "difficulty": 2,
+      "topic": "ООП",
+      "tags": [
+        "память"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'ООП'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Кузнецов",
+        "generated": true
+      },
+      "created_at": "2025-11-30T16:24:49.386854",
+      "updated_at": "2025-11-30T11:41:58.386859"
+    },
+    {
+      "id": "item_57437d4b",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "code",
+      "difficulty": 2,
+      "topic": "ООП",
+      "tags": [
+        "мобильный",
+        "производительность",
+        "легкий"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по ООП",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-23T20:33:56.386868",
+      "updated_at": "2025-11-30T14:46:44.386871"
+    },
+    {
+      "id": "item_0ffeb44a",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "true_false",
+      "difficulty": 2,
+      "topic": "ООП",
+      "tags": [
+        "алгоритм",
+        "выбор"
+      ],
+      "content": {
+        "question": "Утверждение о ООП",
+        "statement": "Это утверждение о ООП",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-12-02T09:13:16.386880",
+      "updated_at": "2025-12-01T08:02:22.386884"
+    },
+    {
+      "id": "item_3b132050",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "single_choice",
+      "difficulty": 4,
+      "topic": "ООП",
+      "tags": [
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Вопрос 4 по теме 'ООП'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 4"
+      },
+      "metadata": {
+        "author": "Преподаватель Смирнов",
+        "generated": true
+      },
+      "created_at": "2025-11-30T00:29:42.386893",
+      "updated_at": "2025-11-29T23:11:01.386896"
+    },
+    {
+      "id": "item_8bfc7031",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "true_false",
+      "difficulty": 2,
+      "topic": "ООП",
+      "tags": [
+        "производительность",
+        "тестирование",
+        "мобильный",
+        "практика"
+      ],
+      "content": {
+        "question": "Утверждение о ООП",
+        "statement": "Это утверждение о ООП",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-23T02:42:52.386905",
+      "updated_at": "2025-11-29T06:30:15.386909"
+    },
+    {
+      "id": "item_6695fed4",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "true_false",
+      "difficulty": 1,
+      "topic": "ООП",
+      "tags": [
+        "практика",
+        "оптимизация",
+        "открытый"
+      ],
+      "content": {
+        "question": "Утверждение о ООП",
+        "statement": "Это утверждение о ООП",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-12-01T08:13:53.386917",
+      "updated_at": "2025-12-01T19:25:06.386920"
+    },
+    {
+      "id": "item_c70871ed",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "multiple_choice",
+      "difficulty": 4,
+      "topic": "ООП",
+      "tags": [
+        "веб",
+        "безопасность",
+        "сеть",
+        "тестирование"
+      ],
+      "content": {
+        "question": "Вопрос 7 по теме 'ООП'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 7"
+      },
+      "metadata": {
+        "author": "Преподаватель Михайлов",
+        "generated": true
+      },
+      "created_at": "2025-11-25T23:34:33.386929",
+      "updated_at": "2025-11-30T09:56:40.386933"
+    },
+    {
+      "id": "item_739655f5",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "multiple_choice",
+      "difficulty": 3,
+      "topic": "ООП",
+      "tags": [
+        "тестирование",
+        "легкий",
+        "база данных"
+      ],
+      "content": {
+        "question": "Вопрос 8 по теме 'ООП'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 8"
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-11-22T06:51:04.386941",
+      "updated_at": "2025-12-02T13:30:53.386945"
+    },
+    {
+      "id": "item_ab67b57a",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "single_choice",
+      "difficulty": 5,
+      "topic": "ООП",
+      "tags": [
+        "оптимизация",
+        "debug"
+      ],
+      "content": {
+        "question": "Вопрос 9 по теме 'ООП'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 9"
+      },
+      "metadata": {
+        "author": "Преподаватель Кузнецов",
+        "generated": true
+      },
+      "created_at": "2025-12-02T13:21:28.386958",
+      "updated_at": "2025-11-29T17:16:56.386962"
+    },
+    {
+      "id": "item_3b23fce6",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "matching",
+      "difficulty": 4,
+      "topic": "ООП",
+      "tags": [
+        "выбор",
+        "debug"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'ООП'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-27T06:34:43.386971",
+      "updated_at": "2025-12-01T01:52:09.386974"
+    },
+    {
+      "id": "item_793d17a9",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "matching",
+      "difficulty": 1,
+      "topic": "ООП",
+      "tags": [
+        "практика",
+        "выбор"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'ООП'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-29T00:45:23.386984",
+      "updated_at": "2025-12-02T02:25:39.386987"
+    },
+    {
+      "id": "item_fa06ef61",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "multiple_choice",
+      "difficulty": 1,
+      "topic": "ООП",
+      "tags": [
+        "мобильный",
+        "веб",
+        "практика"
+      ],
+      "content": {
+        "question": "Вопрос 12 по теме 'ООП'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 12"
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-26T17:38:48.386997",
+      "updated_at": "2025-12-02T02:34:06.387001"
+    },
+    {
+      "id": "item_1f6040ba",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "matching",
+      "difficulty": 2,
+      "topic": "ООП",
+      "tags": [
+        "открытый",
+        "сеть"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'ООП'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-12-02T17:46:07.387010",
+      "updated_at": "2025-12-01T08:08:47.387013"
+    },
+    {
+      "id": "item_00551d45",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "topic": "ООП",
+      "tags": [
+        "память",
+        "безопасность",
+        "выбор"
+      ],
+      "content": {
+        "question": "Вопрос 14 по теме 'ООП'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 14"
+      },
+      "metadata": {
+        "author": "Преподаватель Васильев",
+        "generated": true
+      },
+      "created_at": "2025-12-02T11:15:27.387022",
+      "updated_at": "2025-12-02T17:38:52.387025"
+    },
+    {
+      "id": "item_6beab6cc",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "code",
+      "difficulty": 4,
+      "topic": "ООП",
+      "tags": [
+        "алгоритм",
+        "производительность"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по ООП",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-22T23:20:46.387034",
+      "updated_at": "2025-11-30T07:18:41.387037"
+    },
+    {
+      "id": "item_c5410d34",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "multiple_choice",
+      "difficulty": 1,
+      "topic": "ООП",
+      "tags": [
+        "производительность",
+        "память"
+      ],
+      "content": {
+        "question": "Вопрос 16 по теме 'ООП'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 16"
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-26T00:29:27.387046",
+      "updated_at": "2025-11-30T17:16:36.387049"
+    },
+    {
+      "id": "item_da40d58d",
+      "lesson_id": "lesson_python101_7cbf",
+      "type": "single_choice",
+      "difficulty": 2,
+      "topic": "ООП",
+      "tags": [
+        "производительность",
+        "теория",
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Вопрос 17 по теме 'ООП'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 17"
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-23T15:59:25.387058",
+      "updated_at": "2025-12-01T11:21:47.387061"
+    },
+    {
+      "id": "item_c08c4dd4",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "open_answer",
+      "difficulty": 5,
+      "topic": "синтаксис",
+      "tags": [
+        "теория"
+      ],
+      "content": {
+        "question": "Объясните понятие 'синтаксис'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о синтаксис"
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-11-25T19:02:15.387070",
+      "updated_at": "2025-11-29T05:43:51.387073"
+    },
+    {
+      "id": "item_939580c5",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "single_choice",
+      "difficulty": 3,
+      "topic": "синтаксис",
+      "tags": [
+        "сопоставление",
+        "база данных",
+        "код",
+        "средний"
+      ],
+      "content": {
+        "question": "Вопрос 2 по теме 'синтаксис'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 2"
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-11-27T03:50:51.387082",
+      "updated_at": "2025-11-29T03:39:30.387085"
+    },
+    {
+      "id": "item_25a26152",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "code",
+      "difficulty": 1,
+      "topic": "синтаксис",
+      "tags": [
+        "тестирование"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по синтаксис",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Михайлов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T18:09:25.387095",
+      "updated_at": "2025-12-01T22:42:41.387098"
+    },
+    {
+      "id": "item_e41902b4",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "multiple_choice",
+      "difficulty": 3,
+      "topic": "синтаксис",
+      "tags": [
+        "практика",
+        "код",
+        "легкий"
+      ],
+      "content": {
+        "question": "Вопрос 4 по теме 'синтаксис'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 4"
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-12-02T11:03:33.387109",
+      "updated_at": "2025-12-02T03:21:32.387113"
+    },
+    {
+      "id": "item_f003e782",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "code",
+      "difficulty": 3,
+      "topic": "синтаксис",
+      "tags": [
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по синтаксис",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Васильев",
+        "generated": true
+      },
+      "created_at": "2025-11-23T18:07:24.387121",
+      "updated_at": "2025-11-30T19:30:40.387125"
+    },
+    {
+      "id": "item_39e4be6e",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "code",
+      "difficulty": 2,
+      "topic": "синтаксис",
+      "tags": [
+        "легкий"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по синтаксис",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-12-02T02:15:45.387134",
+      "updated_at": "2025-11-30T00:03:15.387137"
+    },
+    {
+      "id": "item_31950ae3",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "open_answer",
+      "difficulty": 3,
+      "topic": "синтаксис",
+      "tags": [
+        "практика",
+        "сложный",
+        "легкий",
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Объясните понятие 'синтаксис'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о синтаксис"
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-11-30T12:35:14.387147",
+      "updated_at": "2025-11-29T04:11:34.387151"
+    },
+    {
+      "id": "item_a0ebd278",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "true_false",
+      "difficulty": 3,
+      "topic": "синтаксис",
+      "tags": [
+        "код"
+      ],
+      "content": {
+        "question": "Утверждение о синтаксис",
+        "statement": "Это утверждение о синтаксис",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-12-01T22:03:42.387159",
+      "updated_at": "2025-12-03T01:30:03.387163"
+    },
+    {
+      "id": "item_68b57d2b",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "matching",
+      "difficulty": 2,
+      "topic": "синтаксис",
+      "tags": [
+        "база данных",
+        "теория",
+        "сложный",
+        "сеть"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'синтаксис'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-25T00:29:08.387172",
+      "updated_at": "2025-11-30T15:05:51.387175"
+    },
+    {
+      "id": "item_44140001",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "true_false",
+      "difficulty": 4,
+      "topic": "синтаксис",
+      "tags": [
+        "тестирование",
+        "легкий",
+        "сложный"
+      ],
+      "content": {
+        "question": "Утверждение о синтаксис",
+        "statement": "Это утверждение о синтаксис",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-24T17:31:42.387183",
+      "updated_at": "2025-12-01T19:11:01.387186"
+    },
+    {
+      "id": "item_16930676",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "true_false",
+      "difficulty": 4,
+      "topic": "синтаксис",
+      "tags": [
+        "легкий",
+        "база данных"
+      ],
+      "content": {
+        "question": "Утверждение о синтаксис",
+        "statement": "Это утверждение о синтаксис",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-12-01T17:46:15.387195",
+      "updated_at": "2025-12-02T12:56:13.387198"
+    },
+    {
+      "id": "item_0122ee11",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "true_false",
+      "difficulty": 2,
+      "topic": "синтаксис",
+      "tags": [
+        "средний"
+      ],
+      "content": {
+        "question": "Утверждение о синтаксис",
+        "statement": "Это утверждение о синтаксис",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Васильев",
+        "generated": true
+      },
+      "created_at": "2025-11-30T23:07:14.387208",
+      "updated_at": "2025-12-02T13:55:07.387211"
+    },
+    {
+      "id": "item_979aa834",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "matching",
+      "difficulty": 3,
+      "topic": "синтаксис",
+      "tags": [
+        "мобильный",
+        "выбор",
+        "тестирование"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'синтаксис'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Кузнецов",
+        "generated": true
+      },
+      "created_at": "2025-12-01T20:59:25.387219",
+      "updated_at": "2025-11-29T20:21:46.387222"
+    },
+    {
+      "id": "item_383de066",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "open_answer",
+      "difficulty": 2,
+      "topic": "синтаксис",
+      "tags": [
+        "тестирование",
+        "открытый",
+        "выбор"
+      ],
+      "content": {
+        "question": "Объясните понятие 'синтаксис'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о синтаксис"
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-11-25T05:45:46.387231",
+      "updated_at": "2025-12-02T06:18:26.387235"
+    },
+    {
+      "id": "item_b2a867b3",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "code",
+      "difficulty": 4,
+      "topic": "синтаксис",
+      "tags": [
+        "открытый",
+        "код"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по синтаксис",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-30T15:06:58.387246",
+      "updated_at": "2025-12-01T09:19:32.387249"
+    },
+    {
+      "id": "item_671aacda",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "single_choice",
+      "difficulty": 1,
+      "topic": "синтаксис",
+      "tags": [
+        "база данных",
+        "тестирование"
+      ],
+      "content": {
+        "question": "Вопрос 16 по теме 'синтаксис'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 16"
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-12-02T22:21:49.387258",
+      "updated_at": "2025-12-01T22:07:35.387262"
+    },
+    {
+      "id": "item_cb4b5970",
+      "lesson_id": "lesson_python101_04c0",
+      "type": "true_false",
+      "difficulty": 4,
+      "topic": "синтаксис",
+      "tags": [
+        "код"
+      ],
+      "content": {
+        "question": "Утверждение о синтаксис",
+        "statement": "Это утверждение о синтаксис",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-23T15:40:02.387270",
+      "updated_at": "2025-11-30T19:21:54.387273"
+    },
+    {
+      "id": "item_9993f117",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "single_choice",
+      "difficulty": 3,
+      "topic": "pandas",
+      "tags": [
+        "теория"
+      ],
+      "content": {
+        "question": "Вопрос 1 по теме 'pandas'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 1"
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-11-24T16:25:12.387282",
+      "updated_at": "2025-12-01T18:42:03.387285"
+    },
+    {
+      "id": "item_e3dabc25",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "multiple_choice",
+      "difficulty": 3,
+      "topic": "pandas",
+      "tags": [
+        "практика",
+        "память"
+      ],
+      "content": {
+        "question": "Вопрос 2 по теме 'pandas'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 2"
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-30T22:26:06.387294",
+      "updated_at": "2025-12-01T00:05:38.387297"
+    },
+    {
+      "id": "item_e48c0121",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "true_false",
+      "difficulty": 1,
+      "topic": "pandas",
+      "tags": [
+        "оптимизация",
+        "производительность"
+      ],
+      "content": {
+        "question": "Утверждение о pandas",
+        "statement": "Это утверждение о pandas",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Попов",
+        "generated": true
+      },
+      "created_at": "2025-11-28T15:19:18.387306",
+      "updated_at": "2025-11-30T16:35:21.387309"
+    },
+    {
+      "id": "item_5cc7436f",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "single_choice",
+      "difficulty": 2,
+      "topic": "pandas",
+      "tags": [
+        "безопасность",
+        "веб"
+      ],
+      "content": {
+        "question": "Вопрос 4 по теме 'pandas'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 4"
+      },
+      "metadata": {
+        "author": "Преподаватель Попов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T05:38:23.387317",
+      "updated_at": "2025-12-02T15:31:30.387321"
+    },
+    {
+      "id": "item_170f9b07",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "open_answer",
+      "difficulty": 3,
+      "topic": "pandas",
+      "tags": [
+        "мобильный",
+        "выбор",
+        "открытый"
+      ],
+      "content": {
+        "question": "Объясните понятие 'pandas'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о pandas"
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-27T02:52:22.387329",
+      "updated_at": "2025-12-02T04:14:02.387332"
+    },
+    {
+      "id": "item_80e59fbc",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "multiple_choice",
+      "difficulty": 4,
+      "topic": "pandas",
+      "tags": [
+        "сеть"
+      ],
+      "content": {
+        "question": "Вопрос 6 по теме 'pandas'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 6"
+      },
+      "metadata": {
+        "author": "Преподаватель Васильев",
+        "generated": true
+      },
+      "created_at": "2025-11-22T13:20:00.387342",
+      "updated_at": "2025-11-29T05:59:05.387345"
+    },
+    {
+      "id": "item_24c16e1c",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "open_answer",
+      "difficulty": 3,
+      "topic": "pandas",
+      "tags": [
+        "сложный",
+        "практика",
+        "безопасность",
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Объясните понятие 'pandas'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о pandas"
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-26T23:31:26.387354",
+      "updated_at": "2025-12-01T17:46:45.387357"
+    },
+    {
+      "id": "item_1cc84dfd",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "code",
+      "difficulty": 3,
+      "topic": "pandas",
+      "tags": [
+        "сопоставление",
+        "база данных",
+        "память",
+        "код"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по pandas",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-12-01T05:11:21.387367",
+      "updated_at": "2025-11-29T20:49:58.387371"
+    },
+    {
+      "id": "item_de97082f",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "true_false",
+      "difficulty": 5,
+      "topic": "pandas",
+      "tags": [
+        "средний",
+        "открытый",
+        "теория"
+      ],
+      "content": {
+        "question": "Утверждение о pandas",
+        "statement": "Это утверждение о pandas",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-11-28T08:57:08.387379",
+      "updated_at": "2025-11-30T10:09:07.387383"
+    },
+    {
+      "id": "item_e0e23578",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "code",
+      "difficulty": 5,
+      "topic": "pandas",
+      "tags": [
+        "производительность",
+        "память"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по pandas",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-30T06:33:01.387392",
+      "updated_at": "2025-11-29T05:49:44.387396"
+    },
+    {
+      "id": "item_a00dfe5b",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "single_choice",
+      "difficulty": 3,
+      "topic": "pandas",
+      "tags": [
+        "средний",
+        "сеть",
+        "легкий"
+      ],
+      "content": {
+        "question": "Вопрос 11 по теме 'pandas'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 11"
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-12-02T13:07:34.387405",
+      "updated_at": "2025-12-02T05:53:42.387408"
+    },
+    {
+      "id": "item_ec6e7e10",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "code",
+      "difficulty": 4,
+      "topic": "pandas",
+      "tags": [
+        "debug"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по pandas",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-11-23T22:30:29.387418",
+      "updated_at": "2025-12-01T11:25:18.387421"
+    },
+    {
+      "id": "item_93a89a00",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "single_choice",
+      "difficulty": 4,
+      "topic": "pandas",
+      "tags": [
+        "алгоритм",
+        "открытый"
+      ],
+      "content": {
+        "question": "Вопрос 13 по теме 'pandas'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 13"
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-30T10:16:03.387430",
+      "updated_at": "2025-12-01T19:33:00.387444"
+    },
+    {
+      "id": "item_335e3783",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "matching",
+      "difficulty": 4,
+      "topic": "pandas",
+      "tags": [
+        "производительность",
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'pandas'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Смирнов",
+        "generated": true
+      },
+      "created_at": "2025-11-28T12:17:59.387453",
+      "updated_at": "2025-11-29T04:11:06.387456"
+    },
+    {
+      "id": "item_71986d9b",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "open_answer",
+      "difficulty": 3,
+      "topic": "pandas",
+      "tags": [
+        "практика"
+      ],
+      "content": {
+        "question": "Объясните понятие 'pandas'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о pandas"
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-29T07:44:54.387467",
+      "updated_at": "2025-12-01T15:02:15.387471"
+    },
+    {
+      "id": "item_b010dfcf",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "multiple_choice",
+      "difficulty": 1,
+      "topic": "pandas",
+      "tags": [
+        "открытый"
+      ],
+      "content": {
+        "question": "Вопрос 16 по теме 'pandas'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 16"
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-29T21:27:01.387479",
+      "updated_at": "2025-11-29T17:30:56.387482"
+    },
+    {
+      "id": "item_50cf3773",
+      "lesson_id": "lesson_ds_intro_ee9e",
+      "type": "code",
+      "difficulty": 4,
+      "topic": "pandas",
+      "tags": [
+        "алгоритм",
+        "сложный"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по pandas",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-28T20:08:24.387492",
+      "updated_at": "2025-12-02T21:21:37.387495"
+    },
+    {
+      "id": "item_bccf1aa9",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "open_answer",
+      "difficulty": 2,
+      "topic": "статистика",
+      "tags": [
+        "тестирование",
+        "код",
+        "сложный",
+        "легкий"
+      ],
+      "content": {
+        "question": "Объясните понятие 'статистика'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о статистика"
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-30T19:57:37.387505",
+      "updated_at": "2025-12-01T02:19:49.387509"
+    },
+    {
+      "id": "item_6fc06727",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "true_false",
+      "difficulty": 1,
+      "topic": "статистика",
+      "tags": [
+        "оптимизация",
+        "средний",
+        "база данных",
+        "практика"
+      ],
+      "content": {
+        "question": "Утверждение о статистика",
+        "statement": "Это утверждение о статистика",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Михайлов",
+        "generated": true
+      },
+      "created_at": "2025-11-25T08:56:54.387518",
+      "updated_at": "2025-12-02T15:21:33.387521"
+    },
+    {
+      "id": "item_5bd56f05",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "code",
+      "difficulty": 2,
+      "topic": "статистика",
+      "tags": [
+        "практика",
+        "алгоритм",
+        "теория"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по статистика",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-11-25T19:16:30.387531",
+      "updated_at": "2025-12-02T16:15:36.387534"
+    },
+    {
+      "id": "item_2a278d0b",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "matching",
+      "difficulty": 4,
+      "topic": "статистика",
+      "tags": [
+        "легкий",
+        "память",
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'статистика'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Смирнов",
+        "generated": true
+      },
+      "created_at": "2025-11-29T11:30:15.387542",
+      "updated_at": "2025-12-02T21:31:00.387545"
+    },
+    {
+      "id": "item_28c8aeb8",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "true_false",
+      "difficulty": 3,
+      "topic": "статистика",
+      "tags": [
+        "практика",
+        "выбор",
+        "память"
+      ],
+      "content": {
+        "question": "Утверждение о статистика",
+        "statement": "Это утверждение о статистика",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-12-01T16:04:23.387554",
+      "updated_at": "2025-11-29T21:06:28.387557"
+    },
+    {
+      "id": "item_587d129b",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "single_choice",
+      "difficulty": 3,
+      "topic": "статистика",
+      "tags": [
+        "оптимизация",
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Вопрос 6 по теме 'статистика'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 6"
+      },
+      "metadata": {
+        "author": "Преподаватель Кузнецов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T18:50:39.387565",
+      "updated_at": "2025-12-02T00:06:51.387569"
+    },
+    {
+      "id": "item_f937d0d9",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "multiple_choice",
+      "difficulty": 1,
+      "topic": "статистика",
+      "tags": [
+        "безопасность",
+        "debug"
+      ],
+      "content": {
+        "question": "Вопрос 7 по теме 'статистика'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 7"
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-11-22T19:20:09.387577",
+      "updated_at": "2025-12-01T21:03:56.387580"
+    },
+    {
+      "id": "item_c9a0c06d",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "matching",
+      "difficulty": 1,
+      "topic": "статистика",
+      "tags": [
+        "сеть",
+        "теория"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'статистика'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-12-02T09:48:18.387590",
+      "updated_at": "2025-11-29T06:23:29.387593"
+    },
+    {
+      "id": "item_8a560516",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "matching",
+      "difficulty": 1,
+      "topic": "статистика",
+      "tags": [
+        "легкий",
+        "практика",
+        "алгоритм",
+        "тестирование"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'статистика'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-29T04:55:23.387601",
+      "updated_at": "2025-11-30T19:47:15.387605"
+    },
+    {
+      "id": "item_b430bb06",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "matching",
+      "difficulty": 5,
+      "topic": "статистика",
+      "tags": [
+        "debug"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'статистика'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Михайлов",
+        "generated": true
+      },
+      "created_at": "2025-11-23T23:13:54.387615",
+      "updated_at": "2025-11-30T03:09:53.387620"
+    },
+    {
+      "id": "item_1ac258e5",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "topic": "статистика",
+      "tags": [
+        "безопасность",
+        "сложный",
+        "оптимизация",
+        "производительность"
+      ],
+      "content": {
+        "question": "Вопрос 11 по теме 'статистика'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 11"
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-12-01T21:29:13.387629",
+      "updated_at": "2025-12-02T13:46:14.387632"
+    },
+    {
+      "id": "item_25e1b96e",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "true_false",
+      "difficulty": 5,
+      "topic": "статистика",
+      "tags": [
+        "веб",
+        "выбор",
+        "код",
+        "открытый"
+      ],
+      "content": {
+        "question": "Утверждение о статистика",
+        "statement": "Это утверждение о статистика",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-11-22T20:23:01.387641",
+      "updated_at": "2025-11-30T15:36:10.387644"
+    },
+    {
+      "id": "item_7dd6d573",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "true_false",
+      "difficulty": 4,
+      "topic": "статистика",
+      "tags": [
+        "сопоставление",
+        "безопасность",
+        "практика",
+        "база данных"
+      ],
+      "content": {
+        "question": "Утверждение о статистика",
+        "statement": "Это утверждение о статистика",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Попов",
+        "generated": true
+      },
+      "created_at": "2025-11-30T04:37:57.387652",
+      "updated_at": "2025-12-01T14:18:06.387655"
+    },
+    {
+      "id": "item_186df5ed",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "topic": "статистика",
+      "tags": [
+        "веб",
+        "практика",
+        "выбор",
+        "теория"
+      ],
+      "content": {
+        "question": "Вопрос 14 по теме 'статистика'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 14"
+      },
+      "metadata": {
+        "author": "Преподаватель Михайлов",
+        "generated": true
+      },
+      "created_at": "2025-11-23T20:33:36.387666",
+      "updated_at": "2025-12-02T11:22:13.387669"
+    },
+    {
+      "id": "item_d781c3ff",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "open_answer",
+      "difficulty": 4,
+      "topic": "статистика",
+      "tags": [
+        "база данных",
+        "открытый",
+        "теория",
+        "легкий"
+      ],
+      "content": {
+        "question": "Объясните понятие 'статистика'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о статистика"
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-11-30T17:37:57.387677",
+      "updated_at": "2025-12-01T13:18:17.387681"
+    },
+    {
+      "id": "item_f5989603",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "code",
+      "difficulty": 5,
+      "topic": "статистика",
+      "tags": [
+        "веб"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по статистика",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Попов",
+        "generated": true
+      },
+      "created_at": "2025-11-23T05:58:27.387689",
+      "updated_at": "2025-12-03T00:08:07.387692"
+    },
+    {
+      "id": "item_f257f8f9",
+      "lesson_id": "lesson_ds_intro_fc80",
+      "type": "true_false",
+      "difficulty": 3,
+      "topic": "статистика",
+      "tags": [
+        "безопасность",
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Утверждение о статистика",
+        "statement": "Это утверждение о статистика",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-23T13:34:27.387701",
+      "updated_at": "2025-11-30T21:40:27.387704"
+    },
+    {
+      "id": "item_5a411d50",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "multiple_choice",
+      "difficulty": 3,
+      "topic": "статистика",
+      "tags": [
+        "безопасность",
+        "средний",
+        "мобильный",
+        "сопоставление"
+      ],
+      "content": {
+        "question": "Вопрос 1 по теме 'статистика'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 1,
+        "explanation": "Объяснение к вопросу 1"
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-30T17:00:38.387714",
+      "updated_at": "2025-11-29T10:19:16.387717"
+    },
+    {
+      "id": "item_39e17b2e",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "true_false",
+      "difficulty": 5,
+      "topic": "статистика",
+      "tags": [
+        "сопоставление"
+      ],
+      "content": {
+        "question": "Утверждение о статистика",
+        "statement": "Это утверждение о статистика",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-30T00:28:25.387727",
+      "updated_at": "2025-12-02T15:24:11.387730"
+    },
+    {
+      "id": "item_a6583a0d",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "multiple_choice",
+      "difficulty": 4,
+      "topic": "статистика",
+      "tags": [
+        "безопасность",
+        "легкий"
+      ],
+      "content": {
+        "question": "Вопрос 3 по теме 'статистика'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 3"
+      },
+      "metadata": {
+        "author": "Преподаватель Кузнецов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T00:50:09.387739",
+      "updated_at": "2025-12-02T04:50:09.387742"
+    },
+    {
+      "id": "item_b3eabf26",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "open_answer",
+      "difficulty": 1,
+      "topic": "статистика",
+      "tags": [
+        "оптимизация",
+        "сложный",
+        "код",
+        "производительность"
+      ],
+      "content": {
+        "question": "Объясните понятие 'статистика'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о статистика"
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-12-01T16:44:03.387751",
+      "updated_at": "2025-12-01T09:26:27.387754"
+    },
+    {
+      "id": "item_7e7c4c0d",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "code",
+      "difficulty": 2,
+      "topic": "статистика",
+      "tags": [
+        "легкий",
+        "сопоставление"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по статистика",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-11-23T23:30:08.387764",
+      "updated_at": "2025-12-02T04:07:49.387767"
+    },
+    {
+      "id": "item_8c1257f1",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "open_answer",
+      "difficulty": 4,
+      "topic": "статистика",
+      "tags": [
+        "средний",
+        "легкий"
+      ],
+      "content": {
+        "question": "Объясните понятие 'статистика'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о статистика"
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-29T19:21:42.387775",
+      "updated_at": "2025-11-30T09:13:02.387780"
+    },
+    {
+      "id": "item_608666c1",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "multiple_choice",
+      "difficulty": 4,
+      "topic": "статистика",
+      "tags": [
+        "код"
+      ],
+      "content": {
+        "question": "Вопрос 7 по теме 'статистика'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 7"
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-29T19:03:22.387791",
+      "updated_at": "2025-11-30T01:13:38.387794"
+    },
+    {
+      "id": "item_f2c37f85",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "topic": "статистика",
+      "tags": [
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Вопрос 8 по теме 'статистика'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 1,
+        "explanation": "Объяснение к вопросу 8"
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-30T13:17:51.387804",
+      "updated_at": "2025-12-01T23:35:57.387807"
+    },
+    {
+      "id": "item_375104d4",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "code",
+      "difficulty": 3,
+      "topic": "статистика",
+      "tags": [
+        "безопасность",
+        "производительность"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по статистика",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-11-30T17:05:25.387816",
+      "updated_at": "2025-11-30T18:37:11.387819"
+    },
+    {
+      "id": "item_003b83d5",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "matching",
+      "difficulty": 2,
+      "topic": "статистика",
+      "tags": [
+        "сопоставление",
+        "тестирование",
+        "debug"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'статистика'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Михайлов",
+        "generated": true
+      },
+      "created_at": "2025-11-24T17:31:12.387828",
+      "updated_at": "2025-11-29T07:44:42.387831"
+    },
+    {
+      "id": "item_3edcfe44",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "true_false",
+      "difficulty": 1,
+      "topic": "статистика",
+      "tags": [
+        "код",
+        "производительность",
+        "практика",
+        "база данных"
+      ],
+      "content": {
+        "question": "Утверждение о статистика",
+        "statement": "Это утверждение о статистика",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-22T11:55:12.387841",
+      "updated_at": "2025-11-30T00:17:28.387845"
+    },
+    {
+      "id": "item_5a26df0b",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "true_false",
+      "difficulty": 3,
+      "topic": "статистика",
+      "tags": [
+        "теория",
+        "практика"
+      ],
+      "content": {
+        "question": "Утверждение о статистика",
+        "statement": "Это утверждение о статистика",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Кузнецов",
+        "generated": true
+      },
+      "created_at": "2025-11-28T23:07:54.387853",
+      "updated_at": "2025-11-30T13:02:33.387856"
+    },
+    {
+      "id": "item_76cfb3e2",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "single_choice",
+      "difficulty": 2,
+      "topic": "статистика",
+      "tags": [
+        "открытый",
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Вопрос 13 по теме 'статистика'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 1,
+        "explanation": "Объяснение к вопросу 13"
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-30T23:17:51.387865",
+      "updated_at": "2025-12-02T15:18:12.387868"
+    },
+    {
+      "id": "item_147f26d7",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "true_false",
+      "difficulty": 3,
+      "topic": "статистика",
+      "tags": [
+        "веб",
+        "теория",
+        "сложный"
+      ],
+      "content": {
+        "question": "Утверждение о статистика",
+        "statement": "Это утверждение о статистика",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-11-24T12:08:48.387876",
+      "updated_at": "2025-11-30T22:40:15.387879"
+    },
+    {
+      "id": "item_fb2b7487",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "matching",
+      "difficulty": 1,
+      "topic": "статистика",
+      "tags": [
+        "память",
+        "сопоставление",
+        "безопасность"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'статистика'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-12-02T09:35:31.387889",
+      "updated_at": "2025-11-30T04:34:53.387892"
+    },
+    {
+      "id": "item_d4c80e12",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "topic": "статистика",
+      "tags": [
+        "сеть",
+        "производительность"
+      ],
+      "content": {
+        "question": "Вопрос 16 по теме 'статистика'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 16"
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-30T08:57:35.387901",
+      "updated_at": "2025-11-29T20:31:59.387905"
+    },
+    {
+      "id": "item_5dc78219",
+      "lesson_id": "lesson_ds_intro_d285",
+      "type": "single_choice",
+      "difficulty": 2,
+      "topic": "статистика",
+      "tags": [
+        "сопоставление"
+      ],
+      "content": {
+        "question": "Вопрос 17 по теме 'статистика'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 17"
+      },
+      "metadata": {
+        "author": "Преподаватель Попов",
+        "generated": true
+      },
+      "created_at": "2025-11-28T21:14:23.387914",
+      "updated_at": "2025-12-01T13:20:42.387917"
+    },
+    {
+      "id": "item_50375ec8",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "multiple_choice",
+      "difficulty": 5,
+      "topic": "REST API",
+      "tags": [
+        "память",
+        "безопасность",
+        "веб"
+      ],
+      "content": {
+        "question": "Вопрос 1 по теме 'REST API'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 1"
+      },
+      "metadata": {
+        "author": "Преподаватель Васильев",
+        "generated": true
+      },
+      "created_at": "2025-11-26T03:20:02.387926",
+      "updated_at": "2025-12-02T00:15:37.387930"
+    },
+    {
+      "id": "item_f3fb2158",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "single_choice",
+      "difficulty": 5,
+      "topic": "REST API",
+      "tags": [
+        "сеть",
+        "debug",
+        "средний"
+      ],
+      "content": {
+        "question": "Вопрос 2 по теме 'REST API'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 2"
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-12-02T21:06:56.387939",
+      "updated_at": "2025-11-30T12:39:13.387942"
+    },
+    {
+      "id": "item_978739dd",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "multiple_choice",
+      "difficulty": 3,
+      "topic": "REST API",
+      "tags": [
+        "веб",
+        "выбор",
+        "мобильный",
+        "производительность"
+      ],
+      "content": {
+        "question": "Вопрос 3 по теме 'REST API'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 3"
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-22T22:48:33.387951",
+      "updated_at": "2025-12-02T17:24:01.387955"
+    },
+    {
+      "id": "item_aac13bb4",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "code",
+      "difficulty": 5,
+      "topic": "REST API",
+      "tags": [
+        "практика",
+        "производительность",
+        "безопасность"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по REST API",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-11-25T04:45:19.387963",
+      "updated_at": "2025-11-29T10:49:13.387966"
+    },
+    {
+      "id": "item_7d951798",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "open_answer",
+      "difficulty": 4,
+      "topic": "REST API",
+      "tags": [
+        "выбор",
+        "алгоритм",
+        "оптимизация",
+        "легкий"
+      ],
+      "content": {
+        "question": "Объясните понятие 'REST API'",
+        "max_length": 200,
+        "sample_answer": "Пример ответа на вопрос о REST API"
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-11-24T23:33:03.387975",
+      "updated_at": "2025-12-02T14:15:48.387978"
+    },
+    {
+      "id": "item_f9db3911",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "code",
+      "difficulty": 3,
+      "topic": "REST API",
+      "tags": [
+        "веб",
+        "выбор"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по REST API",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Смирнов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T15:11:16.387988",
+      "updated_at": "2025-12-01T00:08:11.387991"
+    },
+    {
+      "id": "item_27c6baf6",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "true_false",
+      "difficulty": 5,
+      "topic": "REST API",
+      "tags": [
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Утверждение о REST API",
+        "statement": "Это утверждение о REST API",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-12-02T15:46:32.387999",
+      "updated_at": "2025-11-30T10:28:06.388003"
+    },
+    {
+      "id": "item_138cb540",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "open_answer",
+      "difficulty": 2,
+      "topic": "REST API",
+      "tags": [
+        "производительность",
+        "память",
+        "практика"
+      ],
+      "content": {
+        "question": "Объясните понятие 'REST API'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о REST API"
+      },
+      "metadata": {
+        "author": "Преподаватель Васильев",
+        "generated": true
+      },
+      "created_at": "2025-12-02T13:01:35.388015",
+      "updated_at": "2025-11-29T17:45:38.388018"
+    },
+    {
+      "id": "item_a2894b6f",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "multiple_choice",
+      "difficulty": 4,
+      "topic": "REST API",
+      "tags": [
+        "легкий"
+      ],
+      "content": {
+        "question": "Вопрос 9 по теме 'REST API'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 9"
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-22T10:51:48.388026",
+      "updated_at": "2025-12-02T11:00:20.388057"
+    },
+    {
+      "id": "item_e7d3ac8b",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "matching",
+      "difficulty": 4,
+      "topic": "REST API",
+      "tags": [
+        "сложный",
+        "тестирование",
+        "легкий",
+        "сеть"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'REST API'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-27T18:19:40.388102",
+      "updated_at": "2025-12-01T12:51:14.388113"
+    },
+    {
+      "id": "item_2f8f90ce",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "code",
+      "difficulty": 3,
+      "topic": "REST API",
+      "tags": [
+        "легкий",
+        "память",
+        "оптимизация",
+        "практика"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по REST API",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Михайлов",
+        "generated": true
+      },
+      "created_at": "2025-11-24T03:52:07.388133",
+      "updated_at": "2025-11-30T00:37:10.388138"
+    },
+    {
+      "id": "item_e310f3b0",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "multiple_choice",
+      "difficulty": 4,
+      "topic": "REST API",
+      "tags": [
+        "тестирование"
+      ],
+      "content": {
+        "question": "Вопрос 12 по теме 'REST API'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 12"
+      },
+      "metadata": {
+        "author": "Преподаватель Смирнов",
+        "generated": true
+      },
+      "created_at": "2025-12-01T05:05:50.388154",
+      "updated_at": "2025-11-29T17:02:48.388158"
+    },
+    {
+      "id": "item_8186757a",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "single_choice",
+      "difficulty": 3,
+      "topic": "REST API",
+      "tags": [
+        "память"
+      ],
+      "content": {
+        "question": "Вопрос 13 по теме 'REST API'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 13"
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-25T10:53:17.388174",
+      "updated_at": "2025-12-02T01:28:02.388178"
+    },
+    {
+      "id": "item_9fb311dc",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "code",
+      "difficulty": 1,
+      "topic": "REST API",
+      "tags": [
+        "база данных"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по REST API",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-12-01T01:35:12.388190",
+      "updated_at": "2025-11-30T04:42:47.388195"
+    },
+    {
+      "id": "item_e795f0e6",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "true_false",
+      "difficulty": 2,
+      "topic": "REST API",
+      "tags": [
+        "выбор",
+        "код"
+      ],
+      "content": {
+        "question": "Утверждение о REST API",
+        "statement": "Это утверждение о REST API",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-12-02T18:56:54.388209",
+      "updated_at": "2025-11-29T15:57:22.388214"
+    },
+    {
+      "id": "item_79ae8dbc",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "single_choice",
+      "difficulty": 2,
+      "topic": "REST API",
+      "tags": [
+        "сложный",
+        "debug"
+      ],
+      "content": {
+        "question": "Вопрос 16 по теме 'REST API'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 1,
+        "explanation": "Объяснение к вопросу 16"
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-29T19:54:09.388227",
+      "updated_at": "2025-11-29T22:34:17.388231"
+    },
+    {
+      "id": "item_fd0bd1aa",
+      "lesson_id": "lesson_web_dev_7964",
+      "type": "matching",
+      "difficulty": 2,
+      "topic": "REST API",
+      "tags": [
+        "средний",
+        "открытый",
+        "практика",
+        "тестирование"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'REST API'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-27T21:15:34.388243",
+      "updated_at": "2025-12-02T13:00:37.388248"
+    },
+    {
+      "id": "item_e27eccf5",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "multiple_choice",
+      "difficulty": 1,
+      "topic": "React",
+      "tags": [
+        "производительность",
+        "алгоритм",
+        "средний"
+      ],
+      "content": {
+        "question": "Вопрос 1 по теме 'React'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 1"
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-24T01:49:45.388263",
+      "updated_at": "2025-11-29T08:59:03.388267"
+    },
+    {
+      "id": "item_ea20d5b9",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "matching",
+      "difficulty": 2,
+      "topic": "React",
+      "tags": [
+        "открытый",
+        "выбор"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'React'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Попов",
+        "generated": true
+      },
+      "created_at": "2025-11-24T04:34:48.388279",
+      "updated_at": "2025-11-29T09:06:06.388284"
+    },
+    {
+      "id": "item_0d185754",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "open_answer",
+      "difficulty": 2,
+      "topic": "React",
+      "tags": [
+        "практика",
+        "производительность"
+      ],
+      "content": {
+        "question": "Объясните понятие 'React'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о React"
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-22T18:51:53.388296",
+      "updated_at": "2025-11-30T09:13:28.388300"
+    },
+    {
+      "id": "item_3ffbe6a3",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "single_choice",
+      "difficulty": 3,
+      "topic": "React",
+      "tags": [
+        "сложный",
+        "код"
+      ],
+      "content": {
+        "question": "Вопрос 4 по теме 'React'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 1,
+        "explanation": "Объяснение к вопросу 4"
+      },
+      "metadata": {
+        "author": "Преподаватель Попов",
+        "generated": true
+      },
+      "created_at": "2025-11-23T19:38:13.388312",
+      "updated_at": "2025-11-30T03:15:51.388316"
+    },
+    {
+      "id": "item_a9a2d79c",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "matching",
+      "difficulty": 3,
+      "topic": "React",
+      "tags": [
+        "практика",
+        "сеть"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'React'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Михайлов",
+        "generated": true
+      },
+      "created_at": "2025-11-25T16:27:10.388331",
+      "updated_at": "2025-12-02T04:21:24.388336"
+    },
+    {
+      "id": "item_687918fc",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "matching",
+      "difficulty": 5,
+      "topic": "React",
+      "tags": [
+        "debug",
+        "оптимизация",
+        "производительность"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'React'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Васильев",
+        "generated": true
+      },
+      "created_at": "2025-11-29T18:03:27.388349",
+      "updated_at": "2025-11-29T21:57:11.388354"
+    },
+    {
+      "id": "item_439b7add",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "single_choice",
+      "difficulty": 1,
+      "topic": "React",
+      "tags": [
+        "выбор",
+        "код",
+        "легкий"
+      ],
+      "content": {
+        "question": "Вопрос 7 по теме 'React'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 1,
+        "explanation": "Объяснение к вопросу 7"
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T01:06:22.388367",
+      "updated_at": "2025-12-02T18:15:08.388372"
+    },
+    {
+      "id": "item_26080847",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "multiple_choice",
+      "difficulty": 1,
+      "topic": "React",
+      "tags": [
+        "debug",
+        "алгоритм",
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Вопрос 8 по теме 'React'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 8"
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-27T19:07:42.388386",
+      "updated_at": "2025-11-29T13:50:21.388391"
+    },
+    {
+      "id": "item_6a3c743c",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "matching",
+      "difficulty": 5,
+      "topic": "React",
+      "tags": [
+        "открытый"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'React'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-11-28T10:00:55.388405",
+      "updated_at": "2025-11-30T04:51:38.388409"
+    },
+    {
+      "id": "item_60d88805",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "matching",
+      "difficulty": 5,
+      "topic": "React",
+      "tags": [
+        "безопасность",
+        "открытый",
+        "теория",
+        "легкий"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'React'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-11-25T17:26:21.388424",
+      "updated_at": "2025-11-29T02:43:43.388429"
+    },
+    {
+      "id": "item_e71a03cf",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "open_answer",
+      "difficulty": 4,
+      "topic": "React",
+      "tags": [
+        "алгоритм",
+        "память",
+        "сопоставление"
+      ],
+      "content": {
+        "question": "Объясните понятие 'React'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о React"
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-23T01:03:34.388443",
+      "updated_at": "2025-11-30T16:57:22.388448"
+    },
+    {
+      "id": "item_1a94e812",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "single_choice",
+      "difficulty": 2,
+      "topic": "React",
+      "tags": [
+        "производительность",
+        "веб"
+      ],
+      "content": {
+        "question": "Вопрос 12 по теме 'React'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 12"
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-29T12:07:05.388462",
+      "updated_at": "2025-11-29T10:01:35.388467"
+    },
+    {
+      "id": "item_169f4438",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "single_choice",
+      "difficulty": 4,
+      "topic": "React",
+      "tags": [
+        "база данных",
+        "выбор",
+        "сеть",
+        "сложный"
+      ],
+      "content": {
+        "question": "Вопрос 13 по теме 'React'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 13"
+      },
+      "metadata": {
+        "author": "Преподаватель Попов",
+        "generated": true
+      },
+      "created_at": "2025-11-22T22:16:21.388480",
+      "updated_at": "2025-12-02T08:45:16.388484"
+    },
+    {
+      "id": "item_50a13b70",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "matching",
+      "difficulty": 4,
+      "topic": "React",
+      "tags": [
+        "открытый"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'React'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-12-01T20:12:05.388497",
+      "updated_at": "2025-12-01T20:14:45.388501"
+    },
+    {
+      "id": "item_6914b8db",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "multiple_choice",
+      "difficulty": 3,
+      "topic": "React",
+      "tags": [
+        "безопасность",
+        "выбор"
+      ],
+      "content": {
+        "question": "Вопрос 15 по теме 'React'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 15"
+      },
+      "metadata": {
+        "author": "Преподаватель Смирнов",
+        "generated": true
+      },
+      "created_at": "2025-11-22T17:14:12.388514",
+      "updated_at": "2025-11-29T22:58:27.388519"
+    },
+    {
+      "id": "item_b1b418ee",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "single_choice",
+      "difficulty": 4,
+      "topic": "React",
+      "tags": [
+        "сложный",
+        "мобильный",
+        "открытый"
+      ],
+      "content": {
+        "question": "Вопрос 16 по теме 'React'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 16"
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-23T08:52:50.388533",
+      "updated_at": "2025-12-02T20:08:22.388538"
+    },
+    {
+      "id": "item_3b05d7d9",
+      "lesson_id": "lesson_web_dev_ab8f",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "topic": "React",
+      "tags": [
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Вопрос 17 по теме 'React'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 17"
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-11-22T14:31:14.388550",
+      "updated_at": "2025-12-01T11:17:40.388557"
+    },
+    {
+      "id": "item_a09ea78d",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "single_choice",
+      "difficulty": 2,
+      "topic": "HTML/CSS",
+      "tags": [
+        "безопасность",
+        "оптимизация",
+        "алгоритм",
+        "выбор"
+      ],
+      "content": {
+        "question": "Вопрос 1 по теме 'HTML/CSS'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 1,
+        "explanation": "Объяснение к вопросу 1"
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-11-30T09:17:37.388571",
+      "updated_at": "2025-12-01T02:34:57.388576"
+    },
+    {
+      "id": "item_010c2e2c",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "open_answer",
+      "difficulty": 4,
+      "topic": "HTML/CSS",
+      "tags": [
+        "теория",
+        "память",
+        "база данных"
+      ],
+      "content": {
+        "question": "Объясните понятие 'HTML/CSS'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о HTML/CSS"
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-29T19:03:57.388588",
+      "updated_at": "2025-11-29T10:22:12.388593"
+    },
+    {
+      "id": "item_674e19e8",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "code",
+      "difficulty": 5,
+      "topic": "HTML/CSS",
+      "tags": [
+        "память"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по HTML/CSS",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-11-27T08:54:14.388607",
+      "updated_at": "2025-12-01T03:47:57.388611"
+    },
+    {
+      "id": "item_543427a8",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "matching",
+      "difficulty": 3,
+      "topic": "HTML/CSS",
+      "tags": [
+        "производительность"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'HTML/CSS'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-27T21:18:36.388624",
+      "updated_at": "2025-11-30T03:36:32.388628"
+    },
+    {
+      "id": "item_7d26ec00",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "open_answer",
+      "difficulty": 1,
+      "topic": "HTML/CSS",
+      "tags": [
+        "мобильный",
+        "безопасность",
+        "тестирование"
+      ],
+      "content": {
+        "question": "Объясните понятие 'HTML/CSS'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о HTML/CSS"
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-12-02T18:55:28.388641",
+      "updated_at": "2025-12-01T03:18:13.388646"
+    },
+    {
+      "id": "item_1b7e93bc",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "open_answer",
+      "difficulty": 2,
+      "topic": "HTML/CSS",
+      "tags": [
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Объясните понятие 'HTML/CSS'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о HTML/CSS"
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-30T14:46:10.388658",
+      "updated_at": "2025-12-02T05:37:27.388662"
+    },
+    {
+      "id": "item_092cdfa9",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "single_choice",
+      "difficulty": 5,
+      "topic": "HTML/CSS",
+      "tags": [
+        "практика",
+        "безопасность",
+        "тестирование",
+        "легкий"
+      ],
+      "content": {
+        "question": "Вопрос 7 по теме 'HTML/CSS'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 7"
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-11-28T20:37:04.388677",
+      "updated_at": "2025-11-30T15:06:12.388682"
+    },
+    {
+      "id": "item_c6b975fa",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "single_choice",
+      "difficulty": 2,
+      "topic": "HTML/CSS",
+      "tags": [
+        "средний"
+      ],
+      "content": {
+        "question": "Вопрос 8 по теме 'HTML/CSS'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 8"
+      },
+      "metadata": {
+        "author": "Преподаватель Смирнов",
+        "generated": true
+      },
+      "created_at": "2025-12-01T12:23:22.388694",
+      "updated_at": "2025-12-02T03:07:05.388698"
+    },
+    {
+      "id": "item_d41fb68d",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "matching",
+      "difficulty": 3,
+      "topic": "HTML/CSS",
+      "tags": [
+        "тестирование",
+        "сеть",
+        "алгоритм",
+        "веб"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'HTML/CSS'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-11-25T13:53:20.388711",
+      "updated_at": "2025-11-29T23:58:12.388716"
+    },
+    {
+      "id": "item_cbacc6d9",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "code",
+      "difficulty": 5,
+      "topic": "HTML/CSS",
+      "tags": [
+        "теория",
+        "практика",
+        "код",
+        "сеть"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по HTML/CSS",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Кузнецов",
+        "generated": true
+      },
+      "created_at": "2025-11-25T02:17:01.388728",
+      "updated_at": "2025-11-29T11:58:48.388735"
+    },
+    {
+      "id": "item_31ccc2a7",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "code",
+      "difficulty": 5,
+      "topic": "HTML/CSS",
+      "tags": [
+        "производительность",
+        "открытый"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по HTML/CSS",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Васильев",
+        "generated": true
+      },
+      "created_at": "2025-11-29T17:02:25.388747",
+      "updated_at": "2025-11-29T09:31:00.388752"
+    },
+    {
+      "id": "item_5bb48855",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "true_false",
+      "difficulty": 3,
+      "topic": "HTML/CSS",
+      "tags": [
+        "производительность",
+        "выбор",
+        "мобильный",
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Утверждение о HTML/CSS",
+        "statement": "Это утверждение о HTML/CSS",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-22T07:08:49.388766",
+      "updated_at": "2025-12-02T13:19:25.388771"
+    },
+    {
+      "id": "item_3c0527a5",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "matching",
+      "difficulty": 3,
+      "topic": "HTML/CSS",
+      "tags": [
+        "код",
+        "открытый",
+        "легкий",
+        "выбор"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'HTML/CSS'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Попов",
+        "generated": true
+      },
+      "created_at": "2025-11-22T22:37:11.388787",
+      "updated_at": "2025-12-02T18:59:48.388792"
+    },
+    {
+      "id": "item_fb6bdbf7",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "open_answer",
+      "difficulty": 3,
+      "topic": "HTML/CSS",
+      "tags": [
+        "тестирование"
+      ],
+      "content": {
+        "question": "Объясните понятие 'HTML/CSS'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о HTML/CSS"
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T20:37:02.388805",
+      "updated_at": "2025-11-30T10:42:27.388809"
+    },
+    {
+      "id": "item_e802d43a",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "topic": "HTML/CSS",
+      "tags": [
+        "легкий",
+        "мобильный"
+      ],
+      "content": {
+        "question": "Вопрос 15 по теме 'HTML/CSS'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 15"
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-12-01T19:39:05.388822",
+      "updated_at": "2025-12-02T07:22:34.388826"
+    },
+    {
+      "id": "item_3d4140e6",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "matching",
+      "difficulty": 4,
+      "topic": "HTML/CSS",
+      "tags": [
+        "теория",
+        "производительность"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'HTML/CSS'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-12-02T07:40:44.388838",
+      "updated_at": "2025-12-02T20:22:01.388843"
+    },
+    {
+      "id": "item_6d151b3b",
+      "lesson_id": "lesson_web_dev_76fe",
+      "type": "single_choice",
+      "difficulty": 2,
+      "topic": "HTML/CSS",
+      "tags": [
+        "сложный"
+      ],
+      "content": {
+        "question": "Вопрос 17 по теме 'HTML/CSS'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 17"
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-25T06:06:49.388855",
+      "updated_at": "2025-12-02T22:59:54.388859"
+    },
+    {
+      "id": "item_fbb1917e",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "code",
+      "difficulty": 5,
+      "topic": "динамическое программирование",
+      "tags": [
+        "код"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по динамическое программирование",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-30T16:36:54.388874",
+      "updated_at": "2025-12-02T09:17:29.388878"
+    },
+    {
+      "id": "item_2fcdec01",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "open_answer",
+      "difficulty": 1,
+      "topic": "динамическое программирование",
+      "tags": [
+        "оптимизация",
+        "сопоставление"
+      ],
+      "content": {
+        "question": "Объясните понятие 'динамическое программирование'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о динамическое программирование"
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-11-29T01:11:35.388890",
+      "updated_at": "2025-11-30T07:03:50.388895"
+    },
+    {
+      "id": "item_2dcc4f80",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "matching",
+      "difficulty": 5,
+      "topic": "динамическое программирование",
+      "tags": [
+        "алгоритм",
+        "веб"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'динамическое программирование'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-12-02T21:53:46.388906",
+      "updated_at": "2025-11-30T14:06:25.388911"
+    },
+    {
+      "id": "item_c696c0ff",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "topic": "динамическое программирование",
+      "tags": [
+        "база данных",
+        "легкий",
+        "веб",
+        "производительность"
+      ],
+      "content": {
+        "question": "Вопрос 4 по теме 'динамическое программирование'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 4"
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-30T07:06:25.388925",
+      "updated_at": "2025-11-30T21:20:50.388930"
+    },
+    {
+      "id": "item_8fc3f429",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "matching",
+      "difficulty": 1,
+      "topic": "динамическое программирование",
+      "tags": [
+        "теория",
+        "средний"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'динамическое программирование'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Михайлов",
+        "generated": true
+      },
+      "created_at": "2025-11-30T09:40:20.388943",
+      "updated_at": "2025-12-02T20:41:08.388948"
+    },
+    {
+      "id": "item_95096332",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "open_answer",
+      "difficulty": 3,
+      "topic": "динамическое программирование",
+      "tags": [
+        "теория",
+        "легкий"
+      ],
+      "content": {
+        "question": "Объясните понятие 'динамическое программирование'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о динамическое программирование"
+      },
+      "metadata": {
+        "author": "Преподаватель Алексеев",
+        "generated": true
+      },
+      "created_at": "2025-11-27T07:24:01.388959",
+      "updated_at": "2025-12-01T02:18:34.388964"
+    },
+    {
+      "id": "item_6cd87665",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "single_choice",
+      "difficulty": 5,
+      "topic": "динамическое программирование",
+      "tags": [
+        "мобильный",
+        "теория",
+        "практика"
+      ],
+      "content": {
+        "question": "Вопрос 7 по теме 'динамическое программирование'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 2,
+        "explanation": "Объяснение к вопросу 7"
+      },
+      "metadata": {
+        "author": "Преподаватель Смирнов",
+        "generated": true
+      },
+      "created_at": "2025-11-29T21:01:01.388977",
+      "updated_at": "2025-12-02T19:09:34.388981"
+    },
+    {
+      "id": "item_c88f1011",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "open_answer",
+      "difficulty": 4,
+      "topic": "динамическое программирование",
+      "tags": [
+        "debug",
+        "алгоритм",
+        "сеть",
+        "средний"
+      ],
+      "content": {
+        "question": "Объясните понятие 'динамическое программирование'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о динамическое программирование"
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-29T17:48:14.388995",
+      "updated_at": "2025-11-30T06:14:46.389001"
+    },
+    {
+      "id": "item_43352e1d",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "single_choice",
+      "difficulty": 2,
+      "topic": "динамическое программирование",
+      "tags": [
+        "открытый",
+        "сложный"
+      ],
+      "content": {
+        "question": "Вопрос 9 по теме 'динамическое программирование'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 1,
+        "explanation": "Объяснение к вопросу 9"
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-12-02T03:21:32.389013",
+      "updated_at": "2025-12-02T05:23:58.389017"
+    },
+    {
+      "id": "item_91aecb31",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "true_false",
+      "difficulty": 4,
+      "topic": "динамическое программирование",
+      "tags": [
+        "сеть",
+        "безопасность",
+        "база данных",
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Утверждение о динамическое программирование",
+        "statement": "Это утверждение о динамическое программирование",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-22T13:57:18.389047",
+      "updated_at": "2025-11-30T13:14:40.389068"
+    },
+    {
+      "id": "item_f98e9479",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "code",
+      "difficulty": 3,
+      "topic": "динамическое программирование",
+      "tags": [
+        "алгоритм",
+        "память"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по динамическое программирование",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T20:32:21.389107",
+      "updated_at": "2025-11-30T12:39:18.389126"
+    },
+    {
+      "id": "item_e622f39d",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "multiple_choice",
+      "difficulty": 3,
+      "topic": "динамическое программирование",
+      "tags": [
+        "сопоставление",
+        "практика"
+      ],
+      "content": {
+        "question": "Вопрос 12 по теме 'динамическое программирование'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 12"
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-29T01:35:17.389146",
+      "updated_at": "2025-11-30T15:49:26.389151"
+    },
+    {
+      "id": "item_a87382a3",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "matching",
+      "difficulty": 3,
+      "topic": "динамическое программирование",
+      "tags": [
+        "debug",
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'динамическое программирование'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Михайлов",
+        "generated": true
+      },
+      "created_at": "2025-12-01T07:06:17.389167",
+      "updated_at": "2025-12-01T03:30:01.389173"
+    },
+    {
+      "id": "item_f4bbc690",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "matching",
+      "difficulty": 4,
+      "topic": "динамическое программирование",
+      "tags": [
+        "память",
+        "debug"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'динамическое программирование'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-23T05:35:21.389186",
+      "updated_at": "2025-12-02T16:31:36.389190"
+    },
+    {
+      "id": "item_8c551779",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "matching",
+      "difficulty": 1,
+      "topic": "динамическое программирование",
+      "tags": [
+        "открытый",
+        "безопасность",
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'динамическое программирование'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-27T17:15:44.389208",
+      "updated_at": "2025-12-02T06:06:03.389213"
+    },
+    {
+      "id": "item_0b032244",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "code",
+      "difficulty": 5,
+      "topic": "динамическое программирование",
+      "tags": [
+        "память",
+        "код",
+        "открытый",
+        "база данных"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по динамическое программирование",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-12-02T22:36:55.389469",
+      "updated_at": "2025-11-30T06:10:01.389476"
+    },
+    {
+      "id": "item_e1f5355f",
+      "lesson_id": "lesson_algorithms_09e4",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "topic": "динамическое программирование",
+      "tags": [
+        "debug",
+        "выбор",
+        "база данных",
+        "веб"
+      ],
+      "content": {
+        "question": "Вопрос 17 по теме 'динамическое программирование'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 17"
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-27T03:10:41.389493",
+      "updated_at": "2025-12-01T01:34:19.389497"
+    },
+    {
+      "id": "item_a796fa4f",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "single_choice",
+      "difficulty": 1,
+      "topic": "поиск",
+      "tags": [
+        "безопасность",
+        "сложный",
+        "сопоставление"
+      ],
+      "content": {
+        "question": "Вопрос 1 по теме 'поиск'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 1,
+        "explanation": "Объяснение к вопросу 1"
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-26T07:39:19.389512",
+      "updated_at": "2025-12-02T18:38:08.389517"
+    },
+    {
+      "id": "item_2d356304",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "matching",
+      "difficulty": 1,
+      "topic": "поиск",
+      "tags": [
+        "открытый",
+        "память"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'поиск'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-12-02T16:42:08.389530",
+      "updated_at": "2025-12-02T00:27:50.389534"
+    },
+    {
+      "id": "item_a232c58e",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "single_choice",
+      "difficulty": 3,
+      "topic": "поиск",
+      "tags": [
+        "сеть",
+        "открытый"
+      ],
+      "content": {
+        "question": "Вопрос 3 по теме 'поиск'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 3"
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-12-01T09:42:26.389549",
+      "updated_at": "2025-11-30T01:49:55.389553"
+    },
+    {
+      "id": "item_92768a19",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "matching",
+      "difficulty": 1,
+      "topic": "поиск",
+      "tags": [
+        "оптимизация",
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'поиск'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-11-25T16:57:53.389566",
+      "updated_at": "2025-12-01T01:39:59.389571"
+    },
+    {
+      "id": "item_66ac0f07",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "true_false",
+      "difficulty": 4,
+      "topic": "поиск",
+      "tags": [
+        "практика"
+      ],
+      "content": {
+        "question": "Утверждение о поиск",
+        "statement": "Это утверждение о поиск",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-26T23:39:42.389585",
+      "updated_at": "2025-11-30T13:32:06.389589"
+    },
+    {
+      "id": "item_67a3e6d9",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "multiple_choice",
+      "difficulty": 5,
+      "topic": "поиск",
+      "tags": [
+        "тестирование"
+      ],
+      "content": {
+        "question": "Вопрос 6 по теме 'поиск'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 6"
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-26T11:04:34.389601",
+      "updated_at": "2025-12-02T15:39:34.389605"
+    },
+    {
+      "id": "item_c732394f",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "multiple_choice",
+      "difficulty": 5,
+      "topic": "поиск",
+      "tags": [
+        "средний",
+        "теория"
+      ],
+      "content": {
+        "question": "Вопрос 7 по теме 'поиск'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 7"
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-27T04:01:34.389617",
+      "updated_at": "2025-11-29T07:46:18.389622"
+    },
+    {
+      "id": "item_7335bea1",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "true_false",
+      "difficulty": 3,
+      "topic": "поиск",
+      "tags": [
+        "сопоставление",
+        "мобильный",
+        "код"
+      ],
+      "content": {
+        "question": "Утверждение о поиск",
+        "statement": "Это утверждение о поиск",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Кузнецов",
+        "generated": true
+      },
+      "created_at": "2025-11-28T12:23:52.389635",
+      "updated_at": "2025-12-01T05:52:35.389640"
+    },
+    {
+      "id": "item_d1c4f807",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "topic": "поиск",
+      "tags": [
+        "сеть",
+        "сопоставление",
+        "легкий",
+        "теория"
+      ],
+      "content": {
+        "question": "Вопрос 9 по теме 'поиск'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 9"
+      },
+      "metadata": {
+        "author": "Преподаватель Смирнов",
+        "generated": true
+      },
+      "created_at": "2025-11-29T00:32:39.389652",
+      "updated_at": "2025-11-29T14:32:35.389657"
+    },
+    {
+      "id": "item_003f96f5",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "open_answer",
+      "difficulty": 1,
+      "topic": "поиск",
+      "tags": [
+        "легкий",
+        "практика",
+        "выбор",
+        "алгоритм"
+      ],
+      "content": {
+        "question": "Объясните понятие 'поиск'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о поиск"
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-11-29T07:09:42.389670",
+      "updated_at": "2025-12-01T13:23:06.389674"
+    },
+    {
+      "id": "item_348f4c15",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "code",
+      "difficulty": 4,
+      "topic": "поиск",
+      "tags": [
+        "тестирование"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по поиск",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-30T19:39:56.389685",
+      "updated_at": "2025-11-29T14:01:21.389690"
+    },
+    {
+      "id": "item_1f47e258",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "single_choice",
+      "difficulty": 1,
+      "topic": "поиск",
+      "tags": [
+        "мобильный",
+        "производительность",
+        "открытый"
+      ],
+      "content": {
+        "question": "Вопрос 12 по теме 'поиск'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 0,
+        "explanation": "Объяснение к вопросу 12"
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-12-01T03:33:31.389706",
+      "updated_at": "2025-11-30T07:57:20.389710"
+    },
+    {
+      "id": "item_1e18201e",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "single_choice",
+      "difficulty": 3,
+      "topic": "поиск",
+      "tags": [
+        "выбор",
+        "код",
+        "оптимизация",
+        "теория"
+      ],
+      "content": {
+        "question": "Вопрос 13 по теме 'поиск'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 13"
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-11-27T16:50:14.389723",
+      "updated_at": "2025-11-30T18:07:44.389728"
+    },
+    {
+      "id": "item_dfae6083",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "topic": "поиск",
+      "tags": [
+        "код",
+        "практика",
+        "сложный"
+      ],
+      "content": {
+        "question": "Вопрос 14 по теме 'поиск'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 14"
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-30T03:05:05.389740",
+      "updated_at": "2025-11-29T15:22:23.389744"
+    },
+    {
+      "id": "item_2f892679",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "true_false",
+      "difficulty": 1,
+      "topic": "поиск",
+      "tags": [
+        "мобильный"
+      ],
+      "content": {
+        "question": "Утверждение о поиск",
+        "statement": "Это утверждение о поиск",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T22:18:05.389757",
+      "updated_at": "2025-12-02T02:10:52.389761"
+    },
+    {
+      "id": "item_a0a8bb83",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "code",
+      "difficulty": 4,
+      "topic": "поиск",
+      "tags": [
+        "производительность",
+        "сопоставление",
+        "база данных",
+        "сложный"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по поиск",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Соколов",
+        "generated": true
+      },
+      "created_at": "2025-12-02T12:50:55.389774",
+      "updated_at": "2025-12-02T23:31:49.389779"
+    },
+    {
+      "id": "item_26121bde",
+      "lesson_id": "lesson_algorithms_77e7",
+      "type": "code",
+      "difficulty": 5,
+      "topic": "поиск",
+      "tags": [
+        "легкий",
+        "веб"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по поиск",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Смирнов",
+        "generated": true
+      },
+      "created_at": "2025-11-24T10:08:13.389791",
+      "updated_at": "2025-12-01T05:41:32.389796"
+    },
+    {
+      "id": "item_c9ba6126",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "open_answer",
+      "difficulty": 1,
+      "topic": "поиск",
+      "tags": [
+        "база данных",
+        "сопоставление",
+        "debug"
+      ],
+      "content": {
+        "question": "Объясните понятие 'поиск'",
+        "max_length": 500,
+        "sample_answer": "Пример ответа на вопрос о поиск"
+      },
+      "metadata": {
+        "author": "Преподаватель Иванов",
+        "generated": true
+      },
+      "created_at": "2025-11-30T21:33:35.389809",
+      "updated_at": "2025-12-01T23:18:30.389813"
+    },
+    {
+      "id": "item_12f80f31",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "code",
+      "difficulty": 3,
+      "topic": "поиск",
+      "tags": [
+        "код",
+        "тестирование",
+        "выбор",
+        "легкий"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по поиск",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Федоров",
+        "generated": true
+      },
+      "created_at": "2025-11-25T08:55:16.389823",
+      "updated_at": "2025-11-30T12:10:31.389826"
+    },
+    {
+      "id": "item_3fce2c76",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "open_answer",
+      "difficulty": 1,
+      "topic": "поиск",
+      "tags": [
+        "легкий",
+        "код",
+        "веб",
+        "практика"
+      ],
+      "content": {
+        "question": "Объясните понятие 'поиск'",
+        "max_length": 200,
+        "sample_answer": "Пример ответа на вопрос о поиск"
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-11-28T01:32:22.389836",
+      "updated_at": "2025-11-30T12:59:46.389840"
+    },
+    {
+      "id": "item_39c9fd8e",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "open_answer",
+      "difficulty": 2,
+      "topic": "поиск",
+      "tags": [
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Объясните понятие 'поиск'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о поиск"
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-24T11:36:27.389851",
+      "updated_at": "2025-12-01T15:25:00.389855"
+    },
+    {
+      "id": "item_1ea15ef9",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "true_false",
+      "difficulty": 5,
+      "topic": "поиск",
+      "tags": [
+        "debug",
+        "безопасность"
+      ],
+      "content": {
+        "question": "Утверждение о поиск",
+        "statement": "Это утверждение о поиск",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-28T12:17:55.389865",
+      "updated_at": "2025-11-29T17:57:06.389869"
+    },
+    {
+      "id": "item_f4a4b3e8",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "true_false",
+      "difficulty": 2,
+      "topic": "поиск",
+      "tags": [
+        "сеть",
+        "открытый"
+      ],
+      "content": {
+        "question": "Утверждение о поиск",
+        "statement": "Это утверждение о поиск",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-11-30T14:41:30.389879",
+      "updated_at": "2025-11-30T09:15:19.389884"
+    },
+    {
+      "id": "item_a75a6b66",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "true_false",
+      "difficulty": 1,
+      "topic": "поиск",
+      "tags": [
+        "мобильный"
+      ],
+      "content": {
+        "question": "Утверждение о поиск",
+        "statement": "Это утверждение о поиск",
+        "is_true": false
+      },
+      "metadata": {
+        "author": "Преподаватель Смирнов",
+        "generated": true
+      },
+      "created_at": "2025-11-23T10:29:19.389895",
+      "updated_at": "2025-12-01T14:25:01.389898"
+    },
+    {
+      "id": "item_dce1cf6b",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "multiple_choice",
+      "difficulty": 4,
+      "topic": "поиск",
+      "tags": [
+        "средний",
+        "алгоритм",
+        "сопоставление",
+        "мобильный"
+      ],
+      "content": {
+        "question": "Вопрос 8 по теме 'поиск'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 1,
+        "explanation": "Объяснение к вопросу 8"
+      },
+      "metadata": {
+        "author": "Преподаватель Кузнецов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T07:06:23.389911",
+      "updated_at": "2025-11-29T23:22:50.389916"
+    },
+    {
+      "id": "item_eea5ce6f",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "single_choice",
+      "difficulty": 5,
+      "topic": "поиск",
+      "tags": [
+        "средний",
+        "выбор"
+      ],
+      "content": {
+        "question": "Вопрос 9 по теме 'поиск'",
+        "options": [
+          "Вариант A",
+          "Вариант B",
+          "Вариант C",
+          "Вариант D"
+        ],
+        "correct_answer": 3,
+        "explanation": "Объяснение к вопросу 9"
+      },
+      "metadata": {
+        "author": "Преподаватель Сидоров",
+        "generated": true
+      },
+      "created_at": "2025-11-28T12:09:40.389927",
+      "updated_at": "2025-12-01T15:44:52.389930"
+    },
+    {
+      "id": "item_569ba29d",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "matching",
+      "difficulty": 1,
+      "topic": "поиск",
+      "tags": [
+        "база данных"
+      ],
+      "content": {
+        "question": "Сопоставьте элементы по теме 'поиск'",
+        "left_items": [
+          "Элемент 1",
+          "Элемент 2",
+          "Элемент 3"
+        ],
+        "right_items": [
+          "Соответствие 1",
+          "Соответствие 2",
+          "Соответствие 3"
+        ],
+        "correct_mapping": {
+          "0": "0",
+          "1": "1",
+          "2": "2"
+        }
+      },
+      "metadata": {
+        "author": "Преподаватель Новиков",
+        "generated": true
+      },
+      "created_at": "2025-11-23T05:14:13.389940",
+      "updated_at": "2025-11-30T05:25:40.389944"
+    },
+    {
+      "id": "item_dc92a113",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "code",
+      "difficulty": 4,
+      "topic": "поиск",
+      "tags": [
+        "оптимизация"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по поиск",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Михайлов",
+        "generated": true
+      },
+      "created_at": "2025-11-26T21:28:56.389954",
+      "updated_at": "2025-12-02T19:51:47.389958"
+    },
+    {
+      "id": "item_a90a0d31",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "code",
+      "difficulty": 4,
+      "topic": "поиск",
+      "tags": [
+        "база данных"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по поиск",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Попов",
+        "generated": true
+      },
+      "created_at": "2025-11-25T16:24:40.389969",
+      "updated_at": "2025-12-01T08:35:32.389972"
+    },
+    {
+      "id": "item_e7fcc708",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "open_answer",
+      "difficulty": 2,
+      "topic": "поиск",
+      "tags": [
+        "безопасность"
+      ],
+      "content": {
+        "question": "Объясните понятие 'поиск'",
+        "max_length": 200,
+        "sample_answer": "Пример ответа на вопрос о поиск"
+      },
+      "metadata": {
+        "author": "Преподаватель Петров",
+        "generated": true
+      },
+      "created_at": "2025-11-24T17:42:29.389982",
+      "updated_at": "2025-11-29T18:54:41.389986"
+    },
+    {
+      "id": "item_3e0081aa",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "code",
+      "difficulty": 4,
+      "topic": "поиск",
+      "tags": [
+        "веб",
+        "алгоритм",
+        "база данных",
+        "производительность"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по поиск",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Морозов",
+        "generated": true
+      },
+      "created_at": "2025-11-25T09:33:37.389997",
+      "updated_at": "2025-11-30T03:00:06.390001"
+    },
+    {
+      "id": "item_2eee48c8",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "open_answer",
+      "difficulty": 5,
+      "topic": "поиск",
+      "tags": [
+        "оптимизация",
+        "сеть",
+        "легкий"
+      ],
+      "content": {
+        "question": "Объясните понятие 'поиск'",
+        "max_length": 100,
+        "sample_answer": "Пример ответа на вопрос о поиск"
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-12-01T16:47:51.390012",
+      "updated_at": "2025-12-01T08:31:30.390015"
+    },
+    {
+      "id": "item_cf13989f",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "true_false",
+      "difficulty": 2,
+      "topic": "поиск",
+      "tags": [
+        "оптимизация",
+        "безопасность"
+      ],
+      "content": {
+        "question": "Утверждение о поиск",
+        "statement": "Это утверждение о поиск",
+        "is_true": true
+      },
+      "metadata": {
+        "author": "Преподаватель Лебедев",
+        "generated": true
+      },
+      "created_at": "2025-12-03T00:06:46.390026",
+      "updated_at": "2025-11-29T05:31:46.390029"
+    },
+    {
+      "id": "item_6ab52ba4",
+      "lesson_id": "lesson_algorithms_dda0",
+      "type": "code",
+      "difficulty": 1,
+      "topic": "поиск",
+      "tags": [
+        "веб",
+        "память"
+      ],
+      "content": {
+        "question": "Напишите код для решения задачи по поиск",
+        "language": "python",
+        "test_cases": [
+          {
+            "input": "test1",
+            "output": "result1"
+          },
+          {
+            "input": "test2",
+            "output": "result2"
+          }
+        ]
+      },
+      "metadata": {
+        "author": "Преподаватель Волков",
+        "generated": true
+      },
+      "created_at": "2025-11-30T01:05:06.390040",
+      "updated_at": "2025-12-01T13:39:20.390044"
+    }
+  ],
+  "users": [
+    {
+      "id": "user_ef5452ed",
+      "email": "алексей.лебедев0@yandex.ru",
+      "name": "Алексей Лебедев",
+      "role": "admin",
+      "group": "",
+      "created_at": "2025-10-16T00:21:52.390088"
+    },
+    {
+      "id": "user_166648a5",
+      "email": "ирина.петров1@gmail.com",
+      "name": "Ирина Петров",
+      "role": "teacher",
+      "group": "",
+      "created_at": "2025-11-20T20:43:30.390111"
+    },
+    {
+      "id": "user_717be3ec",
+      "email": "ирина.васильев2@gmail.com",
+      "name": "Ирина Васильев",
+      "role": "admin",
+      "group": "",
+      "created_at": "2025-09-10T18:45:39.390122"
+    },
+    {
+      "id": "user_46b3bb89",
+      "email": "иван.соколов3@mail.ru",
+      "name": "Иван Соколов",
+      "role": "teacher",
+      "group": "",
+      "created_at": "2025-09-22T09:00:59.390130"
+    },
+    {
+      "id": "user_218f1b46",
+      "email": "николай.сидоров4@outlook.com",
+      "name": "Николай Сидоров",
+      "role": "student",
+      "group": "Группа 5",
+      "created_at": "2025-11-06T14:45:49.390141"
+    },
+    {
+      "id": "user_5cd5d8f0",
+      "email": "сергей.иванов5@outlook.com",
+      "name": "Сергей Иванов",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-10-02T19:57:28.390150"
+    },
+    {
+      "id": "user_fbc4a244",
+      "email": "светлана.михайлов6@outlook.com",
+      "name": "Светлана Михайлов",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-11-27T02:50:18.390158"
+    },
+    {
+      "id": "user_4fea379e",
+      "email": "владимир.смирнов7@gmail.com",
+      "name": "Владимир Смирнов",
+      "role": "student",
+      "group": "Группа 2",
+      "created_at": "2025-09-21T15:40:59.390166"
+    },
+    {
+      "id": "user_43592cb3",
+      "email": "роман.федоров8@yandex.ru",
+      "name": "Роман Федоров",
+      "role": "student",
+      "group": "Группа 2",
+      "created_at": "2025-10-30T12:43:11.390175"
+    },
+    {
+      "id": "user_960d677e",
+      "email": "наталья.федоров9@gmail.com",
+      "name": "Наталья Федоров",
+      "role": "student",
+      "group": "Группа 1",
+      "created_at": "2025-11-02T05:55:27.390185"
+    },
+    {
+      "id": "user_d7e7e576",
+      "email": "виктория.соколов10@mail.ru",
+      "name": "Виктория Соколов",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-09-11T15:57:07.390193"
+    },
+    {
+      "id": "user_c897957a",
+      "email": "ирина.петров11@gmail.com",
+      "name": "Ирина Петров",
+      "role": "student",
+      "group": "Группа 4",
+      "created_at": "2025-09-13T09:34:04.390200"
+    },
+    {
+      "id": "user_c1188efb",
+      "email": "дмитрий.иванов12@gmail.com",
+      "name": "Дмитрий Иванов",
+      "role": "student",
+      "group": "Группа 2",
+      "created_at": "2025-09-13T17:38:03.390208"
+    },
+    {
+      "id": "user_a5ffac4d",
+      "email": "иван.федоров13@gmail.com",
+      "name": "Иван Федоров",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-10-01T00:58:22.390218"
+    },
+    {
+      "id": "user_9c236c42",
+      "email": "андрей.волков14@mail.ru",
+      "name": "Андрей Волков",
+      "role": "student",
+      "group": "Группа 2",
+      "created_at": "2025-11-13T01:06:24.390227"
+    },
+    {
+      "id": "user_38e49d40",
+      "email": "роман.иванов15@hotmail.com",
+      "name": "Роман Иванов",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-08-31T08:41:46.390235"
+    },
+    {
+      "id": "user_61a4264b",
+      "email": "павел.лебедев16@gmail.com",
+      "name": "Павел Лебедев",
+      "role": "student",
+      "group": "Группа 5",
+      "created_at": "2025-11-25T02:06:45.390242"
+    },
+    {
+      "id": "user_e0d6c921",
+      "email": "александр.михайлов17@mail.ru",
+      "name": "Александр Михайлов",
+      "role": "student",
+      "group": "Группа 2",
+      "created_at": "2025-09-07T12:27:15.390252"
+    },
+    {
+      "id": "user_1b24fdbd",
+      "email": "артем.федоров18@gmail.com",
+      "name": "Артем Федоров",
+      "role": "student",
+      "group": "Группа 5",
+      "created_at": "2025-10-14T15:58:19.390259"
+    },
+    {
+      "id": "user_e2cea9f0",
+      "email": "владимир.волков19@hotmail.com",
+      "name": "Владимир Волков",
+      "role": "student",
+      "group": "Группа 5",
+      "created_at": "2025-11-22T12:54:52.390266"
+    },
+    {
+      "id": "user_dd9409f0",
+      "email": "анна.сидоров20@hotmail.com",
+      "name": "Анна Сидоров",
+      "role": "student",
+      "group": "Группа 2",
+      "created_at": "2025-08-31T07:11:16.390274"
+    },
+    {
+      "id": "user_7e999798",
+      "email": "николай.михайлов21@hotmail.com",
+      "name": "Николай Михайлов",
+      "role": "student",
+      "group": "Группа 4",
+      "created_at": "2025-08-25T07:37:26.390281"
+    },
+    {
+      "id": "user_65b0e64f",
+      "email": "владимир.морозов22@yandex.ru",
+      "name": "Владимир Морозов",
+      "role": "student",
+      "group": "Группа 5",
+      "created_at": "2025-08-30T04:43:17.390289"
+    },
+    {
+      "id": "user_6c29b507",
+      "email": "андрей.новиков23@yandex.ru",
+      "name": "Андрей Новиков",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-10-13T19:23:45.390296"
+    },
+    {
+      "id": "user_82e9ea91",
+      "email": "михаил.федоров24@mail.ru",
+      "name": "Михаил Федоров",
+      "role": "student",
+      "group": "Группа 4",
+      "created_at": "2025-11-16T06:07:32.390303"
+    },
+    {
+      "id": "user_b15a97c0",
+      "email": "мария.волков25@yandex.ru",
+      "name": "Мария Волков",
+      "role": "student",
+      "group": "Группа 4",
+      "created_at": "2025-09-14T20:09:07.390310"
+    },
+    {
+      "id": "user_ded6e947",
+      "email": "александр.новиков26@mail.ru",
+      "name": "Александр Новиков",
+      "role": "student",
+      "group": "Группа 4",
+      "created_at": "2025-11-19T18:10:32.390318"
+    },
+    {
+      "id": "user_a7b13d31",
+      "email": "владимир.сидоров27@mail.ru",
+      "name": "Владимир Сидоров",
+      "role": "student",
+      "group": "Группа 5",
+      "created_at": "2025-08-30T11:51:45.390326"
+    },
+    {
+      "id": "user_8952b431",
+      "email": "роман.соколов28@yandex.ru",
+      "name": "Роман Соколов",
+      "role": "student",
+      "group": "Группа 5",
+      "created_at": "2025-10-24T02:56:49.390335"
+    },
+    {
+      "id": "user_d19f004e",
+      "email": "светлана.петров29@gmail.com",
+      "name": "Светлана Петров",
+      "role": "student",
+      "group": "Группа 5",
+      "created_at": "2025-11-26T23:28:06.390342"
+    },
+    {
+      "id": "user_1bcedeac",
+      "email": "ольга.петров30@gmail.com",
+      "name": "Ольга Петров",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-09-02T10:25:49.390351"
+    },
+    {
+      "id": "user_3ae775b2",
+      "email": "елена.сидоров31@mail.ru",
+      "name": "Елена Сидоров",
+      "role": "student",
+      "group": "Группа 5",
+      "created_at": "2025-09-15T10:14:04.390359"
+    },
+    {
+      "id": "user_5b0b43cc",
+      "email": "светлана.сидоров32@hotmail.com",
+      "name": "Светлана Сидоров",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-10-25T04:30:30.390366"
+    },
+    {
+      "id": "user_09ab18fc",
+      "email": "павел.иванов33@outlook.com",
+      "name": "Павел Иванов",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-09-14T03:48:00.390374"
+    },
+    {
+      "id": "user_ca2747c8",
+      "email": "ирина.смирнов34@gmail.com",
+      "name": "Ирина Смирнов",
+      "role": "student",
+      "group": "Группа 2",
+      "created_at": "2025-08-28T05:24:53.390381"
+    },
+    {
+      "id": "user_2cece5fb",
+      "email": "ольга.соколов35@outlook.com",
+      "name": "Ольга Соколов",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-10-06T20:38:35.390389"
+    },
+    {
+      "id": "user_d98b8b10",
+      "email": "юлия.федоров36@gmail.com",
+      "name": "Юлия Федоров",
+      "role": "student",
+      "group": "Группа 5",
+      "created_at": "2025-10-24T07:53:46.390396"
+    },
+    {
+      "id": "user_d0a91a64",
+      "email": "мария.смирнов37@hotmail.com",
+      "name": "Мария Смирнов",
+      "role": "student",
+      "group": "Группа 2",
+      "created_at": "2025-11-23T23:35:52.390403"
+    },
+    {
+      "id": "user_6a899247",
+      "email": "ольга.иванов38@hotmail.com",
+      "name": "Ольга Иванов",
+      "role": "student",
+      "group": "Группа 1",
+      "created_at": "2025-09-13T11:23:44.390411"
+    },
+    {
+      "id": "user_2f324d53",
+      "email": "сергей.федоров39@mail.ru",
+      "name": "Сергей Федоров",
+      "role": "student",
+      "group": "Группа 4",
+      "created_at": "2025-10-25T10:38:26.390418"
+    },
+    {
+      "id": "user_d262b946",
+      "email": "иван.попов40@outlook.com",
+      "name": "Иван Попов",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-11-05T11:41:39.390425"
+    },
+    {
+      "id": "user_7b2128cd",
+      "email": "татьяна.лебедев41@outlook.com",
+      "name": "Татьяна Лебедев",
+      "role": "student",
+      "group": "Группа 2",
+      "created_at": "2025-09-07T20:39:29.390433"
+    },
+    {
+      "id": "user_f834a1c8",
+      "email": "николай.иванов42@yandex.ru",
+      "name": "Николай Иванов",
+      "role": "student",
+      "group": "Группа 1",
+      "created_at": "2025-09-26T18:26:38.390441"
+    },
+    {
+      "id": "user_602f04f7",
+      "email": "анна.попов43@yandex.ru",
+      "name": "Анна Попов",
+      "role": "student",
+      "group": "Группа 3",
+      "created_at": "2025-08-24T06:25:50.390449"
+    },
+    {
+      "id": "user_253e41f6",
+      "email": "наталья.новиков44@yandex.ru",
+      "name": "Наталья Новиков",
+      "role": "student",
+      "group": "Группа 2",
+      "created_at": "2025-11-08T05:53:33.390458"
+    }
+  ],
+  "blueprints": [
+    {
+      "id": "bp_cc7533",
+      "name": "Тест по курсу 'Алгоритмы и структуры данных'",
+      "description": "Итоговый тест по темам: деревья, динамическое программирование, поиск",
+      "course_id": "algorithms",
+      "rules": {
+        "topics": [
+          "деревья",
+          "динамическое программирование",
+          "поиск"
+        ],
+        "difficulty": [
+          2,
+          4
+        ],
+        "types": [
+          "matching",
+          "multiple_choice",
+          "code",
+          "single_choice"
+        ],
+        "count": 10,
+        "sort_by_difficulty": true
+      },
+      "tags": [
+        "открытый",
+        "алгоритм",
+        "легкий",
+        "веб"
+      ],
+      "time_limit_minutes": 45,
+      "shuffle_questions": false,
+      "shuffle_answers": true,
+      "allow_back": true,
+      "negative_marking": true,
+      "created_at": "2025-11-09T09:57:06.390496"
+    },
+    {
+      "id": "bp_d358bf",
+      "name": "Тест по курсу 'Введение в Data Science'",
+      "description": "Итоговый тест по темам: pandas, визуализация",
+      "course_id": "ds_intro",
+      "rules": {
+        "topics": [
+          "pandas",
+          "визуализация"
+        ],
+        "difficulty": [
+          3,
+          5
+        ],
+        "types": [
+          "true_false",
+          "multiple_choice",
+          "single_choice"
+        ],
+        "count": 25,
+        "sort_by_difficulty": true
+      },
+      "tags": [
+        "выбор",
+        "память",
+        "оптимизация",
+        "сеть",
+        "мобильный"
+      ],
+      "time_limit_minutes": 30,
+      "shuffle_questions": false,
+      "shuffle_answers": true,
+      "allow_back": true,
+      "negative_marking": true,
+      "created_at": "2025-11-22T16:15:29.390518"
+    },
+    {
+      "id": "bp_c67561",
+      "name": "Тест по курсу 'Python для начинающих'",
+      "description": "Итоговый тест по темам: ООП, типы данных",
+      "course_id": "python101",
+      "rules": {
+        "topics": [
+          "ООП",
+          "типы данных"
+        ],
+        "difficulty": [
+          1,
+          5
+        ],
+        "types": [
+          "matching",
+          "single_choice"
+        ],
+        "count": 10,
+        "sort_by_difficulty": true
+      },
+      "tags": [
+        "debug",
+        "память",
+        "средний",
+        "выбор"
+      ],
+      "time_limit_minutes": 90,
+      "shuffle_questions": true,
+      "shuffle_answers": false,
+      "allow_back": false,
+      "negative_marking": true,
+      "created_at": "2025-11-05T03:16:06.390537"
+    },
+    {
+      "id": "bp_fcf3be",
+      "name": "Тест по курсу 'Алгоритмы и структуры данных'",
+      "description": "Итоговый тест по темам: деревья",
+      "course_id": "algorithms",
+      "rules": {
+        "topics": [
+          "деревья"
+        ],
+        "difficulty": [
+          3,
+          4
+        ],
+        "types": [
+          "open_answer",
+          "matching",
+          "single_choice"
+        ],
+        "count": 25,
+        "sort_by_difficulty": true
+      },
+      "tags": [
+        "тестирование",
+        "безопасность",
+        "сеть",
+        "теория"
+      ],
+      "time_limit_minutes": 30,
+      "shuffle_questions": true,
+      "shuffle_answers": false,
+      "allow_back": true,
+      "negative_marking": true,
+      "created_at": "2025-11-18T15:49:26.390553"
+    },
+    {
+      "id": "bp_4078f9",
+      "name": "Тест по курсу 'Алгоритмы и структуры данных'",
+      "description": "Итоговый тест по темам: графы",
+      "course_id": "algorithms",
+      "rules": {
+        "topics": [
+          "графы"
+        ],
+        "difficulty": [
+          2,
+          4
+        ],
+        "types": [
+          "matching",
+          "code"
+        ],
+        "count": 25,
+        "sort_by_difficulty": false
+      },
+      "tags": [
+        "производительность",
+        "тестирование",
+        "debug"
+      ],
+      "time_limit_minutes": 120,
+      "shuffle_questions": true,
+      "shuffle_answers": true,
+      "allow_back": true,
+      "negative_marking": true,
+      "created_at": "2025-11-23T01:43:20.390568"
+    }
+  ],
+  "rules": [
+    {
+      "id": "rule_multiple_choice",
+      "name": "Оценка множественного выбора",
+      "condition": {
+        "type": "multiple_choice"
+      },
+      "action": {
+        "correct": 1,
+        "incorrect": 0,
+        "penalty": 0.25
+      }
+    },
+    {
+      "id": "rule_single_choice",
+      "name": "Оценка одиночного выбора",
+      "condition": {
+        "type": "single_choice"
+      },
+      "action": {
+        "correct": 1,
+        "incorrect": 0,
+        "penalty": 0
+      }
+    },
+    {
+      "id": "rule_open_answer",
+      "name": "Оценка открытого ответа",
+      "condition": {
+        "type": "open_answer"
+      },
+      "action": {
+        "max": 5,
+        "min": 0,
+        "partial_credit": true
+      }
+    },
+    {
+      "id": "rule_code",
+      "name": "Оценка кода",
+      "condition": {
+        "type": "code"
+      },
+      "action": {
+        "per_test_case": 1,
+        "max": 10,
+        "compile_error": 0
+      }
+    },
+    {
+      "id": "rule_true_false",
+      "name": "Оценка верно/неверно",
+      "condition": {
+        "type": "true_false"
+      },
+      "action": {
+        "correct": 1,
+        "incorrect": -0.5,
+        "penalty": 0.5
+      }
+    },
+    {
+      "id": "rule_matching",
+      "name": "Оценка сопоставления",
+      "condition": {
+        "type": "matching"
+      },
+      "action": {
+        "per_match": 0.33,
+        "max": 1,
+        "min": 0
+      }
+    }
+  ],
+  "generated_at": "2025-12-03T02:28:21.390587",
+  "metadata": {
+    "total_items": 204,
+    "total_users": 45,
+    "total_courses": 4,
+    "total_lessons": 12,
+    "total_blueprints": 5,
+    "difficulty_distribution": {
+      "1": 35,
+      "2": 46,
+      "3": 43,
+      "4": 48,
+      "5": 32
+    },
+    "type_distribution": {
+      "multiple_choice": 37,
+      "single_choice": 33,
+      "open_answer": 32,
+      "code": 35,
+      "true_false": 32,
+      "matching": 35
+    }
+  }
+}

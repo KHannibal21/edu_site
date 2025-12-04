@@ -1,0 +1,442 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}EduPlatform - Главная{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="home-page">
+    <!-- Hero секция -->
+    <section class="home-hero" aria-label="Основной баннер">
+        <div class="home-hero-background">
+            <div class="home-hero-shape shape-1"></div>
+            <div class="home-hero-shape shape-2"></div>
+            <div class="home-hero-shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="home-hero-content">
+                <div class="home-hero-text" data-animate>
+                    <div class="home-hero-badge">
+                        <i class="fas fa-rocket"></i>
+                        <span>Лучшая образовательная платформа 2025</span>
+                    </div>
+                    <h1 class="home-hero-title">Образование, которое <span class="home-highlight">меняет жизнь</span></h1>
+                    <p class="home-hero-description">Освойте востребованные навыки с лучшими преподавателями. Начните свой путь к успешной карьере уже сегодня.</p>
+                    <div class="home-hero-buttons">
+                        <a href="{% url 'courses:courses' %}" class="btn btn-primary btn-large">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Начать обучение</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="{% url 'about:about' %}" class="btn btn-outline btn-large">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Узнать больше</span>
+                        </a>
+                    </div>
+                    <div class="home-hero-stats">
+                        <div class="home-hero-stat">
+                            <div class="home-hero-stat-number" data-count="10000">0</div>
+                            <div class="home-hero-stat-label">
+                                <i class="fas fa-users"></i>
+                                <span>Студентов</span>
+                            </div>
+                        </div>
+                        <div class="home-hero-stat">
+                            <div class="home-hero-stat-number" data-count="150">0</div>
+                            <div class="home-hero-stat-label">
+                                <i class="fas fa-book-open"></i>
+                                <span>Курсов</span>
+                            </div>
+                        </div>
+                        <div class="home-hero-stat">
+                            <div class="home-hero-stat-number" data-count="95">0</div>
+                            <div class="home-hero-stat-label">
+                                <i class="fas fa-chart-line"></i>
+                                <span>% Успеваемость</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-hero-visual" data-animate>
+                    <div class="home-features-showcase">
+                        <div class="home-feature-block">
+                            <div class="home-feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="home-feature-content">
+                                <h4>Дипломы</h4>
+                                <p>Официальные сертификаты</p>
+                                <div class="home-feature-progress">
+                                    <div class="home-progress-bar">
+                                        <div class="home-progress-fill" data-width="95"></div>
+                                    </div>
+                                    <span>95% трудоустраиваются</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="home-feature-block">
+                            <div class="home-feature-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <div class="home-feature-content">
+                                <h4>Эксперты</h4>
+                                <p>Опытные преподаватели</p>
+                                <div class="home-feature-stats">
+                                    <div class="home-feature-stat-item">
+                                        <span class="home-feature-stat-value">50+</span>
+                                        <span class="home-feature-stat-label">преподавателей</span>
+                                    </div>
+                                    <div class="home-feature-stat-item">
+                                        <span class="home-feature-stat-value">5+</span>
+                                        <span class="home-feature-stat-label">лет опыта</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="home-feature-block">
+                            <div class="home-feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="home-feature-content">
+                                <h4>Скорость</h4>
+                                <p>Быстрые результаты</p>
+                                <div class="home-speed-metrics">
+                                    <div class="home-speed-metric">
+                                        <span class="home-speed-metric-value">2.5x</span>
+                                        <span class="home-speed-metric-label">быстрее обучения</span>
+                                    </div>
+                                    <div class="home-speed-metric">
+                                        <span class="home-speed-metric-value">87%</span>
+                                        <span class="home-speed-metric-label">завершают курс</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные курсы -->
+    <section class="home-popular-courses" aria-label="Популярные курсы">
+        <div class="container">
+            <div class="home-section-header" data-animate>
+                <h2>Популярные курсы</h2>
+                <p>Выберите направление для развития</p>
+                <a href="{% url 'courses:courses' %}" class="home-section-link">
+                    Все курсы
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="home-courses-grid" data-animate>
+                <div class="home-course-card">
+                    <div class="home-course-badge home-course-bestseller">Бестселлер</div>
+                    <div class="home-course-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="home-course-title">Python с нуля</h3>
+                    <p class="home-course-description">Освойте один из самых популярных языков программирования с практическими проектами</p>
+                    <div class="home-course-meta">
+                        <span class="home-course-duration">
+                            <i class="fas fa-clock"></i>
+                            48 часов
+                        </span>
+                        <span class="home-course-level">
+                            <i class="fas fa-bullseye"></i>
+                            Для начинающих
+                        </span>
+                    </div>
+                    <div class="home-progress-bar">
+                        <div class="home-progress-fill" data-width="85"></div>
+                    </div>
+                    <div class="home-course-enrollment">85% студентов завершили</div>
+                    <div class="home-course-footer">
+                        <div class="home-course-rating">
+                            <div class="home-course-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (2.1k)</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-primary">
+                            Подробнее
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="home-course-card">
+                    <div class="home-course-badge home-course-hot">Горячий</div>
+                    <div class="home-course-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="home-course-title">Веб-разработка</h3>
+                    <p class="home-course-description">Создавайте современные веб-приложения с нуля. React, Node.js и многое другое</p>
+                    <div class="home-course-meta">
+                        <span class="home-course-duration">
+                            <i class="fas fa-clock"></i>
+                            72 часа
+                        </span>
+                        <span class="home-course-level">
+                            <i class="fas fa-bullseye"></i>
+                            Средний уровень
+                        </span>
+                    </div>
+                    <div class="home-progress-bar">
+                        <div class="home-progress-fill" data-width="78"></div>
+                    </div>
+                    <div class="home-course-enrollment">78% студентов завершили</div>
+                    <div class="home-course-footer">
+                        <div class="home-course-rating">
+                            <div class="home-course-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.8 (1.8k)</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-primary">
+                            Подробнее
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="home-course-card">
+                    <div class="home-course-badge home-course-new">Новый</div>
+                    <div class="home-course-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="home-course-title">Data Science</h3>
+                    <p class="home-course-description">Анализ данных и машинное обучение. Python, Pandas, Scikit-learn</p>
+                    <div class="home-course-meta">
+                        <span class="home-course-duration">
+                            <i class="fas fa-clock"></i>
+                            96 часов
+                        </span>
+                        <span class="home-course-level">
+                            <i class="fas fa-bullseye"></i>
+                            Продвинутый
+                        </span>
+                    </div>
+                    <div class="home-progress-bar">
+                        <div class="home-progress-fill" data-width="92"></div>
+                    </div>
+                    <div class="home-course-enrollment">92% студентов завершили</div>
+                    <div class="home-course-footer">
+                        <div class="home-course-rating">
+                            <div class="home-course-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (1.2k)</span>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-primary">
+                            Подробнее
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="home-advantages" aria-label="Наши преимущества">
+        <div class="container">
+            <div class="home-section-header" data-animate>
+                <h2>Почему выбирают нас?</h2>
+                <p>Лучшие условия для эффективного обучения</p>
+            </div>
+
+            <div class="home-advantages-grid" data-animate>
+                <div class="home-advantage-card">
+                    <div class="home-advantage-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Практические навыки</h3>
+                    <p>Фокус на реальных проектах и задачах, которые пригодятся в работе</p>
+                </div>
+
+                <div class="home-advantage-card">
+                    <div class="home-advantage-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Опытные преподаватели</h3>
+                    <p>Обучение у практикующих специалистов с многолетним опытом</p>
+                </div>
+
+                <div class="home-advantage-card">
+                    <div class="home-advantage-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Гибкий график</h3>
+                    <p>Учитесь в удобное время из любой точки мира</p>
+                </div>
+
+                <div class="home-advantage-card">
+                    <div class="home-advantage-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Поддержка</h3>
+                    <p>Помощь преподавателей и сообщества 24/7</p>
+                </div>
+
+                <div class="home-advantage-card">
+                    <div class="home-advantage-icon">
+                        <i class="fas fa-scroll"></i>
+                    </div>
+                    <h3>Сертификаты</h3>
+                    <p>Официальные документы о прохождении курсов</p>
+                </div>
+
+                <div class="home-advantage-card">
+                    <div class="home-advantage-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Карьера</h3>
+                    <p>Помощь в трудоустройстве после обучения</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="home-testimonials" aria-label="Отзывы студентов">
+        <div class="container">
+            <div class="home-section-header" data-animate>
+                <h2>Отзывы студентов</h2>
+                <p>Что говорят наши выпускники</p>
+            </div>
+
+            <div class="home-testimonials-grid" data-animate>
+                <div class="home-testimonial-card">
+                    <div class="home-testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="home-testimonial-content">
+                        <p>"Курс по Python изменил мою карьеру. Сейчас работаю backend-разработчиком в крупной компании!"</p>
+                    </div>
+                    <div class="home-testimonial-author">
+                        <div class="home-testimonial-author-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="home-testimonial-author-info">
+                            <h4>Иосиф Сталин</h4>
+                            <p>Backend Developer</p>
+                            <span>Выпуск 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="home-testimonial-card">
+                    <div class="home-testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="home-testimonial-content">
+                        <p>"Отличная платформа! Преподаватели всегда на связи, материалы актуальные и полезные."</p>
+                    </div>
+                    <div class="home-testimonial-author">
+                        <div class="home-testimonial-author-avatar">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="home-testimonial-author-info">
+                            <h4>Әлихан Бөкейханов</h4>
+                            <p>Fullstack Developer</p>
+                            <span>Выпуск 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="home-testimonial-card">
+                    <div class="home-testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="home-testimonial-content">
+                        <p>"Смог сменить профессию в 35 лет. Спасибо команде за поддержку и качественные курсы!"</p>
+                    </div>
+                    <div class="home-testimonial-author">
+                        <div class="home-testimonial-author-avatar">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="home-testimonial-author-info">
+                            <h4>Абай Құнанбаев</h4>
+                            <p>Data Analyst</p>
+                            <span>Выпуск 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA секция -->
+    <section class="home-cta" aria-label="Призыв к действию">
+        <div class="home-cta-background">
+            <div class="home-cta-shape shape-1"></div>
+            <div class="home-cta-shape shape-2"></div>
+        </div>
+        <div class="container">
+            <div class="home-cta-content" data-animate>
+                <h2>Готовы начать обучение?</h2>
+                <p>Присоединяйтесь к тысячам студентов по всему миру</p>
+                <div class="home-cta-buttons">
+                    <a href="{% url 'accounts:register' %}" class="btn btn-primary btn-large">
+                        <i class="fas fa-user-plus"></i>
+                        Начать бесплатно
+                    </a>
+                    <a href="{% url 'courses:courses' %}" class="btn btn-outline btn-large">
+                        <i class="fas fa-eye"></i>
+                        Посмотреть курсы
+                    </a>
+                </div>
+                <div class="home-cta-features">
+                    <div class="home-cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        7 дней бесплатно
+                    </div>
+                    <div class="home-cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        Доступ ко всем курсам
+                    </div>
+                    <div class="home-cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        Поддержка 24/7
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

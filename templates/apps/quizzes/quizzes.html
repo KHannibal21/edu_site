@@ -1,0 +1,744 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Тесты - EduPlatform{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/quizzes.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="quizzes-page">
+    <!-- Hero секция -->
+    <section class="quizzes-hero" aria-label="Тесты и викторины">
+        <div class="quizzes-hero-particles"></div>
+        <div class="container">
+            <div class="quizzes-hero-content quizzes-animate">
+                <div class="quizzes-hero-badge">
+                    <i class="fas fa-brain"></i>
+                    <span>Более 2000+ тестов</span>
+                </div>
+                <h1 class="quizzes-hero-title">Прокачайте <span class="highlight">интеллект</span> через тесты</h1>
+                <p class="quizzes-hero-description">От программирования до искусства, от науки до бизнеса. Проверьте свои знания и соревнуйтесь с лучшими!</p>
+
+                <div class="quizzes-search-box">
+                    <input type="text" class="quizzes-search-input" placeholder="Найти тест по теме, ключевому слову...">
+                    <button class="quizzes-search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="quizzes-hero-stats">
+                    <div class="quizzes-stat">
+                        <div class="quizzes-stat-number" data-count="2150">0</div>
+                        <div class="quizzes-stat-label">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Тестов доступно</span>
+                        </div>
+                    </div>
+                    <div class="quizzes-stat">
+                        <div class="quizzes-stat-number" data-count="98">0</div>
+                        <div class="quizzes-stat-label">
+                            <i class="fas fa-users"></i>
+                            <span>% удовлетворенности</span>
+                        </div>
+                    </div>
+                    <div class="quizzes-stat">
+                        <div class="quizzes-stat-number" data-count="127">0</div>
+                        <div class="quizzes-stat-label">
+                            <i class="fas fa-trophy"></i>
+                            <span>Категорий знаний</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Категории тестов -->
+    <section class="quizzes-categories" aria-label="Категории тестов">
+        <div class="container">
+            <div class="quizzes-section-header quizzes-animate">
+                <h2>Исследуйте категории</h2>
+                <p>Выберите интересующую вас область знаний</p>
+            </div>
+
+            <div class="quizzes-categories-grid">
+                <div class="quizzes-category-card quizzes-animate" data-category="programming">
+                    <div class="quizzes-category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="quizzes-category-title">Программирование</h3>
+                    <span class="quizzes-category-count">450+ тестов</span>
+                    <p class="quizzes-category-description">Python, JavaScript, Java, C++, Go, Rust и другие языки программирования</p>
+                    <div class="quizzes-category-progress">
+                        <div class="quizzes-category-progress-bar" data-width="92"></div>
+                    </div>
+                    <div class="quizzes-category-stats">
+                        <span>92% завершают</span>
+                        <span>4.9★ рейтинг</span>
+                    </div>
+                </div>
+
+                <div class="quizzes-category-card quizzes-animate" data-category="design">
+                    <div class="quizzes-category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="quizzes-category-title">Дизайн</h3>
+                    <span class="quizzes-category-count">380+ тестов</span>
+                    <p class="quizzes-category-description">UI/UX, графический дизайн, веб-дизайн, типографика, 3D моделирование</p>
+                    <div class="quizzes-category-progress">
+                        <div class="quizzes-category-progress-bar" data-width="88"></div>
+                    </div>
+                    <div class="quizzes-category-stats">
+                        <span>88% завершают</span>
+                        <span>4.8★ рейтинг</span>
+                    </div>
+                </div>
+
+                <div class="quizzes-category-card quizzes-animate" data-category="business">
+                    <div class="quizzes-category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="quizzes-category-title">Бизнес</h3>
+                    <span class="quizzes-category-count">320+ тестов</span>
+                    <p class="quizzes-category-description">Маркетинг, менеджмент, финансы, предпринимательство, MBA</p>
+                    <div class="quizzes-category-progress">
+                        <div class="quizzes-category-progress-bar" data-width="85"></div>
+                    </div>
+                    <div class="quizzes-category-stats">
+                        <span>85% завершают</span>
+                        <span>4.7★ рейтинг</span>
+                    </div>
+                </div>
+
+                <div class="quizzes-category-card quizzes-animate" data-category="science">
+                    <div class="quizzes-category-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3 class="quizzes-category-title">Наука</h3>
+                    <span class="quizzes-category-count">410+ тестов</span>
+                    <p class="quizzes-category-description">Математика, физика, химия, биология, астрономия, геология</p>
+                    <div class="quizzes-category-progress">
+                        <div class="quizzes-category-progress-bar" data-width="79"></div>
+                    </div>
+                    <div class="quizzes-category-stats">
+                        <span>79% завершают</span>
+                        <span>4.8★ рейтинг</span>
+                    </div>
+                </div>
+
+                <div class="quizzes-category-card quizzes-animate" data-category="languages">
+                    <div class="quizzes-category-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="quizzes-category-title">Языки</h3>
+                    <span class="quizzes-category-count">280+ тестов</span>
+                    <p class="quizzes-category-description">Английский, немецкий, французский, испанский, китайский, японский</p>
+                    <div class="quizzes-category-progress">
+                        <div class="quizzes-category-progress-bar" data-width="91"></div>
+                    </div>
+                    <div class="quizzes-category-stats">
+                        <span>91% завершают</span>
+                        <span>4.9★ рейтинг</span>
+                    </div>
+                </div>
+
+                <div class="quizzes-category-card quizzes-animate" data-category="history">
+                    <div class="quizzes-category-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="quizzes-category-title">История</h3>
+                    <span class="quizzes-category-count">190+ тестов</span>
+                    <p class="quizzes-category-description">Мировая история, искусство, культура, археология, политика</p>
+                    <div class="quizzes-category-progress">
+                        <div class="quizzes-category-progress-bar" data-width="76"></div>
+                    </div>
+                    <div class="quizzes-category-stats">
+                        <span>76% завершают</span>
+                        <span>4.6★ рейтинг</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Избранные тесты -->
+    <section class="quizzes-featured" aria-label="Популярные тесты">
+        <div class="container">
+            <div class="quizzes-section-header quizzes-animate">
+                <h2>Популярные тесты</h2>
+                <p>Проверенные тысячами пользователей</p>
+            </div>
+
+            <div class="quizzes-grid">
+                <!-- Тест 1 -->
+                <div class="quizzes-card quizzes-animate" data-quiz-id="1" data-category="programming">
+                    <div class="quizzes-card-header">
+                        <span class="quizzes-card-badge">Хит недели</span>
+                        <h3 class="quizzes-card-title">Python для начинающих</h3>
+                        <div class="quizzes-card-category">
+                            <i class="fas fa-code"></i>
+                            Программирование
+                        </div>
+                        <span class="quizzes-card-difficulty quizzes-difficulty-beginner">
+                            <i class="fas fa-signal"></i>
+                            Начинающий
+                        </span>
+                    </div>
+                    <div class="quizzes-card-body">
+                        <p class="quizzes-card-description">Основы Python: синтаксис, структуры данных, функции. Идеально для новичков в программировании.</p>
+                        <div class="quizzes-card-meta">
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-question-circle"></i>
+                                25 вопросов
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-clock"></i>
+                                20 минут
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-user-friends"></i>
+                                25.2k прошли
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quizzes-card-footer">
+                        <div class="quizzes-card-rating">
+                            <div class="quizzes-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="quizzes-rating-text">4.7 (12.5k оценок)</span>
+                        </div>
+                        <button class="quizzes-start-btn">
+                            Начать тест
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 2 -->
+                <div class="quizzes-card quizzes-animate" data-quiz-id="2" data-category="design">
+                    <div class="quizzes-card-header">
+                        <span class="quizzes-card-badge">Новый</span>
+                        <h3 class="quizzes-card-title">Основы UI/UX дизайна</h3>
+                        <div class="quizzes-card-category">
+                            <i class="fas fa-palette"></i>
+                            Дизайн
+                        </div>
+                        <span class="quizzes-card-difficulty quizzes-difficulty-intermediate">
+                            <i class="fas fa-signal"></i>
+                            Средний
+                        </span>
+                    </div>
+                    <div class="quizzes-card-body">
+                        <p class="quizzes-card-description">Принципы пользовательского интерфейса и опыта. Тестирование, прототипирование, юзабилити.</p>
+                        <div class="quizzes-card-meta">
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-question-circle"></i>
+                                30 вопросов
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-clock"></i>
+                                25 минут
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-user-friends"></i>
+                                18.7k прошли
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quizzes-card-footer">
+                        <div class="quizzes-card-rating">
+                            <div class="quizzes-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="quizzes-rating-text">4.9 (8.2k оценок)</span>
+                        </div>
+                        <button class="quizzes-start-btn">
+                            Начать тест
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 3 -->
+                <div class="quizzes-card quizzes-animate" data-quiz-id="3" data-category="science">
+                    <div class="quizzes-card-header">
+                        <h3 class="quizzes-card-title">Квантовая физика</h3>
+                        <div class="quizzes-card-category">
+                            <i class="fas fa-atom"></i>
+                            Наука
+                        </div>
+                        <span class="quizzes-card-difficulty quizzes-difficulty-advanced">
+                            <i class="fas fa-signal"></i>
+                            Продвинутый
+                        </span>
+                    </div>
+                    <div class="quizzes-card-body">
+                        <p class="quizzes-card-description">Сложные концепции квантовой механики. Для студентов и энтузиастов физики.</p>
+                        <div class="quizzes-card-meta">
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-question-circle"></i>
+                                35 вопросов
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-clock"></i>
+                                30 минут
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-user-friends"></i>
+                                8.5k прошли
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quizzes-card-footer">
+                        <div class="quizzes-card-rating">
+                            <div class="quizzes-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="quizzes-rating-text">4.8 (4.1k оценок)</span>
+                        </div>
+                        <button class="quizzes-start-btn">
+                            Начать тест
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 4 -->
+                <div class="quizzes-card quizzes-animate" data-quiz-id="4" data-category="business">
+                    <div class="quizzes-card-header">
+                        <span class="quizzes-card-badge">Рекомендуем</span>
+                        <h3 class="quizzes-card-title">Основы финансов</h3>
+                        <div class="quizzes-card-category">
+                            <i class="fas fa-chart-line"></i>
+                            Бизнес
+                        </div>
+                        <span class="quizzes-card-difficulty quizzes-difficulty-beginner">
+                            <i class="fas fa-signal"></i>
+                            Начинающий
+                        </span>
+                    </div>
+                    <div class="quizzes-card-body">
+                        <p class="quizzes-card-description">Базовые понятия финансов, инвестиций, управления бюджетом.</p>
+                        <div class="quizzes-card-meta">
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-question-circle"></i>
+                                20 вопросов
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-clock"></i>
+                                15 минут
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-user-friends"></i>
+                                22.3k прошли
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quizzes-card-footer">
+                        <div class="quizzes-card-rating">
+                            <div class="quizzes-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="quizzes-rating-text">4.6 (9.8k оценок)</span>
+                        </div>
+                        <button class="quizzes-start-btn">
+                            Начать тест
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 5 -->
+                <div class="quizzes-card quizzes-animate" data-quiz-id="5" data-category="languages">
+                    <div class="quizzes-card-header">
+                        <h3 class="quizzes-card-title">Английский B2 Intermediate</h3>
+                        <div class="quizzes-card-category">
+                            <i class="fas fa-language"></i>
+                            Языки
+                        </div>
+                        <span class="quizzes-card-difficulty quizzes-difficulty-intermediate">
+                            <i class="fas fa-signal"></i>
+                            Средний
+                        </span>
+                    </div>
+                    <div class="quizzes-card-body">
+                        <p class="quizzes-card-description">Грамматика, лексика, понимание на слух для уровня B2.</p>
+                        <div class="quizzes-card-meta">
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-question-circle"></i>
+                                40 вопросов
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-clock"></i>
+                                40 минут
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-user-friends"></i>
+                                31.5k прошли
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quizzes-card-footer">
+                        <div class="quizzes-card-rating">
+                            <div class="quizzes-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="quizzes-rating-text">4.9 (15.2k оценок)</span>
+                        </div>
+                        <button class="quizzes-start-btn">
+                            Начать тест
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 6 -->
+                <div class="quizzes-card quizzes-animate" data-quiz-id="6" data-category="history">
+                    <div class="quizzes-card-header">
+                        <span class="quizzes-card-badge">Популярный</span>
+                        <h3 class="quizzes-card-title">Вторая мировая война</h3>
+                        <div class="quizzes-card-category">
+                            <i class="fas fa-landmark"></i>
+                            История
+                        </div>
+                        <span class="quizzes-card-difficulty quizzes-difficulty-intermediate">
+                            <i class="fas fa-signal"></i>
+                            Средний
+                        </span>
+                    </div>
+                    <div class="quizzes-card-body">
+                        <p class="quizzes-card-description">Ключевые события, личности, сражения Второй мировой войны.</p>
+                        <div class="quizzes-card-meta">
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-question-circle"></i>
+                                25 вопросов
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-clock"></i>
+                                20 минут
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-user-friends"></i>
+                                14.8k прошли
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quizzes-card-footer">
+                        <div class="quizzes-card-rating">
+                            <div class="quizzes-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="quizzes-rating-text">4.7 (6.3k оценок)</span>
+                        </div>
+                        <button class="quizzes-start-btn">
+                            Начать тест
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 7 -->
+                <div class="quizzes-card quizzes-animate" data-quiz-id="7" data-category="programming">
+                    <div class="quizzes-card-header">
+                        <h3 class="quizzes-card-title">JavaScript Advanced</h3>
+                        <div class="quizzes-card-category">
+                            <i class="fas fa-code"></i>
+                            Программирование
+                        </div>
+                        <span class="quizzes-card-difficulty quizzes-difficulty-advanced">
+                            <i class="fas fa-signal"></i>
+                            Продвинутый
+                        </span>
+                    </div>
+                    <div class="quizzes-card-body">
+                        <p class="quizzes-card-description">Closures, prototypes, async/await, design patterns в JavaScript.</p>
+                        <div class="quizzes-card-meta">
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-question-circle"></i>
+                                30 вопросов
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-clock"></i>
+                                25 минут
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-user-friends"></i>
+                                12.4k прошли
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quizzes-card-footer">
+                        <div class="quizzes-card-rating">
+                            <div class="quizzes-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="quizzes-rating-text">4.8 (7.1k оценок)</span>
+                        </div>
+                        <button class="quizzes-start-btn">
+                            Начать тест
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Тест 8 -->
+                <div class="quizzes-card quizzes-animate" data-quiz-id="8" data-category="science">
+                    <div class="quizzes-card-header">
+                        <span class="quizzes-card-badge">Новый</span>
+                        <h3 class="quizzes-card-title">Генетика и ДНК</h3>
+                        <div class="quizzes-card-category">
+                            <i class="fas fa-dna"></i>
+                            Наука
+                        </div>
+                        <span class="quizzes-card-difficulty quizzes-difficulty-intermediate">
+                            <i class="fas fa-signal"></i>
+                            Средний
+                        </span>
+                    </div>
+                    <div class="quizzes-card-body">
+                        <p class="quizzes-card-description">Основы генетики, структура ДНК, наследственные заболевания.</p>
+                        <div class="quizzes-card-meta">
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-question-circle"></i>
+                                28 вопросов
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-clock"></i>
+                                25 минут
+                            </div>
+                            <div class="quizzes-meta-item">
+                                <i class="fas fa-user-friends"></i>
+                                9.2k прошли
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quizzes-card-footer">
+                        <div class="quizzes-card-rating">
+                            <div class="quizzes-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="quizzes-rating-text">4.7 (4.8k оценок)</span>
+                        </div>
+                        <button class="quizzes-start-btn">
+                            Начать тест
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Особенности -->
+    <section class="quizzes-features" aria-label="Особенности платформы">
+        <div class="container">
+            <div class="quizzes-section-header quizzes-animate">
+                <h2>Почему наши тесты эффективны?</h2>
+                <p>Уникальный подход к проверке знаний</p>
+            </div>
+
+            <div class="quizzes-features-grid">
+                <div class="quizzes-feature-card quizzes-animate">
+                    <div class="quizzes-feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="quizzes-feature-title">Адаптивное тестирование</h3>
+                    <p class="quizzes-feature-description">Сложность вопросов подстраивается под ваш уровень знаний в реальном времени</p>
+                </div>
+
+                <div class="quizzes-feature-card quizzes-animate">
+                    <div class="quizzes-feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="quizzes-feature-title">Детальная статистика</h3>
+                    <p class="quizzes-feature-description">Полный разбор результатов, сильные и слабые стороны, рекомендации по улучшению</p>
+                </div>
+
+                <div class="quizzes-feature-card quizzes-animate">
+                    <div class="quizzes-feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="quizzes-feature-title">Соревновательный элемент</h3>
+                    <p class="quizzes-feature-description">Таблицы лидеров, достижения, бейджи для мотивации и вовлеченности</p>
+                </div>
+
+                <div class="quizzes-feature-card quizzes-animate">
+                    <div class="quizzes-feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="quizzes-feature-title">Мгновенные результаты</h3>
+                    <p class="quizzes-feature-description">Проверка ответов в реальном времени с подробными объяснениями</p>
+                </div>
+
+                <div class="quizzes-feature-card quizzes-animate">
+                    <div class="quizzes-feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="quizzes-feature-title">Мобильная оптимизация</h3>
+                    <p class="quizzes-feature-description">Проходите тесты в любое время с любого устройства</p>
+                </div>
+
+                <div class="quizzes-feature-card quizzes-animate">
+                    <div class="quizzes-feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="quizzes-feature-title">Защита от читерства</h3>
+                    <p class="quizzes-feature-description">Продвинутые алгоритмы обнаружения нечестных методов прохождения</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Таблица лидеров -->
+    <section class="quizzes-leaderboard" aria-label="Таблица лидеров">
+        <div class="container">
+            <div class="quizzes-section-header quizzes-animate">
+                <h2>Топ игроков месяца</h2>
+                <p>Лучшие результаты наших пользователей</p>
+            </div>
+
+            <div class="quizzes-leaderboard-container quizzes-animate">
+                <div class="quizzes-leaderboard-header">
+                    <h3>Лидеры знаний</h3>
+                    <p>Самые высокие баллы за последние 30 дней</p>
+                </div>
+                <div class="quizzes-leaderboard-list">
+                    <div class="quizzes-leaderboard-item">
+                        <div class="quizzes-leaderboard-rank">1</div>
+                        <div class="quizzes-leaderboard-user">
+                            <div class="quizzes-user-avatar">АС</div>
+                            <div class="quizzes-user-info">
+                                <h4>Алишер Сайран</h4>
+                                <p>Мастер программирования</p>
+                            </div>
+                        </div>
+                        <div class="quizzes-user-score">
+                            <div class="quizzes-score-value">9850</div>
+                            <div class="quizzes-score-label">баллов</div>
+                        </div>
+                    </div>
+
+                    <div class="quizzes-leaderboard-item">
+                        <div class="quizzes-leaderboard-rank">2</div>
+                        <div class="quizzes-leaderboard-user">
+                            <div class="quizzes-user-avatar">МК</div>
+                            <div class="quizzes-user-info">
+                                <h4>Мария Ким</h4>
+                                <p>Эксперт по дизайну</p>
+                            </div>
+                        </div>
+                        <div class="quizzes-user-score">
+                            <div class="quizzes-score-value">9420</div>
+                            <div class="quizzes-score-label">баллов</div>
+                        </div>
+                    </div>
+
+                    <div class="quizzes-leaderboard-item">
+                        <div class="quizzes-leaderboard-rank">3</div>
+                        <div class="quizzes-leaderboard-user">
+                            <div class="quizzes-user-avatar">ДА</div>
+                            <div class="quizzes-user-info">
+                                <h4>Дамир Ахметов</h4>
+                                <p>Гуру бизнеса</p>
+                            </div>
+                        </div>
+                        <div class="quizzes-user-score">
+                            <div class="quizzes-score-value">9015</div>
+                            <div class="quizzes-score-label">баллов</div>
+                        </div>
+                    </div>
+
+                    <div class="quizzes-leaderboard-item">
+                        <div class="quizzes-leaderboard-rank">4</div>
+                        <div class="quizzes-leaderboard-user">
+                            <div class="quizzes-user-avatar">ЕП</div>
+                            <div class="quizzes-user-info">
+                                <h4>Елена Петрова</h4>
+                                <p>Знаток языков</p>
+                            </div>
+                        </div>
+                        <div class="quizzes-user-score">
+                            <div class="quizzes-score-value">8765</div>
+                            <div class="quizzes-score-label">баллов</div>
+                        </div>
+                    </div>
+
+                    <div class="quizzes-leaderboard-item">
+                        <div class="quizzes-leaderboard-rank">5</div>
+                        <div class="quizzes-leaderboard-user">
+                            <div class="quizzes-user-avatar">СК</div>
+                            <div class="quizzes-user-info">
+                                <h4>Сергей Козлов</h4>
+                                <p>Историк-энциклопедист</p>
+                            </div>
+                        </div>
+                        <div class="quizzes-user-score">
+                            <div class="quizzes-score-value">8540</div>
+                            <div class="quizzes-score-label">баллов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA секция -->
+    <section class="quizzes-cta" aria-label="Призыв к действию">
+        <div class="container">
+            <div class="quizzes-cta-content quizzes-animate">
+                <h2>Готовы бросить вызов?</h2>
+                <p>Присоединяйтесь к миллиону пользователей, которые уже прокачали свои знания</p>
+                <div class="quizzes-cta-buttons">
+                    <a href="{% url 'accounts:register' %}" class="quizzes-cta-btn quizzes-cta-btn-primary">
+                        <i class="fas fa-user-plus"></i>
+                        Начать бесплатно
+                    </a>
+                    <a href="#categories" class="quizzes-cta-btn quizzes-cta-btn-outline">
+                        <i class="fas fa-play-circle"></i>
+                        Попробовать тест
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quizzes.js' %}"></script>
+{% endblock %}

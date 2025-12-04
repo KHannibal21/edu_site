@@ -1,0 +1,391 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Аналитика сайта - EduPlatform{% endblock %}
+
+{% block content %}
+<div class="analytics-page">
+    <!-- Hero секция -->
+    <section class="analytics-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Аналитика платформы</h1>
+                <p class="hero-subtitle">Статистика по курсам, пользователям и активности на платформе</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Быстрая статистика -->
+        <section class="quick-stats">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="10500">0</div>
+                        <div class="stat-label">Всего пользователей</div>
+                        <div class="stat-trend trend-up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>12% за месяц</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="156">0</div>
+                        <div class="stat-label">Активных курсов</div>
+                        <div class="stat-trend trend-up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>8% за месяц</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="4320">0</div>
+                        <div class="stat-label">Выпускников</div>
+                        <div class="stat-trend trend-up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>15% за месяц</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" data-count="98">0</div>
+                        <div class="stat-label">% Успеваемости</div>
+                        <div class="stat-trend trend-up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>2% за месяц</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Основная аналитика -->
+        <div class="analytics-grid">
+            <!-- Распределение пользователей -->
+            <div class="analytics-card">
+                <div class="card-header">
+                    <h3>Распределение пользователей</h3>
+                    <div class="card-actions">
+                        <button class="btn btn-sm btn-outline">Регионы</button>
+                        <button class="btn btn-sm btn-primary">Роли</button>
+                        <button class="btn btn-sm btn-outline">Активность</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="user-distribution">
+                        <div class="distribution-chart">
+                            <div class="chart-ring">
+                                <svg width="120" height="120" viewBox="0 0 120 120">
+                                    <circle cx="60" cy="60" r="54" fill="none" stroke="#e5e7eb" stroke-width="12"/>
+                                    <circle cx="60" cy="60" r="54" fill="none" stroke="#4f46e5" stroke-width="12"
+                                            stroke-dasharray="339.292" stroke-dashoffset="67.8584" class="ring-segment"/>
+                                    <circle cx="60" cy="60" r="54" fill="none" stroke="#f59e0b" stroke-width="12"
+                                            stroke-dasharray="339.292" stroke-dashoffset="169.646" class="ring-segment"/>
+                                    <circle cx="60" cy="60" r="54" fill="none" stroke="#10b981" stroke-width="12"
+                                            stroke-dasharray="339.292" stroke-dashoffset="237.504" class="ring-segment"/>
+                                </svg>
+                            </div>
+                            <div class="distribution-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #4f46e5"></span>
+                                    <span class="legend-label">Студенты</span>
+                                    <span class="legend-value">65%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #f59e0b"></span>
+                                    <span class="legend-label">Преподаватели</span>
+                                    <span class="legend-value">20%</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #10b981"></span>
+                                    <span class="legend-label">Администраторы</span>
+                                    <span class="legend-value">15%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Статистика курсов -->
+            <div class="analytics-card">
+                <div class="card-header">
+                    <h3>Статистика курсов</h3>
+                </div>
+                <div class="card-body">
+                    <div class="courses-stats">
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <div class="stat-label-small">Всего курсов</div>
+                                <div class="stat-number-small">156</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label-small">Новых за месяц</div>
+                                <div class="stat-number-small">12</div>
+                            </div>
+                        </div>
+                        <div class="progress-list">
+                            <div class="progress-item">
+                                <div class="course-info">
+                                    <span class="course-name">Python для начинающих</span>
+                                    <span class="progress-percent">1,250</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="course-info">
+                                    <span class="course-name">Веб-разработка</span>
+                                    <span class="progress-percent">980</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 72%"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="course-info">
+                                    <span class="course-name">Data Science</span>
+                                    <span class="progress-percent">750</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="course-info">
+                                    <span class="course-name">JavaScript</span>
+                                    <span class="progress-percent">620</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 68%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Активность на платформе -->
+            <div class="analytics-card">
+                <div class="card-header">
+                    <h3>Активность на платформе</h3>
+                </div>
+                <div class="card-body">
+                    <div class="platform-activity">
+                        <div class="activity-chart">
+                            <div class="chart-bars">
+                                <div class="chart-bar" style="height: 40%">
+                                    <span class="bar-value">1,250</span>
+                                    <span class="bar-label">Пн</span>
+                                </div>
+                                <div class="chart-bar" style="height: 65%">
+                                    <span class="bar-value">2,100</span>
+                                    <span class="bar-label">Вт</span>
+                                </div>
+                                <div class="chart-bar" style="height: 50%">
+                                    <span class="bar-value">1,800</span>
+                                    <span class="bar-label">Ср</span>
+                                </div>
+                                <div class="chart-bar" style="height: 80%">
+                                    <span class="bar-value">3,200</span>
+                                    <span class="bar-label">Чт</span>
+                                </div>
+                                <div class="chart-bar" style="height: 60%">
+                                    <span class="bar-value">2,400</span>
+                                    <span class="bar-label">Пт</span>
+                                </div>
+                                <div class="chart-bar" style="height: 75%">
+                                    <span class="bar-value">2,800</span>
+                                    <span class="bar-label">Сб</span>
+                                </div>
+                                <div class="chart-bar" style="height: 45%">
+                                    <span class="bar-value">1,600</span>
+                                    <span class="bar-label">Вс</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activity-info">
+                            <div class="info-item">
+                                <span class="info-label">Сеансов сегодня</span>
+                                <span class="info-value">1,850</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Среднее время</span>
+                                <span class="info-value">24 мин</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- География пользователей -->
+            <div class="analytics-card">
+                <div class="card-header">
+                    <h3>География пользователей</h3>
+                </div>
+                <div class="card-body">
+                    <div class="geo-distribution">
+                        <div class="geo-list">
+                            <div class="geo-item">
+                                <div class="geo-country">
+                                    <i class="fas fa-globe-europe"></i>
+                                    <span>Россия</span>
+                                </div>
+                                <div class="geo-percent">45%</div>
+                            </div>
+                            <div class="geo-item">
+                                <div class="geo-country">
+                                    <i class="fas fa-globe-europe"></i>
+                                    <span>Казахстан</span>
+                                </div>
+                                <div class="geo-percent">18%</div>
+                            </div>
+                            <div class="geo-item">
+                                <div class="geo-country">
+                                    <i class="fas fa-globe-europe"></i>
+                                    <span>Украина</span>
+                                </div>
+                                <div class="geo-percent">12%</div>
+                            </div>
+                            <div class="geo-item">
+                                <div class="geo-country">
+                                    <i class="fas fa-globe-europe"></i>
+                                    <span>Беларусь</span>
+                                </div>
+                                <div class="geo-percent">8%</div>
+                            </div>
+                            <div class="geo-item">
+                                <div class="geo-country">
+                                    <i class="fas fa-globe-europe"></i>
+                                    <span>Другие</span>
+                                </div>
+                                <div class="geo-percent">17%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Новые пользователи -->
+            <div class="analytics-card">
+                <div class="card-header">
+                    <h3>Новые пользователи</h3>
+                    <a href="#" class="btn btn-sm btn-outline">Все пользователи</a>
+                </div>
+                <div class="card-body">
+                    <div class="new-users">
+                        <div class="user-list">
+                            <div class="user-item">
+                                <div class="user-avatar-small">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-info">
+                                    <div class="user-name">Александр Петров</div>
+                                    <div class="user-email">alex@example.com</div>
+                                </div>
+                                <div class="user-date">Сегодня</div>
+                            </div>
+                            <div class="user-item">
+                                <div class="user-avatar-small">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-info">
+                                    <div class="user-name">Мария Иванова</div>
+                                    <div class="user-email">maria@example.com</div>
+                                </div>
+                                <div class="user-date">Вчера</div>
+                            </div>
+                            <div class="user-item">
+                                <div class="user-avatar-small">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-info">
+                                    <div class="user-name">Иван Сидоров</div>
+                                    <div class="user-email">ivan@example.com</div>
+                                </div>
+                                <div class="user-date">2 дня назад</div>
+                            </div>
+                            <div class="user-item">
+                                <div class="user-avatar-small">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="user-info">
+                                    <div class="user-name">Елена Кузнецова</div>
+                                    <div class="user-email">elena@example.com</div>
+                                </div>
+                                <div class="user-date">2 дня назад</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Статистика доходов -->
+            <div class="analytics-card">
+                <div class="card-header">
+                    <h3>Статистика доходов</h3>
+                </div>
+                <div class="card-body">
+                    <div class="revenue-stats">
+                        <div class="revenue-total">
+                            <div class="revenue-label">Общий доход</div>
+                            <div class="revenue-amount">$ 2,450,000</div>
+                            <div class="stat-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>18% за месяц</span>
+                            </div>
+                        </div>
+                        <div class="revenue-breakdown">
+                            <div class="breakdown-item">
+                                <div class="breakdown-label">Платные курсы</div>
+                                <div class="breakdown-value">$ 1,850,000</div>
+                                <div class="breakdown-percent">75%</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="breakdown-label">Подписки</div>
+                                <div class="breakdown-value">$ 450,000</div>
+                                <div class="breakdown-percent">18%</div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="breakdown-label">Сертификаты</div>
+                                <div class="breakdown-value">$ 150,000</div>
+                                <div class="breakdown-percent">7%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/analytics.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/analytics.js' %}"></script>
+{% endblock %}

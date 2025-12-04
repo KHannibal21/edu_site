@@ -1,0 +1,431 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Мой профиль - EduPlatform{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="profile-page">
+    <div class="container">
+        <!-- Заголовок профиля -->
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <div class="avatar-circle">
+                    {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
+                </div>
+                <div class="avatar-status"></div>
+            </div>
+            <div class="profile-info">
+                <h1 class="profile-name">{{ user.full_name }}</h1>
+                <p class="profile-email">{{ user.email }}</p>
+                <div class="profile-badges">
+                    <span class="badge badge-role">{{ user.role|title }}</span>
+                    <span class="badge badge-level">Уровень {{ user.level }}</span>
+                    <span class="badge badge-xp">{{ user.xp }} XP</span>
+                </div>
+            </div>
+            <div class="profile-stats">
+                <div class="stat-card">
+                    <div class="stat-value">{{ user.enrolled_courses|default:0 }}</div>
+                    <div class="stat-label">Курсов</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">{{ user.completed_courses|default:0 }}</div>
+                    <div class="stat-label">Завершено</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">{{ user.current_score|default:0 }}%</div>
+                    <div class="stat-label">Успеваемость</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Навигация профиля -->
+        <div class="profile-navigation">
+            <a href="{% url 'accounts:profile' %}" 
+               class="nav-item {% if active_tab == 'profile' %}active{% endif %}">
+                <i class="fas fa-user"></i>
+                <span>Профиль</span>
+            </a>
+            <a href="{% url 'accounts:profile' %}?tab=progress" 
+               class="nav-item {% if active_tab == 'progress' %}active{% endif %}">
+                <i class="fas fa-chart-line"></i>
+                <span>Прогресс</span>
+            </a>
+            <a href="{% url 'accounts:profile' %}?tab=courses" 
+               class="nav-item {% if active_tab == 'courses' %}active{% endif %}">
+                <i class="fas fa-book"></i>
+                <span>Мои курсы</span>
+            </a>
+            <a href="{% url 'accounts:sessions' %}" 
+               class="nav-item {% if active_tab == 'sessions' %}active{% endif %}">
+                <i class="fas fa-shield-alt"></i>
+                <span>Безопасность</span>
+            </a>
+            <a href="{% url 'accounts:profile' %}?tab=settings" 
+               class="nav-item {% if active_tab == 'settings' %}active{% endif %}">
+                <i class="fas fa-cog"></i>
+                <span>Настройки</span>
+            </a>
+        </div>
+
+        <!-- Основной контент профиля -->
+        <div class="profile-content">
+            {% if active_tab == 'profile' %}
+                <!-- Вкладка профиля -->
+                <div class="profile-card">
+                    <h2 class="card-title">
+                        <i class="fas fa-id-card"></i>
+                        Личная информация
+                    </h2>
+                    
+                    {% if messages %}
+                    <div class="alert-container">
+                        {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    <form method="POST" action="{% url 'accounts:profile' %}" class="profile-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="update_profile">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name" class="form-label">
+                                    <i class="fas fa-user"></i>
+                                    <span>Имя</span>
+                                </label>
+                                <input type="text" 
+                                       name="first_name" 
+                                       id="first_name" 
+                                       class="form-input"
+                                       value="{{ user.first_name }}"
+                                       required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name" class="form-label">
+                                    <i class="fas fa-user"></i>
+                                    <span>Фамилия</span>
+                                </label>
+                                <input type="text" 
+                                       name="last_name" 
+                                       id="last_name" 
+                                       class="form-input"
+                                       value="{{ user.last_name }}">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </label>
+                            <input type="email" 
+                                   name="email" 
+                                   id="email" 
+                                   class="form-input"
+                                   value="{{ user.email }}"
+                                   readonly>
+                            <small class="form-hint">Email нельзя изменить</small>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i>
+                                Сохранить изменения
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="profile-card">
+                    <h2 class="card-title">
+                        <i class="fas fa-key"></i>
+                        Смена пароля
+                    </h2>
+                    
+                    <form method="POST" action="{% url 'accounts:profile' %}" class="profile-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="change_password">
+                        
+                        <div class="form-group">
+                            <label for="current_password" class="form-label">
+                                <i class="fas fa-lock"></i>
+                                <span>Текущий пароль</span>
+                            </label>
+                            <input type="password" 
+                                   name="current_password" 
+                                   id="current_password" 
+                                   class="form-input"
+                                   required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="new_password" class="form-label">
+                                <i class="fas fa-lock"></i>
+                                <span>Новый пароль</span>
+                            </label>
+                            <input type="password" 
+                                   name="new_password" 
+                                   id="new_password" 
+                                   class="form-input"
+                                   required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirm_password" class="form-label">
+                                <i class="fas fa-lock"></i>
+                                <span>Подтверждение пароля</span>
+                            </label>
+                            <input type="password" 
+                                   name="confirm_password" 
+                                   id="confirm_password" 
+                                   class="form-input"
+                                   required>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-key"></i>
+                                Сменить пароль
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+            {% elif active_tab == 'progress' %}
+                <!-- Вкладка прогресса -->
+                <div class="profile-card">
+                    <h2 class="card-title">
+                        <i class="fas fa-chart-line"></i>
+                        Мой прогресс
+                    </h2>
+                    
+                    <div class="progress-stats">
+                        <div class="progress-chart">
+                            <div class="chart-header">
+                                <h3>Общая успеваемость</h3>
+                                <div class="chart-percentage">{{ user.current_score }}%</div>
+                            </div>
+                            <div class="chart-bar">
+                                <div class="chart-fill" style="width: {{ user.current_score }}%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-details">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Зарегистрирован</div>
+                                    <div class="detail-value">{{ user.created_at }}</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Последний вход</div>
+                                    <div class="detail-value">{{ user.last_login }}</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Уровень</div>
+                                    <div class="detail-value">{{ user.level }}</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Опыт (XP)</div>
+                                    <div class="detail-value">{{ user.xp }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            {% elif active_tab == 'settings' %}
+                <!-- Вкладка настроек -->
+                <div class="profile-card">
+                    <h2 class="card-title">
+                        <i class="fas fa-cog"></i>
+                        Настройки аккаунта
+                    </h2>
+                    
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <div class="setting-title">Email уведомления</div>
+                                <div class="setting-description">Получать новости о курсах и обновлениях</div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <div class="setting-title">Push-уведомления</div>
+                                <div class="setting-description">Уведомления о новых заданиях</div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <div class="setting-title">Темная тема</div>
+                                <div class="setting-description">Использовать темную тему оформления</div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="danger-zone">
+                        <h3 class="danger-title">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Опасная зона
+                        </h3>
+                        
+                        <div class="danger-actions">
+                            <button type="button" class="btn btn-danger" id="deactivate-account">
+                                <i class="fas fa-user-slash"></i>
+                                Деактивировать аккаунт
+                            </button>
+                            
+                            <button type="button" class="btn btn-danger" id="delete-account">
+                                <i class="fas fa-trash"></i>
+                                Удалить аккаунт
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно подтверждения деактивации -->
+<div class="modal" id="deactivate-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Деактивация аккаунта</h3>
+            <button type="button" class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Вы уверены, что хотите деактивировать свой аккаунт?</p>
+            <p><small>Вы сможете восстановить его в течение 30 дней.</small></p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="cancel-deactivate">Отмена</button>
+            <button type="button" class="btn btn-danger" id="confirm-deactivate">Деактивировать</button>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно подтверждения удаления -->
+<div class="modal" id="delete-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Удаление аккаунта</h3>
+            <button type="button" class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="text-danger">Внимание! Это действие необратимо!</p>
+            <p>Все ваши данные будут удалены без возможности восстановления.</p>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="confirm-delete-checkbox">
+                <label class="form-check-label" for="confirm-delete-checkbox">
+                    Я понимаю, что все мои данные будут удалены
+                </label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="cancel-delete">Отмена</button>
+            <button type="button" class="btn btn-danger" id="confirm-delete" disabled>Удалить аккаунт</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/profile.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Деактивация аккаунта
+    document.getElementById('deactivate-account').addEventListener('click', function() {
+        document.getElementById('deactivate-modal').style.display = 'block';
+    });
+    
+    document.getElementById('cancel-deactivate').addEventListener('click', function() {
+        document.getElementById('deactivate-modal').style.display = 'none';
+    });
+    
+    document.getElementById('confirm-deactivate').addEventListener('click', function() {
+        // Здесь будет AJAX запрос для деактивации
+        alert('Функция деактивации в разработке');
+        document.getElementById('deactivate-modal').style.display = 'none';
+    });
+    
+    // Удаление аккаунта
+    document.getElementById('delete-account').addEventListener('click', function() {
+        document.getElementById('delete-modal').style.display = 'block';
+    });
+    
+    document.getElementById('cancel-delete').addEventListener('click', function() {
+        document.getElementById('delete-modal').style.display = 'none';
+    });
+    
+    document.getElementById('confirm-delete-checkbox').addEventListener('change', function() {
+        document.getElementById('confirm-delete').disabled = !this.checked;
+    });
+    
+    document.getElementById('confirm-delete').addEventListener('click', function() {
+        // Здесь будет AJAX запрос для удаления
+        alert('Функция удаления в разработке');
+        document.getElementById('delete-modal').style.display = 'none';
+    });
+    
+    // Закрытие модальных окон
+    document.querySelectorAll('.modal-close').forEach(button => {
+        button.addEventListener('click', function() {
+            this.closest('.modal').style.display = 'none';
+        });
+    });
+    
+    // Закрытие модальных окон при клике вне
+    window.addEventListener('click', function(event) {
+        document.querySelectorAll('.modal').forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

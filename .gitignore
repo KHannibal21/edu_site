@@ -1,14 +1,43 @@
-# Добавьте эти строки в .gitignore
+# Python кеш и временные файлы
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
-.Python
-env/
+
+# Виртуальное окружение
 venv/
-.venv/
-.env
-*.sqlite3
-*.db
+env/
+ENV/
+
+# Django
+*.sqlite3        # локальная база данных
+*.log            # логи
+*.pot
+*.pyc
+*.mo
+media/            # если будут загруженные файлы
+staticfiles/      # собранные статика (collectstatic)
+*.env             # локальные переменные окружения
+
+# IDE и редакторы
+.idea/
+*.iml
+*.swp
+*.swo
+*.vscode/
+
+# MacOS
 .DS_Store
+
+# Windows
 Thumbs.db
+
+# Папки с данными или временными файлами
+data/temp/
+data/cache/
+
+# Node.js (если вдруг что-то с фронтом)
+node_modules/
+
+# Логи тестов
+pytest_cache/

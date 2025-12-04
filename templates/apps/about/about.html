@@ -1,0 +1,301 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}О нас - EduPlatform{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="about-page">
+    <!-- Hero секция -->
+    <section class="about-hero" aria-label="Главный баннер страницы 'О нас'">
+        <div class="about-hero-background">
+            <div class="about-hero-shape shape-1"></div>
+            <div class="about-hero-shape shape-2"></div>
+            <div class="about-hero-shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="about-hero-content">
+                <div class="about-hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Основано в 2025 году</span>
+                </div>
+                <h1 class="about-hero-title">О нашей образовательной платформе</h1>
+                <p class="about-hero-subtitle">Мы создаем будущее образования, где каждый может раскрыть свой потенциал и изменить жизнь через знания</p>
+                <div class="about-hero-stats">
+                    <div class="about-hero-stat">
+                        <div class="about-hero-stat-number" data-count="10000">0</div>
+                        <div class="about-hero-stat-label">
+                            <i class="fas fa-users"></i>
+                            <span>Учеников по всему миру</span>
+                        </div>
+                    </div>
+                    <div class="about-hero-stat">
+                        <div class="about-hero-stat-number" data-count="95">0</div>
+                        <div class="about-hero-stat-label">
+                            <i class="fas fa-chart-line"></i>
+                            <span>% Довольных студентов</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <!-- Миссия и ценности -->
+        <section class="about-mission" aria-label="Наша миссия и ценности">
+            <div class="about-section-header" data-animate>
+                <h2>Наша миссия</h2>
+                <p>Мы верим, что качественное образование должно быть доступно каждому, независимо от обстоятельств</p>
+            </div>
+
+            <div class="about-mission-grid" data-animate>
+                <div class="about-mission-card">
+                    <div class="about-mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Доступность</h3>
+                    <p>Предоставляем качественное образование независимо от местоположения, возраста или финансовых возможностей. Стоимость обучения в 3 раза ниже рынка.</p>
+                </div>
+
+                <div class="about-mission-card">
+                    <div class="about-mission-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Инновации</h3>
+                    <p>Используем современные технологии и методики для эффективного обучения. Виртуальные классы, AI-помощник и интерактивные задания.</p>
+                </div>
+
+                <div class="about-mission-card">
+                    <div class="about-mission-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Сообщество</h3>
+                    <p>Создаем поддерживающее сообщество учащихся и преподавателей. 85% студентов находят работу через наше комьюнити.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="about-advantages" aria-label="Наши преимущества">
+            <div class="container">
+                <div class="about-section-header" data-animate>
+                    <h2>Почему выбирают нас?</h2>
+                    <p>Уникальный подход к онлайн-образованию</p>
+                </div>
+
+                <div class="about-advantages-grid" data-animate>
+                    <div class="about-advantage-item">
+                        <div class="about-advantage-number">01</div>
+                        <div class="about-advantage-content">
+                            <div class="about-advantage-icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <h3>Экспертные курсы</h3>
+                            <p>Все курсы разработаны практикующими специалистами из Google, Yandex, Microsoft с многолетним опытом</p>
+                        </div>
+                    </div>
+
+                    <div class="about-advantage-item">
+                        <div class="about-advantage-number">02</div>
+                        <div class="about-advantage-content">
+                            <div class="about-advantage-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h3>Гибкий график</h3>
+                            <p>Учитесь в удобное время и в своем темпе без привязки к расписанию. Доступ к материалам 24/7</p>
+                        </div>
+                    </div>
+
+                    <div class="about-advantage-item">
+                        <div class="about-advantage-number">03</div>
+                        <div class="about-advantage-content">
+                            <div class="about-advantage-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>Практические навыки</h3>
+                            <p>Фокус на реальных проектах и задачах, которые пригодятся в работе. Портфолио после каждого курса</p>
+                        </div>
+                    </div>
+
+                    <div class="about-advantage-item">
+                        <div class="about-advantage-number">04</div>
+                        <div class="about-advantage-content">
+                            <div class="about-advantage-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h3>Пожизненный доступ</h3>
+                            <p>Все обновления курсов бесплатны для выпускников. Актуальные знания на протяжении всей карьеры</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Статистика -->
+        <section class="about-stats" aria-label="Статистика платформы">
+            <div class="about-stats-background">
+                <div class="about-stats-shape shape-1"></div>
+                <div class="about-stats-shape shape-2"></div>
+            </div>
+            <div class="container">
+                <div class="about-stats-grid" data-animate>
+                    <div class="about-stat-item">
+                        <div class="about-stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="about-stat-number" data-count="10000">0</div>
+                        <div class="about-stat-label">Учеников</div>
+                    </div>
+
+                    <div class="about-stat-item">
+                        <div class="about-stat-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="about-stat-number" data-count="150">0</div>
+                        <div class="about-stat-label">Курсов</div>
+                    </div>
+
+                    <div class="about-stat-item">
+                        <div class="about-stat-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="about-stat-number" data-count="50">0</div>
+                        <div class="about-stat-label">Преподавателей</div>
+                    </div>
+
+                    <div class="about-stat-item">
+                        <div class="about-stat-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="about-stat-number" data-count="95">0</div>
+                        <div class="about-stat-label">% Успеваемости</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Команда -->
+        <section class="about-team" aria-label="Наша команда">
+            <div class="container">
+                <div class="about-section-header" data-animate>
+                    <h2>Наша команда</h2>
+                    <p>Профессионалы, которые делают образование лучше</p>
+                </div>
+
+                <div class="about-team-grid" data-animate>
+                    <div class="about-team-member">
+                        <div class="about-team-member-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="about-team-member-info">
+                            <h3>Ганнибал Барка</h3>
+                            <p class="about-team-member-role">Основатель и CEO</p>
+                            <p class="about-team-member-bio">Более 10 лет в образовательных технологиях. Эксперт в создании scalable educational platforms.</p>
+                            <div class="about-team-member-stats">
+                                <div class="about-team-member-stat">
+                                    <span class="about-team-member-stat-value">12 лет</span>
+                                    <span class="about-team-member-stat-label">в EdTech</span>
+                                </div>
+                                <div class="about-team-member-stat">
+                                    <span class="about-team-member-stat-value">50+</span>
+                                    <span class="about-team-member-stat-label">проектов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-team-member">
+                        <div class="about-team-member-avatar">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="about-team-member-info">
+                            <h3>Гай Юлий Цезарь</h3>
+                            <p class="about-team-member-role">Главный методист</p>
+                            <p class="about-team-member-bio">Эксперт в разработке учебных программ. Создал 100+ курсов для ведущих IT-компаний.</p>
+                            <div class="about-team-member-stats">
+                                <div class="about-team-member-stat">
+                                    <span class="about-team-member-stat-value">8 лет</span>
+                                    <span class="about-team-member-stat-label">в образовании</span>
+                                </div>
+                                <div class="about-team-member-stat">
+                                    <span class="about-team-member-stat-value">100+</span>
+                                    <span class="about-team-member-stat-label">курсов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-team-member">
+                        <div class="about-team-member-avatar">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="about-team-member-info">
+                            <h3>Александр Македонский</h3>
+                            <p class="about-team-member-role">Технический директор</p>
+                            <p class="about-team-member-bio">Создает технологическую основу платформы. Бывший lead engineer в FAANG-компаниях.</p>
+                            <div class="about-team-member-stats">
+                                <div class="about-team-member-stat">
+                                    <span class="about-team-member-stat-value">15 лет</span>
+                                    <span class="about-team-member-stat-label">в разработке</span>
+                                </div>
+                                <div class="about-team-member-stat">
+                                    <span class="about-team-member-stat-value">10M+</span>
+                                    <span class="about-team-member-stat-label">пользователей</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA секция -->
+        <section class="about-cta" aria-label="Призыв к действию">
+            <div class="about-cta-background">
+                <div class="about-cta-shape shape-1"></div>
+                <div class="about-cta-shape shape-2"></div>
+            </div>
+            <div class="container">
+                <div class="about-cta-content" data-animate>
+                    <h2>Готовы начать обучение?</h2>
+                    <p>Присоединяйтесь к тысячам студентов, которые уже меняют свою жизнь с помощью нашего образования</p>
+                    <div class="about-cta-features">
+                        <div class="about-cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            7 дней бесплатного доступа
+                        </div>
+                        <div class="about-cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            Гарантия возврата 30 дней
+                        </div>
+                        <div class="about-cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            Поддержка карьеры
+                        </div>
+                    </div>
+                    <div class="about-cta-buttons">
+                        <a href="{% url 'courses:courses' %}" class="btn btn-primary btn-large">
+                            <i class="fas fa-book-open"></i>
+                            <span>Выбрать курс</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="{% url 'accounts:register' %}" class="btn btn-outline btn-large">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Создать аккаунт</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

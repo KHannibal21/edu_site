@@ -1,0 +1,193 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <a href="{% url 'home:home' %}" class="footer-logo">
+                    <span class="logo-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </span>
+                    <span class="logo-text">EduPlatform</span>
+                </a>
+                <p class="footer-description">
+                    Современная образовательная платформа для тех, кто стремится к знаниям и профессиональному росту.
+                    Обучайтесь в удобном темпе с лучшими преподавателями.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="ВКонтакте">
+                        <i class="fab fa-vk"></i>
+                        <span class="social-text">VK</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                        <span class="social-text">Telegram</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                        <span class="social-text">YouTube</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-text">Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <i class="fas fa-compass"></i>
+                    Навигация
+                </h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="{% url 'home:home' %}" class="footer-link">
+                            <i class="fas fa-home"></i>
+                            <span>Главная</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'courses:courses' %}" class="footer-link">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Все курсы</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'events:events' %}" class="footer-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Мероприятия</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'quizzes:quizzes' %}" class="footer-link">
+                            <i class="fas fa-clipboard-check"></i>
+                            <span>Тесты</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'analytics:analytics' %}" class="footer-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Аналитика</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Support Links -->
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <i class="fas fa-life-ring"></i>
+                    Поддержка
+                </h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#" class="footer-link">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Центр помощи</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">
+                            <i class="fas fa-comments"></i>
+                            <span>Частые вопросы</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">
+                            <i class="fas fa-users"></i>
+                            <span>Сообщество</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">
+                            <i class="fas fa-star"></i>
+                            <span>Отзывы</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer-link">
+                            <i class="fas fa-blog"></i>
+                            <span>Блог</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact & Newsletter -->
+            <div class="footer-section">
+                <h3 class="footer-title">
+                    <i class="fas fa-envelope"></i>
+                    Контакты
+                </h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@eduplatform.ru">info@eduplatform.ru</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Алматы, ул. Абая, 1</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Пн-Пт: 9:00-18:00</span>
+                    </div>
+                </div>
+
+                <!-- Newsletter Subscription -->
+                <div class="newsletter">
+                    <p class="newsletter-text">
+                        <i class="fas fa-bell"></i>
+                        Подпишитесь на рассылку для получения новых курсов и акций:
+                    </p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="newsletter-input-group">
+                            <i class="fas fa-envelope newsletter-icon"></i>
+                            <input
+                                type="email"
+                                class="newsletter-input"
+                                placeholder="Введите ваш email адрес"
+                                aria-label="Email для рассылки"
+                                required
+                            >
+                        </div>
+                        <button type="submit" class="newsletter-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Подписаться
+                        </button>
+                    </form>
+                    <div class="newsletter-success" id="newsletter-success" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Спасибо за подписку!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom (без кнопки "Наверх") -->
+        <div class="footer-bottom">
+            <p class="copyright">
+                <i class="far fa-copyright"></i>
+                2024 EduPlatform. Все права защищены.
+            </p>
+            <div class="footer-bottom-links">
+                <a href="#" class="footer-bottom-link">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Политика конфиденциальности</span>
+                </a>
+                <a href="#" class="footer-bottom-link">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Условия использования</span>
+                </a>
+                <a href="#" class="footer-bottom-link">
+                    <i class="fas fa-sitemap"></i>
+                    <span>Карта сайта</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>

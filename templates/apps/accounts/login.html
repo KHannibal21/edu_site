@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Вход в аккаунт - EduPlatform{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-container">
+        <!-- Левая часть - форма -->
+        <div class="auth-form-section">
+            <div class="auth-form-wrapper">
+                <div class="auth-header">
+                    <a href="{% url 'home:home' %}" class="auth-back-link">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>На главную</span>
+                    </a>
+                    <a href="{% url 'home:home' %}" class="auth-logo">
+                        <span class="auth-logo-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </span>
+                        <span class="auth-logo-text">EduPlatform</span>
+                    </a>
+                </div>
+
+                <div class="auth-form-content">
+                    <div class="auth-form-header">
+                        <h1 class="auth-form-title">С возвращением!</h1>
+                        <p class="auth-form-subtitle">Войдите в свой аккаунт чтобы продолжить обучение</p>
+                    </div>
+
+                    {% if messages %}
+                    <div class="auth-messages">
+                        {% for message in messages %}
+                        <div class="auth-alert auth-alert-{{ message.tags }}">
+                            <i class="fas {% if message.tags == 'error' %}fa-exclamation-circle{% else %}fa-check-circle{% endif %}"></i>
+                            <span>{{ message }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <form method="POST" action="{% url 'accounts:login' %}" class="auth-form" id="auth-login-form">
+                        {% csrf_token %}
+
+                        <div class="auth-form-group">
+                            <label for="auth-username" class="auth-form-label">
+                                <i class="fas fa-user"></i>
+                                <span>Имя пользователя или Email</span>
+                            </label>
+                            <div class="auth-input-group">
+                                <input type="text"
+                                       name="username"
+                                       id="auth-username"
+                                       class="auth-form-input"
+                                       placeholder="Введите ваш username или email"
+                                       required
+                                       autofocus
+                                       autocomplete="username"
+                                       aria-describedby="username-help">
+                                <div class="auth-input-hint" id="username-help">
+                                    Используйте ваш email или имя пользователя
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="auth-form-group">
+                            <label for="auth-password" class="auth-form-label">
+                                <i class="fas fa-lock"></i>
+                                <span>Пароль</span>
+                            </label>
+                            <div class="auth-input-group">
+                                <input type="password"
+                                       name="password"
+                                       id="auth-password"
+                                       class="auth-form-input"
+                                       placeholder="Введите ваш пароль"
+                                       required
+                                       autocomplete="current-password"
+                                       aria-describedby="password-help">
+                                <button type="button" class="auth-password-toggle" id="auth-toggle-password" aria-label="Показать/скрыть пароль">
+                                    <i class="fas fa-eye" id="auth-eye-icon"></i>
+                                </button>
+                                <div class="auth-input-hint" id="password-help">
+                                    Минимум 8 символов
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="auth-form-options">
+                            <div class="auth-form-checkbox">
+                                <input type="checkbox" id="auth-remember" name="remember" class="auth-checkbox">
+                                <label for="auth-remember" class="auth-checkbox-label">
+                                    <span class="auth-checkbox-custom"></span>
+                                    <span class="auth-checkbox-text">Запомнить меня</span>
+                                </label>
+                            </div>
+                            <a href="" class="auth-forgot-link">
+                                <i class="fas fa-key"></i>
+                                <span>Забыли пароль?</span>
+                            </a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block auth-submit-button" id="auth-submit-button">
+                            <span class="auth-button-text">Войти в аккаунт</span>
+                            <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                    </form>
+
+                    <div class="auth-divider">
+                        <span class="auth-divider-text">или войдите через</span>
+                    </div>
+
+                    <div class="auth-social-buttons">
+                        <button type="button" class="btn btn-social auth-social-button auth-social-google" data-provider="google">
+                            <i class="fab fa-google"></i>
+                            <span>Google</span>
+                        </button>
+                        <button type="button" class="btn btn-social auth-social-button auth-social-github" data-provider="github">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </button>
+                        <button type="button" class="btn btn-social auth-social-button auth-social-vk" data-provider="vk">
+                            <i class="fab fa-vk"></i>
+                            <span>VK</span>
+                        </button>
+                    </div>
+
+                    <div class="auth-form-footer">
+                        <p class="auth-switch-text">
+                            Еще нет аккаунта?
+                            <a href="{% url 'accounts:register' %}" class="auth-switch-link">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Зарегистрируйтесь</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="auth-footer">
+                    <p class="auth-footer-text">
+                        <i class="fas fa-shield-alt"></i>
+                        Ваши данные защищены
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Правая часть - баннер -->
+        <div class="auth-banner-section">
+            <div class="auth-banner-background">
+                <div class="auth-banner-shape shape-1"></div>
+                <div class="auth-banner-shape shape-2"></div>
+                <div class="auth-banner-shape shape-3"></div>
+            </div>
+            <div class="auth-banner-content">
+                <div class="auth-banner-header">
+                    <h2 class="auth-banner-title">Продолжайте обучение</h2>
+                    <p class="auth-banner-subtitle">10,000+ студентов развивают навыки с нами</p>
+                </div>
+
+                <div class="auth-banner-features">
+                    <div class="auth-banner-feature">
+                        <div class="auth-banner-feature-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="auth-banner-feature-content">
+                            <h4>Доступ к курсам</h4>
+                            <p>150+ курсов по программированию, дизайну и маркетингу</p>
+                        </div>
+                    </div>
+
+                    <div class="auth-banner-feature">
+                        <div class="auth-banner-feature-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="auth-banner-feature-content">
+                            <h4>Поддержка преподавателей</h4>
+                            <p>Помощь экспертов 24/7 через чат и видеоконсультации</p>
+                        </div>
+                    </div>
+
+                    <div class="auth-banner-feature">
+                        <div class="auth-banner-feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="auth-banner-feature-content">
+                            <h4>Отслеживание прогресса</h4>
+                            <p>Детальная аналитика и персональные рекомендации</p>
+                        </div>
+                    </div>
+
+                    <div class="auth-banner-feature">
+                        <div class="auth-banner-feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="auth-banner-feature-content">
+                            <h4>Сертификаты</h4>
+                            <p>Официальные документы о прохождении курсов</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="auth-banner-stats">
+                    <div class="auth-banner-stat">
+                        <div class="auth-banner-stat-number" data-count="10000">0</div>
+                        <div class="auth-banner-stat-label">Студентов</div>
+                    </div>
+                    <div class="auth-banner-stat">
+                        <div class="auth-banner-stat-number" data-count="150">0</div>
+                        <div class="auth-banner-stat-label">Курсов</div>
+                    </div>
+                    <div class="auth-banner-stat">
+                        <div class="auth-banner-stat-number" data-count="95">0</div>
+                        <div class="auth-banner-stat-label">% Успеваемости</div>
+                    </div>
+                </div>
+
+                <div class="auth-banner-testimonial">
+                    <div class="auth-banner-testimonial-content">
+                        <i class="fas fa-quote-left auth-banner-quote"></i>
+                        <p class="auth-banner-testimonial-text">"За 2 недели прошел курс и получил оффер от IT-компании!"</p>
+                    </div>
+                    <div class="auth-banner-testimonial-author">
+                        <div class="auth-banner-testimonial-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="auth-banner-testimonial-info">
+                            <h4>Мария Иванова</h4>
+                            <p>Frontend Developer</p>
+                            <span>Выпускница 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/auth.js' %}"></script>
+{% endblock %}

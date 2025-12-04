@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduPlatform - современная образовательная платформа для онлайн-обучения">
+    <meta name="keywords" content="образование, курсы, обучение, онлайн-курсы">
+
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="msapplication-navbutton-color" content="#667eea">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#667eea">
+
+    <title>{% block title %}EduPlatform - Образовательная платформа{% endblock %}</title>
+
+    {% load static %}
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="{% static 'css/base.css' %}" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% include 'includes/header.html' %}
+    {% include 'includes/navigation.html' %}
+
+    <main id="main-content" class="main-content">
+        {% if messages %}
+        <div class="container">
+            <div class="messages-container">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% block content %}
+        <!-- Default content can go here -->
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Добро пожаловать на EduPlatform</h1>
+                <p class="page-description">
+                    Современная образовательная платформа для эффективного онлайн-обучения
+                </p>
+            </div>
+        </div>
+        {% endblock %}
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+    <!-- JavaScript Files -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/header.js' %}"></script>
+    <script src="{% static 'js/navigation.js' %}"></script>
+    <script src="{% static 'js/footer.js' %}"></script>
+
+    {% block extra_js %}{% endblock %}
+
+    <script>
+    // Smooth scrolling for anchor links
+    document.addEventListener('DOMContentLoaded', function() {
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+        anchorLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+
+    // Add loaded class for animations
+    window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+    });
+    </script>
+</body>
+</html>

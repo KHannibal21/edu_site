@@ -1,0 +1,674 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Мероприятия - EduPlatform{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/events.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="events-page">
+    <!-- Обновленная Hero секция мероприятий -->
+    <section class="events-hero" aria-label="Мероприятия баннер">
+        <div class="events-hero-background">
+            <div class="events-hero-grid">
+                <div class="events-hero-grid-item"></div>
+                <div class="events-hero-grid-item"></div>
+                <div class="events-hero-grid-item"></div>
+                <div class="events-hero-grid-item"></div>
+                <div class="events-hero-grid-item"></div>
+                <div class="events-hero-grid-item"></div>
+            </div>
+            <div class="events-hero-accent events-hero-accent-1"></div>
+            <div class="events-hero-accent events-hero-accent-2"></div>
+        </div>
+        <div class="container">
+            <div class="events-hero-content">
+                <div class="events-hero-header">
+                    <div class="events-hero-tag">
+                        <span>🎯 Актуально сегодня</span>
+                        <div class="events-hero-tag-badge">Новые события</div>
+                    </div>
+                    <h1 class="events-hero-title">
+                        <span class="events-hero-title-line">Живые встречи</span>
+                        <span class="events-hero-title-line">с экспертами</span>
+                        <span class="events-hero-title-line events-hero-title-accent">индустрии</span>
+                    </h1>
+                    <p class="events-hero-subtitle">Присоединяйтесь к сообществу профессионалов и расширяйте горизонты</p>
+                </div>
+
+                <div class="events-hero-stats-wrapper">
+                    <div class="events-hero-stat-card">
+                        <div class="events-hero-stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="events-hero-stat-content">
+                            <div class="events-hero-stat-number" data-count="18">0</div>
+                            <div class="events-hero-stat-label">Мероприятий в этом месяце</div>
+                        </div>
+                    </div>
+
+                    <div class="events-hero-stat-card">
+                        <div class="events-hero-stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="events-hero-stat-content">
+                            <div class="events-hero-stat-number" data-count="1500">0</div>
+                            <div class="events-hero-stat-label">Участников онлайн</div>
+                        </div>
+                    </div>
+
+                    <div class="events-hero-stat-card">
+                        <div class="events-hero-stat-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="events-hero-stat-content">
+                            <div class="events-hero-stat-number" data-count="45">0</div>
+                            <div class="events-hero-stat-label">Приглашенных спикеров</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events-hero-search">
+                    <div class="events-hero-search-header">
+                        <h3><i class="fas fa-search"></i> Найдите свое мероприятие</h3>
+                        <p>Фильтруйте по дате, типу и теме</p>
+                    </div>
+                    <div class="events-hero-search-filters">
+                        <div class="events-hero-search-filter">
+                            <label><i class="far fa-calendar"></i> Дата</label>
+                            <select>
+                                <option>Любая дата</option>
+                                <option>Сегодня</option>
+                                <option>На этой неделе</option>
+                                <option>В этом месяце</option>
+                            </select>
+                        </div>
+                        <div class="events-hero-search-filter">
+                            <label><i class="fas fa-tag"></i> Тип</label>
+                            <select>
+                                <option>Все типы</option>
+                                <option>Вебинары</option>
+                                <option>Мастер-классы</option>
+                                <option>Хакатоны</option>
+                                <option>Митапы</option>
+                            </select>
+                        </div>
+                        <div class="events-hero-search-filter">
+                            <label><i class="fas fa-bullseye"></i> Уровень</label>
+                            <select>
+                                <option>Любой уровень</option>
+                                <option>Для начинающих</option>
+                                <option>Средний</option>
+                                <option>Продвинутый</option>
+                            </select>
+                        </div>
+                        <button class="events-hero-search-button">
+                            <i class="fas fa-search"></i>
+                            Найти
+                        </button>
+                    </div>
+                </div>
+
+                <div class="events-hero-upcoming">
+                    <div class="events-hero-upcoming-header">
+                        <h3><i class="fas fa-bolt"></i> Ближайшие события</h3>
+                        <a href="#upcoming-events" class="events-hero-upcoming-link">
+                            Смотреть все
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="events-hero-upcoming-events">
+                        <div class="events-hero-upcoming-event">
+                            <div class="events-hero-upcoming-date">
+                                <div class="events-hero-upcoming-day">15</div>
+                                <div class="events-hero-upcoming-month">Мар</div>
+                            </div>
+                            <div class="events-hero-upcoming-content">
+                                <div class="events-hero-upcoming-tag">Вебинар</div>
+                                <h4>Искусственный интеллект 2025</h4>
+                                <p>19:00 • Онлайн</p>
+                            </div>
+                            <button class="events-hero-upcoming-button">Записаться</button>
+                        </div>
+
+                        <div class="events-hero-upcoming-event">
+                            <div class="events-hero-upcoming-date">
+                                <div class="events-hero-upcoming-day">22</div>
+                                <div class="events-hero-upcoming-month">Мар</div>
+                            </div>
+                            <div class="events-hero-upcoming-content">
+                                <div class="events-hero-upcoming-tag">Мастер-класс</div>
+                                <h4>React 19: Новые возможности</h4>
+                                <p>10:00 • Астана</p>
+                            </div>
+                            <button class="events-hero-upcoming-button">Записаться</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Предстоящие мероприятия -->
+    <section id="upcoming-events" class="events-upcoming" aria-label="Предстоящие мероприятия">
+        <div class="container">
+            <div class="events-section-header" data-animate>
+                <h2>Предстоящие мероприятия</h2>
+                <p>Присоединяйтесь к нашим ближайшим событиям</p>
+                <div class="events-filter">
+                    <button class="events-filter-btn active" data-filter="all">Все</button>
+                    <button class="events-filter-btn" data-filter="webinar">Вебинары</button>
+                    <button class="events-filter-btn" data-filter="workshop">Мастер-классы</button>
+                    <button class="events-filter-btn" data-filter="hackathon">Хакатоны</button>
+                    <button class="events-filter-btn" data-filter="meetup">Митапы</button>
+                </div>
+            </div>
+
+            <div class="events-grid" data-animate>
+                <div class="events-card" data-category="webinar">
+                    <div class="events-card-badge events-card-online">Онлайн</div>
+                    <div class="events-card-date">
+                        <div class="events-card-day">15</div>
+                        <div class="events-card-month">Мар</div>
+                        <div class="events-card-year">2025</div>
+                    </div>
+                    <div class="events-card-content">
+                        <span class="events-card-type">Вебинар</span>
+                        <h3 class="events-card-title">Искусственный интеллект в 2025: Тренды и возможности</h3>
+                        <p class="events-card-description">Обсуждение последних тенденций в AI с ведущими экспертами индустрии</p>
+                        <div class="events-card-meta">
+                            <div class="events-card-time">
+                                <i class="fas fa-clock"></i>
+                                <span>19:00 - 21:00 (Алматы)</span>
+                            </div>
+                            <div class="events-card-speaker">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Доктор Айгуль Нургалиева</span>
+                            </div>
+                        </div>
+                        <div class="events-card-stats">
+                            <div class="events-card-stat">
+                                <i class="fas fa-users"></i>
+                                <span>245 записалось</span>
+                            </div>
+                            <div class="events-card-stat">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Средний уровень</span>
+                            </div>
+                        </div>
+                        <div class="events-card-progress">
+                            <div class="events-progress-bar">
+                                <div class="events-progress-fill" data-width="82"></div>
+                            </div>
+                            <span>82% мест заполнено</span>
+                        </div>
+                        <div class="events-card-footer">
+                            <div class="events-card-price">
+                                <span class="events-card-price-free">Бесплатно</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm events-register-btn">
+                                <i class="fas fa-user-plus"></i>
+                                Записаться
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events-card" data-category="workshop">
+                    <div class="events-card-badge events-card-offline">Офлайн</div>
+                    <div class="events-card-date">
+                        <div class="events-card-day">22</div>
+                        <div class="events-card-month">Мар</div>
+                        <div class="events-card-year">2025</div>
+                    </div>
+                    <div class="events-card-content">
+                        <span class="events-card-type">Мастер-класс</span>
+                        <h3 class="events-card-title">React 19: Новые возможности и лучшие практики</h3>
+                        <p class="events-card-description">Практический мастер-класс по работе с новыми функциями React</p>
+                        <div class="events-card-meta">
+                            <div class="events-card-time">
+                                <i class="fas fa-clock"></i>
+                                <span>10:00 - 18:00</span>
+                            </div>
+                            <div class="events-card-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Астана, Astana Hub</span>
+                            </div>
+                        </div>
+                        <div class="events-card-stats">
+                            <div class="events-card-stat">
+                                <i class="fas fa-users"></i>
+                                <span>120 записалось</span>
+                            </div>
+                            <div class="events-card-stat">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Для разработчиков</span>
+                            </div>
+                        </div>
+                        <div class="events-card-progress">
+                            <div class="events-progress-bar">
+                                <div class="events-progress-fill" data-width="60"></div>
+                            </div>
+                            <span>60% мест заполнено</span>
+                        </div>
+                        <div class="events-card-footer">
+                            <div class="events-card-price">
+                                <span class="events-card-price-amount">₸15 000</span>
+                                <span class="events-card-price-old">₸25 000</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm events-register-btn">
+                                <i class="fas fa-ticket-alt"></i>
+                                Купить билет
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events-card" data-category="hackathon">
+                    <div class="events-card-badge events-card-featured">Рекомендуем</div>
+                    <div class="events-card-date">
+                        <div class="events-card-day">5-7</div>
+                        <div class="events-card-month">Апр</div>
+                        <div class="events-card-year">2025</div>
+                    </div>
+                    <div class="events-card-content">
+                        <span class="events-card-type">Хакатон</span>
+                        <h3 class="events-card-title">FinTech Хакатон 2025</h3>
+                        <p class="events-card-description">48-часовой марафон по созданию инновационных финансовых решений</p>
+                        <div class="events-card-meta">
+                            <div class="events-card-time">
+                                <i class="fas fa-clock"></i>
+                                <span>48 часов</span>
+                            </div>
+                            <div class="events-card-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Алматы, NU</span>
+                            </div>
+                        </div>
+                        <div class="events-card-stats">
+                            <div class="events-card-stat">
+                                <i class="fas fa-users"></i>
+                                <span>50 команд</span>
+                            </div>
+                            <div class="events-card-stat">
+                                <i class="fas fa-award"></i>
+                                <span>Приз ₸3 000 000</span>
+                            </div>
+                        </div>
+                        <div class="events-card-progress">
+                            <div class="events-progress-bar">
+                                <div class="events-progress-fill" data-width="90"></div>
+                            </div>
+                            <span>90% мест заполнено</span>
+                        </div>
+                        <div class="events-card-footer">
+                            <div class="events-card-price">
+                                <span class="events-card-price-free">Бесплатно</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm events-register-btn">
+                                <i class="fas fa-users"></i>
+                                Зарегистрировать команду
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events-card" data-category="meetup">
+                    <div class="events-card-badge events-card-online">Гибрид</div>
+                    <div class="events-card-date">
+                        <div class="events-card-day">30</div>
+                        <div class="events-card-month">Мар</div>
+                        <div class="events-card-year">2025</div>
+                    </div>
+                    <div class="events-card-content">
+                        <span class="events-card-type">Митап</span>
+                        <h3 class="events-card-title">Стартапы Казахстана: История успеха</h3>
+                        <p class="events-card-description">Встреча с основателями успешных казахстанских стартапов</p>
+                        <div class="events-card-meta">
+                            <div class="events-card-time">
+                                <i class="fas fa-clock"></i>
+                                <span>18:30 - 21:00</span>
+                            </div>
+                            <div class="events-card-speaker">
+                                <i class="fas fa-user-tie"></i>
+                                <span>3 спикера</span>
+                            </div>
+                        </div>
+                        <div class="events-card-stats">
+                            <div class="events-card-stat">
+                                <i class="fas fa-users"></i>
+                                <span>180 записалось</span>
+                            </div>
+                            <div class="events-card-stat">
+                                <i class="fas fa-network-wired"></i>
+                                <span>Нетворкинг</span>
+                            </div>
+                        </div>
+                        <div class="events-card-progress">
+                            <div class="events-progress-bar">
+                                <div class="events-progress-fill" data-width="75"></div>
+                            </div>
+                            <span>75% мест заполнено</span>
+                        </div>
+                        <div class="events-card-footer">
+                            <div class="events-card-price">
+                                <span class="events-card-price-amount">₸5 000</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm events-register-btn">
+                                <i class="fas fa-calendar-plus"></i>
+                                Записаться
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events-card" data-category="webinar">
+                    <div class="events-card-badge events-card-online">Онлайн</div>
+                    <div class="events-card-date">
+                        <div class="events-card-day">12</div>
+                        <div class="events-card-month">Апр</div>
+                        <div class="events-card-year">2025</div>
+                    </div>
+                    <div class="events-card-content">
+                        <span class="events-card-type">Вебинар</span>
+                        <h3 class="events-card-title">Data Science для бизнеса: Кейсы из практики</h3>
+                        <p class="events-card-description">Как внедрять Data Science решения в реальных бизнес-процессах</p>
+                        <div class="events-card-meta">
+                            <div class="events-card-time">
+                                <i class="fas fa-clock"></i>
+                                <span>20:00 - 22:00</span>
+                            </div>
+                            <div class="events-card-speaker">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Асылбек Абдрахманов</span>
+                            </div>
+                        </div>
+                        <div class="events-card-stats">
+                            <div class="events-card-stat">
+                                <i class="fas fa-users"></i>
+                                <span>310 записалось</span>
+                            </div>
+                            <div class="events-card-stat">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Продвинутый уровень</span>
+                            </div>
+                        </div>
+                        <div class="events-card-progress">
+                            <div class="events-progress-bar">
+                                <div class="events-progress-fill" data-width="95"></div>
+                            </div>
+                            <span>95% мест заполнено</span>
+                        </div>
+                        <div class="events-card-footer">
+                            <div class="events-card-price">
+                                <span class="events-card-price-free">Бесплатно</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm events-register-btn">
+                                <i class="fas fa-user-plus"></i>
+                                Записаться
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events-card" data-category="workshop">
+                    <div class="events-card-badge events-card-offline">Офлайн</div>
+                    <div class="events-card-date">
+                        <div class="events-card-day">19</div>
+                        <div class="events-card-month">Апр</div>
+                        <div class="events-card-year">2025</div>
+                    </div>
+                    <div class="events-card-content">
+                        <span class="events-card-type">Мастер-класс</span>
+                        <h3 class="events-card-title">UX/UI дизайн: От исследования до прототипа</h3>
+                        <p class="events-card-description">Полный цикл создания интерфейсов на реальном кейсе</p>
+                        <div class="events-card-meta">
+                            <div class="events-card-time">
+                                <i class="fas fa-clock"></i>
+                                <span>11:00 - 17:00</span>
+                            </div>
+                            <div class="events-card-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Алматы, Design Space</span>
+                            </div>
+                        </div>
+                        <div class="events-card-stats">
+                            <div class="events-card-stat">
+                                <i class="fas fa-users"></i>
+                                <span>45 записалось</span>
+                            </div>
+                            <div class="events-card-stat">
+                                <i class="fas fa-palette"></i>
+                                <span>Для дизайнеров</span>
+                            </div>
+                        </div>
+                        <div class="events-card-progress">
+                            <div class="events-progress-bar">
+                                <div class="events-progress-fill" data-width="45"></div>
+                            </div>
+                            <span>45% мест заполнено</span>
+                        </div>
+                        <div class="events-card-footer">
+                            <div class="events-card-price">
+                                <span class="events-card-price-amount">₸20 000</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm events-register-btn">
+                                <i class="fas fa-ticket-alt"></i>
+                                Купить билет
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Приемущества участия -->
+    <section class="events-benefits" aria-label="Преимущества участия">
+        <div class="container">
+            <div class="events-section-header" data-animate>
+                <h2>Почему стоит участвовать?</h2>
+                <p>Ценность, которую вы получаете от наших мероприятий</p>
+            </div>
+
+            <div class="events-benefits-grid" data-animate>
+                <div class="events-benefit-card">
+                    <div class="events-benefit-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Нетворкинг</h3>
+                    <p>Знакомство с экспертами, инвесторами и единомышленниками. Расширяйте профессиональные связи.</p>
+                    <div class="events-benefit-stats">
+                        <div class="events-benefit-stat">
+                            <span class="events-benefit-stat-value">85%</span>
+                            <span class="events-benefit-stat-label">находят партнеров</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events-benefit-card">
+                    <div class="events-benefit-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Новые знания</h3>
+                    <p>Актуальная информация от практикующих специалистов. Самые свежие тренды и технологии.</p>
+                    <div class="events-benefit-stats">
+                        <div class="events-benefit-stat">
+                            <span class="events-benefit-stat-value">100%</span>
+                            <span class="events-benefit-stat-label">практические кейсы</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events-benefit-card">
+                    <div class="events-benefit-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Карьерные возможности</h3>
+                    <p>Прямой доступ к работодателям и рекрутерам. Шанс проявить себя на хакатонах.</p>
+                    <div class="events-benefit-stats">
+                        <div class="events-benefit-stat">
+                            <span class="events-benefit-stat-value">30%</span>
+                            <span class="events-benefit-stat-label">получают офферы</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events-benefit-card">
+                    <div class="events-benefit-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Сертификаты</h3>
+                    <p>Официальные документы об участии, которые украсят ваше портфолио и резюме.</p>
+                    <div class="events-benefit-stats">
+                        <div class="events-benefit-stat">
+                            <span class="events-benefit-stat-value">100%</span>
+                            <span class="events-benefit-stat-label">официальные документы</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Прошедшие мероприятия -->
+    <section id="past-events" class="events-past" aria-label="Прошедшие мероприятия">
+        <div class="container">
+            <div class="events-section-header" data-animate>
+                <h2>Прошедшие мероприятия</h2>
+                <p>Посмотрите материалы и записи наших предыдущих событий</p>
+            </div>
+
+            <div class="events-past-grid" data-animate>
+                <div class="events-past-card">
+                    <div class="events-past-media">
+                        <div class="events-past-play">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="AI Conference">
+                    </div>
+                    <div class="events-past-content">
+                        <span class="events-past-date">Февраль 2025</span>
+                        <h3 class="events-past-title">Конференция по ИИ и машинному обучению</h3>
+                        <p class="events-past-description">Более 500 участников, 15 спикеров международного уровня</p>
+                        <div class="events-past-stats">
+                            <div class="events-past-stat">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Доступна запись</span>
+                            </div>
+                            <div class="events-past-stat">
+                                <i class="fas fa-download"></i>
+                                <span>Материалы доступны</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-sm">
+                            <i class="fas fa-video"></i>
+                            Смотреть запись
+                        </a>
+                    </div>
+                </div>
+
+                <div class="events-past-card">
+                    <div class="events-past-media">
+                        <div class="events-past-play">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hackathon">
+                    </div>
+                    <div class="events-past-content">
+                        <span class="events-past-date">Январь 2025</span>
+                        <h3 class="events-past-title">EdTech Хакатон: Образование будущего</h3>
+                        <p class="events-past-description">48 часов инноваций, 30 команд, 5 проектов-победителей</p>
+                        <div class="events-past-stats">
+                            <div class="events-past-stat">
+                                <i class="fas fa-images"></i>
+                                <span>Фотоотчет</span>
+                            </div>
+                            <div class="events-past-stat">
+                                <i class="fas fa-trophy"></i>
+                                <span>Проекты победителей</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-sm">
+                            <i class="fas fa-images"></i>
+                            Смотреть фото
+                        </a>
+                    </div>
+                </div>
+
+                <div class="events-past-card">
+                    <div class="events-past-media">
+                        <div class="events-past-play">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Workshop">
+                    </div>
+                    <div class="events-past-content">
+                        <span class="events-past-date">Декабрь 2024</span>
+                        <h3 class="events-past-title">Мастер-класс: Современный фронтенд разработка</h3>
+                        <p class="events-past-description">React, TypeScript, Next.js - полный стек современных технологий</p>
+                        <div class="events-past-stats">
+                            <div class="events-past-stat">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Презентации</span>
+                            </div>
+                            <div class="events-past-stat">
+                                <i class="fas fa-code"></i>
+                                <span>Примеры кода</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline btn-sm">
+                            <i class="fas fa-download"></i>
+                            Скачать материалы
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA секция -->
+    <section class="events-cta" aria-label="Призыв к действию">
+        <div class="events-cta-background">
+            <div class="events-cta-shape shape-1"></div>
+            <div class="events-cta-shape shape-2"></div>
+        </div>
+        <div class="container">
+            <div class="events-cta-content" data-animate>
+                <h2>Не упускайте возможности!</h2>
+                <p>Подпишитесь на уведомления о новых мероприятиях и получайте специальные предложения</p>
+                <div class="events-cta-buttons">
+                    <button class="btn btn-primary btn-large events-subscribe-btn">
+                        <i class="fas fa-bell"></i>
+                        Подписаться на анонсы
+                    </button>
+                    <a href="mailto:events@eduplatform.kz" class="btn btn-outline btn-large">
+                        <i class="fas fa-envelope"></i>
+                        Стать спикером
+                    </a>
+                </div>
+                <div class="events-cta-features">
+                    <div class="events-cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        Первыми узнавайте о мероприятиях
+                    </div>
+                    <div class="events-cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        Скидки для подписчиков
+                    </div>
+                    <div class="events-cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        Возможность задать вопросы спикерам
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/events.js' %}"></script>
+{% endblock %}

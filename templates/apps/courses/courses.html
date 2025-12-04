@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Курсы - EduPlatform{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/courses.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="courses-page">
+    <!-- Hero секция для курсов -->
+    <section class="courses-hero" aria-label="Все курсы">
+        <div class="courses-hero-background">
+            <div class="courses-hero-shape shape-1"></div>
+            <div class="courses-hero-shape shape-2"></div>
+            <div class="courses-hero-shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="courses-hero-content" data-animate>
+                <div class="courses-hero-badge">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Популярные направления 2025</span>
+                </div>
+                <h1 class="courses-hero-title">Наши <span class="courses-highlight">курсы</span></h1>
+                <p class="courses-hero-description">Выберите курс, который подходит именно вам. Все курсы включают практические задания и поддержку преподавателей.</p>
+
+                <div class="courses-hero-stats">
+                    <div class="courses-hero-stat">
+                        <div class="courses-hero-stat-number">150+</div>
+                        <div class="courses-hero-stat-label">
+                            <i class="fas fa-book"></i>
+                            <span>Курсов</span>
+                        </div>
+                    </div>
+                    <div class="courses-hero-stat">
+                        <div class="courses-hero-stat-number">50+</div>
+                        <div class="courses-hero-stat-label">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <span>Преподавателей</span>
+                        </div>
+                    </div>
+                    <div class="courses-hero-stat">
+                        <div class="courses-hero-stat-number">95%</div>
+                        <div class="courses-hero-stat-label">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Трудоустройство</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фильтры и поиск -->
+    <section class="courses-filter-section" aria-label="Фильтры курсов">
+        <div class="container">
+            <div class="courses-filter-container" data-animate>
+                <div class="courses-search">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text"
+                               class="courses-search-input"
+                               placeholder="Поиск курсов..."
+                               id="searchCourses">
+                        <button class="search-clear" id="clearSearch">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <button class="btn btn-primary search-btn">
+                        <i class="fas fa-search"></i>
+                        Найти
+                    </button>
+                </div>
+
+                <div class="courses-filter-categories">
+                    <div class="filter-categories-header">
+                        <h3><i class="fas fa-filter"></i> Категории курсов</h3>
+                    </div>
+                    <div class="filter-categories-grid">
+                        <button class="filter-category-btn active" data-filter="all">
+                            <div class="category-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <span>Все курсы</span>
+                        </button>
+
+                        <button class="filter-category-btn" data-filter="programming">
+                            <div class="category-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span>Программирование</span>
+                        </button>
+
+                        <button class="filter-category-btn" data-filter="design">
+                            <div class="category-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <span>Дизайн</span>
+                        </button>
+
+                        <button class="filter-category-btn" data-filter="marketing">
+                            <div class="category-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span>Маркетинг</span>
+                        </button>
+
+                        <button class="filter-category-btn" data-filter="business">
+                            <div class="category-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <span>Бизнес</span>
+                        </button>
+
+                        <button class="filter-category-btn" data-filter="data">
+                            <div class="category-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <span>Data Science</span>
+                        </button>
+
+                        <button class="filter-category-btn" data-filter="mobile">
+                            <div class="category-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <span>Мобильная разработка</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="courses-filter-options">
+                    <div class="filter-option-group">
+                        <label class="filter-option-label">
+                            <i class="fas fa-sliders-h"></i>
+                            Уровень сложности
+                        </label>
+                        <div class="filter-option-buttons">
+                            <button class="filter-option-btn active" data-level="all">Все</button>
+                            <button class="filter-option-btn" data-level="beginner">Начальный</button>
+                            <button class="filter-option-btn" data-level="intermediate">Средний</button>
+                            <button class="filter-option-btn" data-level="advanced">Продвинутый</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-option-group">
+                        <label class="filter-option-label">
+                            <i class="fas fa-sort-amount-down"></i>
+                            Сортировка
+                        </label>
+                        <div class="filter-option-buttons">
+                            <button class="filter-option-btn active" data-sort="popular">Популярные</button>
+                            <button class="filter-option-btn" data-sort="new">Новые</button>
+                            <button class="filter-option-btn" data-sort="rating">По рейтингу</button>
+                            <button class="filter-option-btn" data-sort="price">По цене</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Сетка курсов -->
+    <section class="courses-grid-section" aria-label="Список курсов">
+        <div class="container">
+            <div class="courses-grid-header">
+                <h2>Доступные курсы</h2>
+                <p class="courses-count">Показано <span id="coursesCount">8</span> из 150+ курсов</p>
+            </div>
+
+            <div class="courses-grid" id="coursesGrid" data-animate>
+                <!-- Курсы загружаются через JavaScript -->
+            </div>
+
+            <!-- Пагинация -->
+            <div class="courses-pagination" data-animate>
+                <button class="pagination-btn" id="prevPage" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                    Назад
+                </button>
+
+                <div class="pagination-numbers">
+                    <button class="pagination-number active">1</button>
+                    <button class="pagination-number">2</button>
+                    <button class="pagination-number">3</button>
+                    <span class="pagination-dots">...</span>
+                    <button class="pagination-number">8</button>
+                </div>
+
+                <button class="pagination-btn" id="nextPage">
+                    Вперед
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Сообщение если нет курсов -->
+            <div class="courses-empty-state" id="noCoursesMessage">
+                <div class="empty-state-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Курсы не найдены</h3>
+                <p>Попробуйте изменить параметры фильтрации</p>
+                <button class="btn btn-outline" id="resetFilters">
+                    <i class="fas fa-redo"></i>
+                    Сбросить фильтры
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA секция -->
+    <section class="courses-cta" aria-label="Призыв к действию">
+        <div class="courses-cta-background">
+            <div class="courses-cta-shape shape-1"></div>
+            <div class="courses-cta-shape shape-2"></div>
+        </div>
+        <div class="container">
+            <div class="courses-cta-content" data-animate>
+                <div class="courses-cta-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <h2>Не можете определиться с курсом?</h2>
+                <p>Пройдите бесплатный тест на профориентацию и получите персональные рекомендации</p>
+                <div class="courses-cta-buttons">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <i class="fas fa-clipboard-check"></i>
+                        Пройти тест
+                    </a>
+                    <a href="#" class="btn btn-outline btn-large">
+                        <i class="fas fa-comments"></i>
+                        Консультация
+                    </a>
+                </div>
+                <div class="courses-cta-features">
+                    <div class="courses-cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        Бесплатный тест
+                    </div>
+                    <div class="courses-cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        Займет 10 минут
+                    </div>
+                    <div class="courses-cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        Точность 95%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/courses.js' %}"></script>
+{% endblock %}

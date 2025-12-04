@@ -1,0 +1,177 @@
+<nav class="navbar" aria-label="Основная навигация">
+    <div class="container">
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="{% url 'home:home' %}" class="nav-link {% if request.resolver_match.app_name == 'home' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'home' %}page{% endif %}">
+                    <span class="nav-icon" aria-hidden="true">
+                        <i class="fas fa-home"></i>
+                    </span>
+                    <span class="nav-text">Главная</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'courses:courses' %}" class="nav-link {% if request.resolver_match.app_name == 'courses' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'courses' %}page{% endif %}">
+                    <span class="nav-icon" aria-hidden="true">
+                        <i class="fas fa-graduation-cap"></i>
+                    </span>
+                    <span class="nav-text">Курсы</span>
+                    <span class="nav-badge" aria-label="3 новых курса">3</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'events:events' %}" class="nav-link {% if request.resolver_match.app_name == 'events' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'events' %}page{% endif %}">
+                    <span class="nav-icon" aria-hidden="true">
+                        <i class="fas fa-calendar-alt"></i>
+                    </span>
+                    <span class="nav-text">Мероприятия</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'quizzes:quizzes' %}" class="nav-link {% if request.resolver_match.app_name == 'quizzes' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'quizzes' %}page{% endif %}">
+                    <span class="nav-icon" aria-hidden="true">
+                        <i class="fas fa-clipboard-check"></i>
+                    </span>
+                    <span class="nav-text">Тесты</span>
+                    <span class="nav-badge" aria-label="Новый тест">1</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'analytics:analytics' %}" class="nav-link {% if request.resolver_match.app_name == 'analytics' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'analytics' %}page{% endif %}">
+                    <span class="nav-icon" aria-hidden="true">
+                        <i class="fas fa-chart-line"></i>
+                    </span>
+                    <span class="nav-text">Аналитика</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'about:about' %}" class="nav-link {% if request.resolver_match.app_name == 'about' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'about' %}page{% endif %}">
+                    <span class="nav-icon" aria-hidden="true">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span class="nav-text">О нас</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Mobile Navigation Menu -->
+<div class="mobile-nav-menu" id="mobile-nav-menu" aria-hidden="true">
+    <div class="mobile-nav-header">
+        <div class="mobile-nav-header-content">
+            <h2 class="mobile-nav-title">
+                <i class="fas fa-bars"></i>
+                Меню
+            </h2>
+            <button class="mobile-nav-close" aria-label="Закрыть меню">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-nav-content">
+        <div class="mobile-nav-items">
+            <div class="mobile-nav-item">
+                <a href="{% url 'home:home' %}" class="mobile-nav-link {% if request.resolver_match.app_name == 'home' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'home' %}page{% endif %}">
+                    <span class="mobile-nav-icon" aria-hidden="true">
+                        <i class="fas fa-home"></i>
+                    </span>
+                    <span class="mobile-nav-text">Главная</span>
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="{% url 'courses:courses' %}" class="mobile-nav-link {% if request.resolver_match.app_name == 'courses' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'courses' %}page{% endif %}">
+                    <span class="mobile-nav-icon" aria-hidden="true">
+                        <i class="fas fa-graduation-cap"></i>
+                    </span>
+                    <span class="mobile-nav-text">Курсы</span>
+                    <span class="mobile-nav-badge" aria-label="3 новых курса">3</span>
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="{% url 'events:events' %}" class="mobile-nav-link {% if request.resolver_match.app_name == 'events' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'events' %}page{% endif %}">
+                    <span class="mobile-nav-icon" aria-hidden="true">
+                        <i class="fas fa-calendar-alt"></i>
+                    </span>
+                    <span class="mobile-nav-text">Мероприятия</span>
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="{% url 'quizzes:quizzes' %}" class="mobile-nav-link {% if request.resolver_match.app_name == 'quizzes' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'quizzes' %}page{% endif %}">
+                    <span class="mobile-nav-icon" aria-hidden="true">
+                        <i class="fas fa-clipboard-check"></i>
+                    </span>
+                    <span class="mobile-nav-text">Тесты</span>
+                    <span class="mobile-nav-badge" aria-label="Новый тест">1</span>
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="{% url 'analytics:analytics' %}" class="mobile-nav-link {% if request.resolver_match.app_name == 'analytics' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'analytics' %}page{% endif %}">
+                    <span class="mobile-nav-icon" aria-hidden="true">
+                        <i class="fas fa-chart-line"></i>
+                    </span>
+                    <span class="mobile-nav-text">Аналитика</span>
+                </a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="{% url 'about:about' %}" class="mobile-nav-link {% if request.resolver_match.app_name == 'about' %}active{% endif %}" aria-current="{% if request.resolver_match.app_name == 'about' %}page{% endif %}">
+                    <span class="mobile-nav-icon" aria-hidden="true">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                    <span class="mobile-nav-text">О нас</span>
+                </a>
+            </div>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div class="mobile-nav-footer">
+            <div class="mobile-user-info">
+                <div class="mobile-user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="mobile-user-details">
+                    <div class="mobile-user-name">{{ user.username }}</div>
+                    <div class="mobile-user-email">{{ user.email|default:"Пользователь" }}</div>
+                </div>
+            </div>
+
+            <div class="mobile-user-actions">
+                <a href="{% url 'users:profile' %}" class="mobile-user-action">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Профиль</span>
+                </a>
+                <a href="{% url 'courses:user_courses' %}" class="mobile-user-action">
+                    <i class="fas fa-book"></i>
+                    <span>Мои курсы</span>
+                </a>
+                <a href="{% url 'analytics:analytics' %}" class="mobile-user-action">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Аналитика</span>
+                </a>
+                <a href="{% url 'accounts:logout' %}" class="mobile-user-action logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Выйти</span>
+                </a>
+            </div>
+        </div>
+        {% else %}
+        <div class="mobile-nav-footer">
+            <div class="mobile-auth-info">
+                <i class="fas fa-user-circle"></i>
+                <h3>Войдите в аккаунт</h3>
+                <p>Чтобы получить доступ ко всем функциям</p>
+            </div>
+            <div class="mobile-auth-actions">
+                <a href="{% url 'accounts:login' %}" class="btn btn-outline btn-block">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Войти
+                </a>
+                <a href="{% url 'accounts:register' %}" class="btn btn-primary btn-block">
+                    <i class="fas fa-user-plus"></i>
+                    Регистрация
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>

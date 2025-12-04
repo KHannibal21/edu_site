@@ -1,0 +1,81 @@
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo -->
+            <a href="{% url 'home:home' %}" class="logo" aria-label="EduPlatform - Главная страница">
+                <span class="logo-icon" aria-hidden="true">🎓</span>
+                <span class="logo-text">EduPlatform</span>
+            </a>
+
+            <!-- Search Box - теперь один для всех устройств -->
+            <div class="search-container">
+                <form action="{% url 'courses:courses' %}" method="get" class="search-form" role="search">
+                    <input
+                        type="text"
+                        name="q"
+                        placeholder="Поиск курсов..."
+                        class="search-input"
+                        value="{{ request.GET.q }}"
+                        aria-label="Поиск курсов"
+                    >
+                    <button type="submit" class="search-button" aria-label="Выполнить поиск">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="m21 21-4.3-4.3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- User Actions -->
+            <div class="header-actions">
+                <!-- Кнопка поиска для мобильных устройств -->
+                <button class="search-mobile-toggle" aria-label="Открыть поиск">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                {% if user.is_authenticated %}
+                <div class="user-menu">
+                    <button class="user-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Меню пользователя">
+                        <div class="user-avatar" aria-hidden="true">
+                            {{ user.username|first|upper }}
+                        </div>
+                        <span class="user-name">{{ user.username }}</span>
+                    </button>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="{% url 'users:profile' %}" class="dropdown-item" role="menuitem">
+                            <span>👤</span>
+                            Профиль
+                        </a>
+                        <a href="{% url 'courses:user_courses' %}" class="dropdown-item" role="menuitem">
+                            <span>📚</span>
+                            Мои курсы
+                        </a>
+                        <a href="{% url 'analytics:analytics' %}" class="dropdown-item" role="menuitem">
+                            <span>📊</span>
+                            Моя Аналитика
+                        </a>
+                        <div class="dropdown-divider" role="separator"></div>
+                        <a href="{% url 'accounts:logout' %}" class="dropdown-item logout" role="menuitem">
+                            <span>🚪</span>
+                            Выйти
+                        </a>
+                    </div>
+                </div>
+                {% else %}
+                <div class="auth-buttons">
+                    <a href="{% url 'accounts:login' %}" class="btn btn-outline">Войти</a>
+                    <a href="{% url 'accounts:register' %}" class="btn btn-primary">Регистрация</a>
+                </div>
+                {% endif %}
+
+                <!-- Mobile Menu Toggle - ТОЛЬКО ОДИН БУРГЕР -->
+                <button class="nav-mobile-toggle" aria-label="Открыть меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
